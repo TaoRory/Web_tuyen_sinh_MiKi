@@ -22,10 +22,19 @@ Long description of module's purpose
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'data/miki.province.csv',
+        'data/miki.district.csv',
+        'data/miki.ward.csv',
+        'views/miki_province_views.xml',
+        'views/miki_distriict_views.xml',
+        'views/miki_ward_views.xml',
+        'views/miki_student_views.xml',
+        'views/portal/login_page.xml'
     ],
+
+
+
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',

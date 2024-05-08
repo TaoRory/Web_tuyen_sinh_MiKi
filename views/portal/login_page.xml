@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="login_page">
+            <h1>
+                Hello
+            </h1>
+        </template>
+    </data>
+</odoo>

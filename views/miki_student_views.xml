@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="miki_student_form_view" model="ir.ui.view">
+            <field name="name">web_tuyen_sinh_miki.miki_student.form</field>
+            <field name="model">miki.student</field>
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <label class="o_form_label" for="dob_day">Date of birth</label>
+                                <div class="o_row">
+                                    <field name="dob_day"/>
+                                    <span>/</span>
+                                    <field name="dob_month"/>
+                                    <span>/</span>
+                                    <field name="dob_year"/>
+                                </div>
+                                <field name="gender"/>
+                            </group>
+                            <group>
+                                <field name="ethnicity"/>
+                                <field name="nationality"/>
+                                <field name="religion"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Personal information">
+                                <group>
+                                    <group>
+                                        <field name="contact_phone"/>
+                                        <field name="citizen_identification_code"/>
+                                        <field name="issued_by"/>
+                                        <label class="o_form_label" for="date_range_day">Date range</label>
+                                        <div class="o_row">
+
+                                            <field name="date_range_day"/>
+                                            <span>/</span>
+                                            <field name="date_range_month"/>
+                                            <span>/</span>
+                                            <field name="date_range_year"/>
+                                        </div>
+                                        <field name="personal_identification_number"/>
+                                    </group>
+                                    <group>
+                                        <group>
+                                            <field name="father_full_name"/>
+                                            <field name="father_occupation"/>
+                                            <field name="father_dob_year"/>
+                                            <field name="father_phone"/>
+                                        </group>
+                                        <group>
+                                            <field name="mother_full_name"/>
+                                            <field name="mother_occupation"/>
+                                            <field name="mother_dob_year"/>
+                                            <field name="mother_phone"/>
+                                        </group>
+                                        <group>
+                                            <field name="guardian_full_name"/>
+                                            <field name="guardian_dob_year"/>
+                                            <field name="guardian_occupation"/>
+                                            <field name="guardian_phone"/>
+                                        </group>
+                                    </group>
+                                </group>
+
+                            </page>
+                            <page string="Permanent Address">
+                                <group>
+
+                                    <field name="permanent_province_id"/>
+                                    <field name="permanent_district_id"/>
+                                    <field name="permanent_ward_id"/>
+                                    <field name="permanent_hamlet"/>
+                                    <field name="permanent_address"/>
+                                </group>
+                            </page>
+                            <page string="Home town Address">
+                                <group>
+
+                                    <field name="home_town_province_id"/>
+                                    <field name="home_town_district_id"/>
+                                    <field name="home_town_ward_id"/>
+                                </group>
+                            </page>
+                            <page string="Birth Address">
+                                <group>
+
+                                    <field name="birth_province_id"/>
+                                    <field name="birth_district_id"/>
+                                    <field name="birth_ward_id"/>
+                                    <field name="birth_address"/>
+                                </group>
+                            </page>
+                            <page string="Current Address">
+                                <group>
+
+                                    <field name="current_province_id"/>
+                                    <field name="current_district_id"/>
+                                    <field name="current_ward_id"/>
+                                    <field name="current_hamlet"/>
+                                    <field name="current_address"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="miki_student_tree_view" model="ir.ui.view">
+            <field name="name">web-tuyen-sinh-miki.miki_student.tree</field>
+            <field name="model">miki.student</field>
+            <field name="arch" type="xml">
+                <tree string="Student">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="miki_student_search_view" model="ir.ui.view">
+            <field name="name">web-tuyen-sinh-miki.miki_student.search</field>
+            <field name="model">miki.student</field>
+            <field name="arch" type="xml">
+                <search string="Student">
+                    <field name="name"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Permanent Province" name="permanent_province" domain="[]"
+                                context="{'group_by':'permanent_province_id'}"/>
+                    </group><group expand="1" string="Group By">
+                    <filter string="Permanent District" name="permanent_district" domain="[]"
+                            context="{'group_by':'permanent_district_id'}"/>
+                </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="miki_student_act_window" model="ir.actions.act_window">
+            <field name="name">ModelTitle</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">miki.student</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Student" id="miki_student_menu" action="miki_student_act_window"/>
+
+    </data>
+</odoo>

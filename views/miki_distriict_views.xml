@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        <record id="miki_district_form_view" model="ir.ui.view">-->
+<!--            <field name="name">web_tuyen_sinh_miki.miki_district.form</field>-->
+<!--            <field name="model">miki.district</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="district">-->
+<!--                    <sheet>-->
+<!--                        <div class="oe_title">-->
+<!--                            <label for="example_title"/>-->
+<!--                            <h1>-->
+<!--                                <field name="example_title" placeholder="Title"/>-->
+<!--                            </h1>-->
+<!--                        </div>-->
+<!--                        <group>-->
+<!--                            <group>-->
+<!--                                <field name="create_date"/>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="example_field"/>-->
+<!--                            </group>-->
+<!--                        </group>-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="miki_district_tree_view" model="ir.ui.view">
+            <field name="name">web_tuyen_sinh_miki.miki_district.tree</field>
+            <field name="model">miki.district</field>
+            <field name="arch" type="xml">
+                <tree string="district">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="name_with_type"/>
+                    <field name="province_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="miki_district_search_view" model="ir.ui.view">
+            <field name="name">web_tuyen_sinh_miki.miki_district.search</field>
+            <field name="model">miki.district</field>
+            <field name="arch" type="xml">
+                <search string="District">
+                    <group expand="1" string="Group By">
+                        <filter string="Type" name="type" domain="[]"
+                                context="{'group_by':'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="miki_district_act_window" model="ir.actions.act_window">
+            <field name="name">district</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">miki.district</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new district.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="District" id="miki_district_menu"  action="miki_district_act_window"/>
+
+    </data>
+</odoo>

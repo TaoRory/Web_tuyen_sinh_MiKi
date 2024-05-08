@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_tuyensinh_tuyensinh,tuyensinh.tuyensinh,model_tuyensinh_tuyensinh,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_province,miki.province,model_miki_province,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_district,miki.district,model_miki_district,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_ward,miki.ward,model_miki_ward,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_student,miki.student,model_miki_student,base.group_user,1,1,1,1
