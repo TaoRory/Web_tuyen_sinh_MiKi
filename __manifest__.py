@@ -18,7 +18,7 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'web'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
@@ -32,12 +32,9 @@ Long description of module's purpose
         'views/miki_student_views.xml',
         'views/portal/login_page.xml'
     ],
-
-
-
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
-    ],
+    ]
 }
 
