@@ -11,6 +11,8 @@
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                     <title>Login Page</title>
                     <link rel="stylesheet" type="text/css" href="/Web-tuyen-sinh-MiKi/static/assets/css/styles.css"/>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
                 </head>
                 <div class="container">
                     <img src="logo.png" alt="Logo" class="logo"/>
@@ -25,26 +27,33 @@
                                 Email: thpt.hcm@minhkhai.edu.vn<br/>
                                 Website: thptnguyenthiminhkhai.hcm.edu.vn</h3>
 
+
                         </div>
                         <div class="login-form">
                             <h2>HỆ THỐNG ĐIỀN THÔNG TIN NHẬP HỌC</h2>
                             <h4>Số báo danh</h4>
-                            <input type="text" placeholder="Nhập số báo danh"/>
+                            <input type="text" placeholder="Nhập số báo danh" id="sbd"/>
                             <h4>Mã số học sinh</h4>
-                            <input type="password" placeholder="Mã số học sinh"/>
-                            <button type="submit">LOG IN</button>
+                            <input type="password" placeholder="Mã số học sinh" id="mhs"/>
+                            <button type="submit" class="btn_login_page">LOG IN</button>
                         </div>
                         <div class="info-section">
-                            <div class="info-box">
+                            <div class="info-box" style="display: none;">
                                 <h5>Họ và tên:</h5>
-                                <p>Thông tin người dùng sẽ hiển thị ở đây</p>
+                                <p id="result_name">Thông tin người dùng sẽ hiển thị ở đây</p>
                                 <h5>Ngày sinh:</h5>
-                                <p>Thông tin người dùng sẽ hiển thị ở đây</p>
+                                <p id="result_dob">Thông tin người dùng sẽ hiển thị ở đây</p>
+                            </div>
+                            <div class="empty-box" style="display: none;">
+                            <p>Không có học sinh này</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            <script src="/Web-tuyen-sinh-MiKi/static/assets/js/login_page.js"/>
+
             </html>
+
 
 
         </template>
