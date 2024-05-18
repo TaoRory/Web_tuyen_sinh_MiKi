@@ -1,0 +1,163 @@
+@charset "utf-8";
+/* CSS Document */
+
+nav{ background: #eee; padding: 5px 0}
+nav .container
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center /* yeu cau cac thanh phan trong flex canh giữa theo chiều dọc của box*/
+}
+.menu ul
+{ 
+	display: flex;
+	list-style: none;
+	padding: 0
+}
+.menu ul li
+{
+	position: relative
+}
+.menu ul li a
+{
+	padding: 10px 15px;
+	text-decoration: none;
+	color: #333;
+	text-transform: uppercase;
+	display: block;
+	transition: all .5s
+}
+.menu ul li a:hover
+{
+	
+	color: #056CB6;
+	border-bottom: 2px solid  #056CB6
+}
+/*-- style cho menu con*/
+.menu ul ul
+{
+	background:#056CB6; 
+	flex-direction: column;
+	width: 200px;
+	position: absolute;
+	left:0;
+	top: 150%;	
+	z-index: 9999; /*chỉ số lớp /layer số này càng cao thì  càng chồng cao trên các đối tượng khác*/
+	visibility:hidden;
+	opacity: 0;
+	transition: all .5s
+}
+.menu ul ul a{
+	color: #fff;
+}
+.menu ul ul a:hover{ background: #F2C94C; border-bottom: none}
+
+.menu ul li:hover >ul{ visibility: visible; opacity:1; top: 100%}
+
+/*--- ket thuc style cho menu con------------------*/
+
+.nav-icon a
+{
+	color: #333; margin: 0 10px
+}
+.nav-icon a:hover{color:#056CB6}
+/*------ footer style*/
+footer h3{ border-bottom: 1px solid yellow; width: 70%; font-size: 0.97rem}
+.footer-menu a
+{
+	display: block;
+	color: #fff; text-decoration: none; padding: 5px
+}
+.footer-menu a:hover{ color: aquamarine}
+
+.tieude-trang
+{
+	background-image: url("../images/pageheader.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 250px;
+	padding: 50px 10%;
+	color: #fff
+}
+.form-timkiem {
+	background: #fff;
+	padding: 20px;
+	display: flex
+}
+.input-form{
+	width: 90%;
+	border:1px solid #ddd; 
+	padding: 5px
+}
+.form-timkiem .btn-primary{ 
+	border-radius: 0
+}
+
+.menu-aside ul{ list-style: none; margin: 0; padding: 0}
+.menu-aside a{
+	color: #666; text-decoration: none;
+	padding: 5px; display: block;
+	text-transform:lowercase; font-size: 1.1rem;
+	background-image: url("../images/MT-XANH.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+	transition: all .3s
+}
+.menu-aside a:hover{ 
+	color: #056CB6;
+	background-image: url("../images/MT-VANG.png");
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	padding-left: 30px;
+}
+aside .baiviet a{ color: #666; text-decoration: none}
+aside .baiviet a:hover{ color: #056CB6}
+
+#welcome ul li { list-style-image: url("../images/MT-VANG.png")}
+
+#dichvu a{ color: #333; text-decoration: none}
+#dichvu a:hover{ color: #F2C94C}
+#dichvu .box-dv{ position: relative; overflow: hidden; height: 100%}
+#dichvu .box-dv img{ transition: all 0.5s}
+#dichvu .box-dv:hover > img { transform: translateY(-20px) scale(1.2); border-bottom: 3px solid  #F2C94C}
+#tai-sao
+{
+	background-image: url("../images/about/about-pic-2.jpg");
+	background-repeat: no-repeat;
+	background-position: center top
+}
+
+#tai-sao h5{ margin-bottom: 0; margin-top: 0}
+
+.img-comp-container {
+  position: relative;
+  height: 340px; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width:auto;
+  height: auto;
+  overflow: hidden;
+	
+}
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+width: 340px; height: 340px;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 5px;
+  height: 300px;
+  background-color:#E9AD17;
+  box-shadow: 1px 1px 3px #000;
+  border-radius: 3px;
+}
+#cnhan .avatar{ width:100px; height:100px; border-radius:50%; margin:auto; display:block}
