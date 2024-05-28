@@ -2,4 +2,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_web_tuyen_sinh_miki_miki_province,miki.province,model_miki_province,base.group_user,1,1,1,1
 access_web_tuyen_sinh_miki_miki_district,miki.district,model_miki_district,base.group_user,1,1,1,1
 access_web_tuyen_sinh_miki_miki_ward,miki.ward,model_miki_ward,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_subject,miki.subject,model_miki_subject,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_major,miki.major,model_miki_major,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_department,miki.department,model_miki_department,base.group_user,1,1,1,1
 access_web_tuyen_sinh_miki_miki_student,miki.student,model_miki_student,base.group_user,1,1,1,1

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        <record id="miki_province_form_view" model="ir.ui.view">-->
+<!--            <field name="name">web_tuyen_sinh_miki.miki_province.form</field>-->
+<!--            <field name="model">miki.province</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Province">-->
+<!--                    <sheet>-->
+<!--                        <div class="oe_title">-->
+<!--                            <label for="example_title"/>-->
+<!--                            <h1>-->
+<!--                                <field name="example_title" placeholder="Title"/>-->
+<!--                            </h1>-->
+<!--                        </div>-->
+<!--                        <group>-->
+<!--                            <group>-->
+<!--                                <field name="create_date"/>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="example_field"/>-->
+<!--                            </group>-->
+<!--                        </group>-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="miki_subject_tree_view" model="ir.ui.view">
+            <field name="name">web_tuyen_sinh_miki.miki_subject.tree</field>
+            <field name="model">miki.subject</field>
+            <field name="arch" type="xml">
+                <tree string="Subject" create="1" editable="top">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="miki_subject_search_view" model="ir.ui.view">
+            <field name="name">web_tuyen_sinh_miki.miki_subject.search</field>
+            <field name="model">miki.subject</field>
+            <field name="arch" type="xml">
+                <search string="Subject">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="miki_subject_act_window" model="ir.actions.act_window">
+            <field name="name">Subject</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">miki.subject</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Subject.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Subject" id="miki_subject_menu" parent="miki_department_menu" action="miki_subject_act_window"/>
+
+    </data>
+</odoo>

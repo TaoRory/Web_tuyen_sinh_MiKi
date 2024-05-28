@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Tinos&display=swap');
+body
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #333;
+	margin: 0;
+	background-color:#F4F3F3
+}
+h1,h2
+{
+	font-family: 'Tinos', serif;
+	color: #056CB6;
+}
+h3
+{
+	font-family: 'Tinos', serif;
+	color: #a30a0a;
+}
+h1{ font-size: 36px}
+h2{ font-size: 30px}
+h3{ font-size: 18px}
+h4{ font-size: 15px}
+p{ line-height: 1.5rem; margin-top: 0}
+ul li{ padding: 5px}
+h1,h2,h3,h4{ margin-top: 0}
+.container{ width: 80%; margin: auto}
+
+*{
+	box-sizing: border-box
+}
+.row{ display: flex; flex-wrap: wrap}
+.col-1{ width: 8.33%}
+.col-2{ width: 16.66%}
+.col-3{ width: 25%}
+.col-4{ width: 33.33%}
+.col-5{ width: 41.66%}
+.col-6{ width: 50%}
+.col-7{ width: 58.33%}
+.col-8{ width:66.66%}
+.col-9{ width: 75%}
+.col-10{ width: 83.33%}
+.col-11{ width: 91.66%}
+.col-12{ width: 100%}
+
+[class*="col-"]
+{
+	padding: 15px;
+	/*border: 1px solid red*/
+}
+/*---- canh giữa/chia các phần/ trái/ phải/ các cột trong row/flex theo chiều ngang*/
+.d-flex{ display: flex}
+	.justify-center{ justify-content: center}
+	.justify-around{ justify-content: space-around}
+	.justify-between{ justify-content:space-between}
+	.justify-start{ justify-content:flex-start}
+	.justify-end{ justify-content: flex-end}
+
+.align-items-center{ align-items: center}
+/*--- canh algin text ----*/
+.text-right{ text-align: right}
+.text-center{ text-align: center}
+.text-jutify{ text-align: justify}
+.text-left{ text-align: left}
+/*--- thư viện color----*/
+.text-light{ color: #eee}
+.text-primary { color: #056CB6}
+.bg-primary{ background-color: #7b407b;}
+.btn-primary{ background-color:#056CB6; color:white; padding: 10px ; border: none; border-radius: 5px; cursor: pointer}
+.btn-primary:hover{ background-color: #F2C94C}
+/*----------------- mau phu-------------*/
+.text-secondary { color:#F2C94C}
+.bg-secondary { background-color:#7b407b; }
+.btn-secondary{
+	background-color:#306bff; 
+	color:white; padding:10px ; 
+	border: none;
+	border-radius: 5px;
+	cursor: pointer
+}
+.btn-secondary:hover{ background-color:#E89012}
+.bg-white{ background-color: #fff}
+/*----------- spacing-style---------*/
+.ml-5{margin-left: 5px}
+.ml-10{margin-left: 10px}
+.mr-5{margin-right: 5px}
+.mr-10{ margin-right: 10px}
+.mt-10{ margin-top: 10px}
+.mt-20{ margin-top: 20px}
+.mt-50{ margin-top: 50px}
+.mx-auto{ margin-left: auto; margin-right: auto}
+.p-0{padding: 0}
+.py-10{ padding-top: 10px; padding-bottom: 10px}
+.py-50{ padding-top: 50px; padding-bottom: 50px}
+.px-10{ padding-left: 10px; padding-right: 10px}
+.p-20{ padding: 20px}
+.p-5{ padding: 5px}
+/*-------style cho img-------------*/
+.img-100{ width: 100%; height: auto}
+.img-circle{ border-radius: 50%}
+.img-circle-10{ border-radius: 10px}
+.logo-header {
+	margin-left: 100 px;
+}
+/*-------style cho form-----------*/
+form {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical; /* Cho phép điều chỉnh kích thước theo chiều dọc */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    margin: 0 auto;
+}
+
+.checkbox {
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    display: none; /* Ẩn checkbox mặc định */
+}
+
+.checkbox label {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.checkbox label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.checkbox input[type="checkbox"]:checked + label::before {
+    background-color: #4CAF50; /* Màu của checkbox khi được đánh dấu */
+}
+
+.checkbox label::after {
+    content: '\2713'; /* Ký tự checkmark Unicode */
+    font-size: 14px;
+    color: #fff; /* Màu của ký tự checkmark */
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.checkbox input[type="checkbox"]:checked + label::after {
+    opacity: 1; /* Hiển thị checkmark khi checkbox được đánh dấu */
+}
+
+
+
