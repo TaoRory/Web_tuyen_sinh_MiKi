@@ -10,11 +10,9 @@ class MikiStudent(models.Model):
     dob_month = fields.Integer()
     dob_year = fields.Integer()
 
-    gender = fields.Selection(
-        selection=[
-            ('male', 'Male'),
-            ('female', 'Female')
-        ]
+    dob_temp = fields.Char()
+
+    gender = fields.Boolean(
     )
 
     ethnicity = fields.Char()
@@ -109,7 +107,9 @@ class MikiStudent(models.Model):
     guardian_dob_year = fields.Integer()
     guardian_phone = fields.Char()
 
+    student_code = fields.Char()
 
+    identification_number = fields.Char()
 
 
 
