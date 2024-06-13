@@ -4,7 +4,10 @@ from odoo import fields, models, api
 class MikiStudent(models.Model):
     _name = 'miki.student'
 
-    name = fields.Char()
+    name = fields.Char(compute='_compute_name')
+
+    last_name = fields.Char()
+    first_name = fields.Char()
 
     dob_day = fields.Integer()
     dob_month = fields.Integer()
@@ -111,7 +114,14 @@ class MikiStudent(models.Model):
 
     identification_number = fields.Char()
 
+    major_id = fields.Many2one(
+        comodel_name='miki.major'
+    )
 
+    @api.depends('first_name', 'last_name')
+    def _compute_name(self):
+        for rec in self:
+            rec.name = (rec.last_name or '') + ' ' + (rec.first_name or '')
 
 
 

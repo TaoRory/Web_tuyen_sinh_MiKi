@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="miki_major_form_view" model="ir.ui.view">
+            <field name="name">web_tuyen_sinh_miki.miki_major.form</field>
+            <field name="model">miki.major</field>
+            <field name="arch" type="xml">
+                <form string="Major">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="subject_ids"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="miki_major_tree_view" model="ir.ui.view">
+            <field name="name">web_tu.miki_major.tree</field>
+            <field name="model">miki.major</field>
+            <field name="arch" type="xml">
+                <tree string="Major" >
+                    <field name="name"/>
+                    <field name="subject_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="miki_major_search_view" model="ir.ui.view">
+            <field name="name">web_tu.miki_major.search</field>
+            <field name="model">miki.major</field>
+            <field name="arch" type="xml">
+                <search string="Major">
+                    <field name="name"/>
+                    <field name="subject_ids"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="miki_major_act_window" model="ir.actions.act_window">
+            <field name="name">Major</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">miki.major</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Major.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Major" id="miki_major_menu" parent="miki_department_menu" action="miki_major_act_window"/>
+
+    </data>
+</odoo>

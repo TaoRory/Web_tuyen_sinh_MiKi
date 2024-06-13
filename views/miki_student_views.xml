@@ -41,6 +41,8 @@
                             <page string="Personal information">
                                 <group>
                                     <group>
+                                        <field name="last_name"/>
+                                        <field name="first_name"/>
                                         <field name="contact_phone"/>
                                         <field name="citizen_identification_code"/>
                                         <field name="issued_by"/>
@@ -115,6 +117,11 @@
                                     <field name="current_address"/>
                                 </group>
                             </page>
+                            <page string="Major">
+                                <group>
+                                    <field name="major_id"/>
+                                </group>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>
@@ -149,7 +156,7 @@
         </record>
 
         <record id="miki_student_act_window" model="ir.actions.act_window">
-            <field name="name">ModelTitle</field>
+            <field name="name">Student</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">miki.student</field>
             <field name="view_mode">tree,form</field>

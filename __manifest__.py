@@ -30,7 +30,11 @@ Long description of module's purpose
         'views/miki_distriict_views.xml',
         'views/miki_ward_views.xml',
         'views/miki_student_views.xml',
-        'views/portal/login_page.xml'
+        'views/portal/login_page.xml',
+        'views/portal/information_page.xml',
+        'views/miki_department_views.xml',
+        'views/miki_major_views.xml',
+        'views/miki_subject_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
