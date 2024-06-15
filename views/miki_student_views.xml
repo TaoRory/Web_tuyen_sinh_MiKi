@@ -120,6 +120,7 @@
                             <page string="Major">
                                 <group>
                                     <field name="major_id"/>
+                                    <field name="student_type_id"/>
                                 </group>
                             </page>
                         </notebook>

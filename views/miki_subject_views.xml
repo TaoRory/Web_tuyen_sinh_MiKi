@@ -59,7 +59,7 @@
             </field>
         </record>
 
-        <menuitem name="Subject" id="miki_subject_menu" parent="miki_department_menu" action="miki_subject_act_window"/>
+        <menuitem name="Subject" id="miki_subject_menu" parent="miki_student_type_menu" action="miki_subject_act_window"/>
 
     </data>
 </odoo>

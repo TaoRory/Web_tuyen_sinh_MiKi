@@ -58,7 +58,7 @@
             </field>
         </record>
 
-        <menuitem name="Department" id="miki_department_menu" action="miki_department_act_window"/>
+        <menuitem name="Department" id="miki_department_menu" parent="miki_student_type_menu" action="miki_department_act_window"/>
 
     </data>
 </odoo>

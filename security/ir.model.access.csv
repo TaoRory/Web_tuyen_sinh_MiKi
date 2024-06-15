@@ -6,3 +6,4 @@ access_web_tuyen_sinh_miki_miki_subject,miki.subject,model_miki_subject,base.gro
 access_web_tuyen_sinh_miki_miki_major,miki.major,model_miki_major,base.group_user,1,1,1,1
 access_web_tuyen_sinh_miki_miki_department,miki.department,model_miki_department,base.group_user,1,1,1,1
 access_web_tuyen_sinh_miki_miki_student,miki.student,model_miki_student,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_student_type,miki.student.type,model_miki_student_type,base.group_user,1,1,1,1

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="miki_student_type_form_view" model="ir.ui.view">
+            <field name="name">Web-tuyen-sinh-MiKi.miki_student_type.form</field>
+            <field name="model">miki.student.type</field>
+            <field name="arch" type="xml">
+                <form string="Student Type">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="department_ids" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="miki_student_type_tree_view" model="ir.ui.view">
+            <field name="name">Web-tuyen-sinh-MiKi.miki_student_type.tree</field>
+            <field name="model">miki.student.type</field>
+            <field name="arch" type="xml">
+                <tree string="Student Type">
+                    <field name="name"/>
+                    <field name="department_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="miki_student_type_search_view" model="ir.ui.view">
+            <field name="name">Web-tuyen-sinh-MiKi.miki_student_type.search</field>
+            <field name="model">miki.student.type</field>
+            <field name="arch" type="xml">
+                <search string="Student Type">
+                    <field name="name"/>
+                    <field name="department_ids"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="miki_student_type_act_window" model="ir.actions.act_window">
+            <field name="name">Student Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">miki.student.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Student Type.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Student Type" id="miki_student_type_menu" action="miki_student_type_act_window"/>
+
+    </data>
+</odoo>

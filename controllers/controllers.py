@@ -64,6 +64,7 @@ class Tuyensinh(http.Controller):
             ('student_code', '=', kw.get('mhs'))
         ])
         department_ids = request.env['miki.department'].sudo().search([(1,'=',1)])
+        student_type_ids = request.env['miki.student.type'].sudo().search([(1,'=',1)])
         if not student:
             return http.request.redirect('/login_page')
         if student.permanent_province_id:
@@ -77,7 +78,8 @@ class Tuyensinh(http.Controller):
         return http.request.render('Web-tuyen-sinh-MiKi.information_page', {
             'student': student,
             'province_ids': province_ids,
-            'department_ids': department_ids
+            'department_ids': department_ids,
+            'student_type_ids': student_type_ids
         })
 
     @http.route('/information_page/submit', auth='public')
@@ -102,6 +104,7 @@ class Tuyensinh(http.Controller):
         kw['current_district_id'] = int(kw.get('current_district_id')) if kw.get('current_district_id') else 'None'
         kw['current_ward_id'] = int(kw.get('current_ward_id')) if kw.get('current_ward_id') else 'None'
         kw['major_id'] = int(kw.get('major_id')) if kw.get('major_id') else 'None'
+        kw['student_type_id'] = int(kw.get('student_type_id')) if kw.get('student_type_id') else 'None'
         student_id.sudo().write(kw)
 
 

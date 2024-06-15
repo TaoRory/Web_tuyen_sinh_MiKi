@@ -58,7 +58,7 @@
             </field>
         </record>
 
-        <menuitem name="Major" id="miki_major_menu" parent="miki_department_menu" action="miki_major_act_window"/>
+        <menuitem name="Major" id="miki_major_menu" parent="miki_student_type_menu" action="miki_major_act_window"/>
 
     </data>
 </odoo>

@@ -114,6 +114,10 @@ class MikiStudent(models.Model):
 
     identification_number = fields.Char()
 
+    student_type_id = fields.Many2one(
+        comodel_name='miki.student.type'
+    )
+
     major_id = fields.Many2one(
         comodel_name='miki.major'
     )

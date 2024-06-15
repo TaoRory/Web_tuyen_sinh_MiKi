@@ -73,8 +73,3 @@ function updateWards(a) {
 }
 
 
-$('document').ready(function() {
-    // updateDistricts('permanent');
-    //
-    // updateWards('permanent');
-})

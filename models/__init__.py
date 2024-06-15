@@ -7,3 +7,4 @@ from . import miki_student
 from . import miki_subject
 from . import miki_major
 from . import miki_department
+from . import miki_student_type
