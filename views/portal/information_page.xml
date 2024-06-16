@@ -532,7 +532,7 @@
                                                                t-att-value="major.id"
                                                                t-att-checked="'checked' if (student.major_id and major.id == student.major_id.id) else None"/>
                                                         <label t-att-for="major.id">
-                                                            <h4><t t-out="'-'.join(major.subject_ids.mapped('name'))"/></h4>
+                                                            <h4><t t-out="major.name"/>(<t t-out="'-'.join(major.subject_ids.mapped('name'))"/>)</h4>
                                                         </label>
                                                     </div>
                                                 </t>
