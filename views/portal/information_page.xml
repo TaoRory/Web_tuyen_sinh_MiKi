@@ -501,7 +501,7 @@
                                     <br/>
                                 </div>
                             </div>
-                            <h2>Nhóm Học Sinh</h2>
+                            <h2>CHƯƠNG TRÌNH</h2>
                             <div class="container">
                                 <div class="row align-items-center justify-between">
                                     <t t-foreach="student_type_ids" t-as="student_type">
@@ -512,9 +512,7 @@
                                                    t-att-checked="'checked' if (student.student_type_id and student_type.id == student.student_type_id.id) else None"
                                                    class="radio-student-type"/>
                                         </div>
-
                                     </t>
-
                                 </div>
                             </div>
                             <h2>NHÓM MÔN HỌC LỰA CHỌN</h2>
