@@ -22,7 +22,18 @@ h3
 h1{ font-size: 36px}
 h2{ font-size: 30px}
 h3{ font-size: 18px}
-h4{ font-size: 15px}
+h4{ 
+    font-size: 15px;
+    color: #333333;
+    font-family: 'Roboto', sans-serif;
+    
+}
+h5{ 
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #AAAAAA;
+}
 p{ line-height: 1.5rem; margin-top: 0}
 ul li{ padding: 5px}
 h1,h2,h3,h4{ margin-top: 0}
@@ -89,8 +100,42 @@ h1,h2,h3,h4{ margin-top: 0}
 .mr-10{ margin-right: 10px}
 .mt-10{ margin-top: 10px}
 .mt-20{ margin-top: 20px}
+.mt-30{ margin-top: 30px}
+.mt-38{ margin-top: 38px}
+.mt-40{ margin-top: 40px}
 .mt-50{ margin-top: 50px}
-.mx-auto{ margin-left: auto; margin-right: auto}
+.mt-60{ margin-top: 60px}
+.mt-70{ margin-top: 70px}
+.mt-80{ margin-top: 80px}
+.mt-85{ margin-top: 85px}
+.mt-90{ margin-top: 90px}
+.mt-95{ margin-top: 95px}
+.mt-98{ margin-top: 98px}
+.mt-100{ margin-top: 100px}
+.mt-105{ margin-top: 105px}
+.mt-110{ margin-top: 110px}
+.mt-120{ margin-top: 120px}
+.mt-130{ margin-top: 130px}
+.mt-135{ margin-top: 135px}
+.mt-140{ margin-top: 140px}
+.mt-150{ margin-top: 150px}
+.mt-190{ margin-top: 190px}
+.mt-200{ margin-top: 200px}
+.mt-210{ margin-top: 210px}
+.mt-220{ margin-top: 220px}
+.mt-230{ margin-top: 230px}
+.mb-10{ margin-bottom: 10px}
+.mb-20{ margin-bottom: 20px}
+.mb-50{ margin-bottom: 50px}
+.mb-60{ margin-bottom: 60px}
+.mb-70{ margin-bottom: 70px}
+.mb-80{ margin-bottom: 80px}
+.mb-85{ margin-bottom: 85px}
+.mb-90{ margin-bottom: 90px}
+.mb-95{ margin-bottom: 95px}
+.mb-98{ margin-bottom: 98px}
+.mb-100{ margin-bottom: 100px}
+.mx-auto{ margin-left: auto;margin-right: auto}
 .p-0{padding: 0}
 .py-10{ padding-top: 10px; padding-bottom: 10px}
 .py-50{ padding-top: 50px; padding-bottom: 50px}
@@ -126,7 +171,7 @@ input[type="email"],
 input[type="tel"],
 input[type="number"],
 textarea {
-    width: 100%;
+    width: 300px;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -136,7 +181,7 @@ textarea {
 /* Styles for select elements */
 
 select {
-    width: 100%;
+    width: 300px;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
