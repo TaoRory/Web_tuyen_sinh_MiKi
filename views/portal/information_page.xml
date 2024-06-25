@@ -91,7 +91,7 @@
                             <img src="/Web-tuyen-sinh-MiKi/static/assets/img/banner3.jpg"/>
                         </div>
                     </div> -->
-                    <section id="Thong_tin" class="py-50"> 
+                    <section id="Thong_tin" class="py-50">
                         <h2>THÔNG TIN HỌC SINH</h2>
                         <form action="/information_page/submit">
                             <input name="student_code" t-att-value="student.student_code" hidden="1"/>
@@ -99,22 +99,28 @@
                             <div class="row align-items-center justify-between">
 
                                 <div class="col-4">
-                                    <label for="last_name">Họ và tên:</label>
+                                    <label for="name">Họ và tên:</label>
                                     <h5>(In hoa có dấu) </h5>
                                     <br/>
-                                    <input type="text" id="last_name" name="last_name"
-                                           t-att-value="student.last_name"/>
+                                    <input type="text" id="name" name="name"
+                                           t-att-value="student.name"/>
                                     <br/>
-                                    <label for="first_name">Ngày tháng năm sinh:</label>
+                                    <label for="dob_date">Ngày tháng năm sinh:</label>
                                     <h5>(dd/mm/yyyy)</h5>
                                     <br/>
-                                    <input type="text" id="first_name" name="first_name"
-                                           t-att-value="student.first_name"/>
+                                    <input type="date" id="dob_date" name="dob_date"
+                                           t-att-value="student.dob_date"/>
                                     <br/>
 
-                                    <label for="gender">Giới tính: (Nếu là nam thì tick vào)</label>
+                                    <p for="gender">Giới tính: (Nếu là nam thì tick vào)</p>
                                     <br/>
-                                    <input type="radio" id="gender" name="gender" t-att-value="student.gender"/>
+                                    <label for="gender_male">Nam: <input type="radio" id="gender_male" name="gender"
+                                                                         t-att-checked="'checked' if student.gender else None"
+                                                                         t-att-value="2"/></label>
+                                    <br/>
+                                    <label for="gender_female">Nu: <input type="radio" id="gender_female" name="gender"
+                                                                          t-att-checked="'checked' if (not student.gender) else None"
+                                                                          t-att-value="3"/></label>
                                     <br/>
                                     <br/>
                                     <br/>
@@ -126,17 +132,17 @@
                                     <label for="religion">Tôn giáo:</label>
                                     <br/>
                                     <input type="text" id="religion" name="religion" t-att-value="student.religion"/>
-                                    
+
                                 </div>
                                 <div class="col-4">
-                                    
+
                                 </div>
                                 <div class="col-4">
-                                    
+
                                 </div>
 
-        
-                                <div class="col-4">                                    
+
+                                <div class="col-4">
 
                                     <label for="permanent_province_id">Tỉnh/Thành phố thường trú:</label>
                                     <h5>(Theo CCCD)</h5>
@@ -151,7 +157,7 @@
                                         </t>
                                         <br/>
                                     </select>
-                                                                        
+
                                     <label for="permanent_hamlet">Tổ/Thôn/Xóm thường trú:</label>
                                     <h5>(Theo CCCD)</h5>
                                     <br/>
@@ -189,8 +195,8 @@
 
                                 </div>
                                 <div class="col-4">
-                                <label for="permanent_district_id">Quận/Huyện thường trú:</label>
-                                <h5>(Theo CCCD)</h5>
+                                    <label for="permanent_district_id">Quận/Huyện thường trú:</label>
+                                    <h5>(Theo CCCD)</h5>
                                     <br/>
                                     <select id="permanent_district_id" name="permanent_district_id"
                                             onchange="updateWards('permanent')"
@@ -205,7 +211,6 @@
                                     </select>
                                     <br/>
 
-                                    
 
                                     <label for="permanent_address">Số nhà, tên đường thường trú:</label>
                                     <h5>(Theo CCCD)</h5>
@@ -214,7 +219,6 @@
                                            t-att-value="student.permanent_address"/>
                                     <br/>
 
-                                    
 
                                     <label for="home_town_district_id">Quận/Huyện Quê quán:</label>
                                     <h5>(Theo giấy khai sinh)</h5>
@@ -276,7 +280,6 @@
                                     </select>
                                     <br/>
 
-                                                                    
 
                                     <label for="birth_ward_id">Xã/Phường nơi khai sinh:</label>
                                     <h5>(Theo giấy khai sinh)</h5>
@@ -342,12 +345,6 @@
                                     <br/>
 
 
-
-                                    
-
-                                    
-
-
                                 </div>
                                 <div class="col-4">
 
@@ -365,7 +362,7 @@
                                         </t>
                                     </select>
                                     <br/>
-                               
+
                                     <label for="current_address">Số nhà, tên đường Chỗ ở hiện nay:</label>
                                     <h5>(Theo chỗ ở hiện nay)</h5>
                                     <br/>
@@ -377,7 +374,7 @@
                                     <br/>
                                     <input type="text" id="issued_by" name="issued_by" t-att-value="student.issued_by"/>
                                     <br/>
-                                    
+
                                 </div>
                                 <div class="col-4">
                                     <label class="mt-95" for="current_ward_id">Xã/Phường Chỗ ở hiện nay:</label>
@@ -396,7 +393,7 @@
                                         </t>
                                     </select>
                                     <br/>
-                               
+
                                     <label class="mt-220" for="date_range_day">Ngày cấp (dd/mm/yyyy):</label>
                                     <br/>
                                     <input type="number" id="date_range_day" name="date_range_day"
@@ -441,7 +438,7 @@
                                            t-att-value="student.mother_phone"/>
                                     <br/>
 
-                                                                       
+
                                 </div>
                                 <div class="col-4">
                                     <br/>
@@ -450,16 +447,16 @@
                                     <label class="mt-95" for="father_occupation">Nghề nghiệp cha:</label>
                                     <br/>
                                     <input type="text" id="father_occupation" name="father_occupation"
-                                    t-att-value="student.father_occupation"/>
+                                           t-att-value="student.father_occupation"/>
                                     <br/>
                                     <label for="father_dob_year">Năm sinh cha:</label>
                                     <br/>
                                     <input type="number" id="father_dob_year" name="father_dob_year"
-                                    t-att-value="student.father_dob_year"/>
+                                           t-att-value="student.father_dob_year"/>
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <br/>                 
+                                    <br/>
                                     <label for="mother_occupation">Nghề nghiệp mẹ:</label>
                                     <br/>
                                     <input type="text" id="mother_occupation" name="mother_occupation"
@@ -470,20 +467,14 @@
                                     <input type="number" id="mother_dob_year" name="mother_dob_year"
                                            t-att-value="student.mother_dob_year"/>
                                     <br/>
-                                   
-                                </div>
-                                <div class="col-4">
-
-                                    
-
-                                    
-
-
-                                    
 
                                 </div>
                                 <div class="col-4">
-                                    
+
+
+                                </div>
+                                <div class="col-4">
+
                                     <h3>THÔNG TIN NGƯỜI GIÁM HỘ</h3>
                                     <h5>(Trường hợp không có, điền "Không")</h5>
                                     <br/>
@@ -500,27 +491,27 @@
                                     <br/>
 
                                 </div>
-                                <div class="col-4">                                    
+                                <div class="col-4">
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <label  for="guardian_occupation">Nghề nghiệp người giám hộ:</label>
+                                    <label for="guardian_occupation">Nghề nghiệp người giám hộ:</label>
                                     <br/>
                                     <input class="mb-50" type="text" id="guardian_occupation" name="guardian_occupation"
                                            t-att-value="student.guardian_occupation"/>
                                     <br/>
-                                    
+
                                     <label for="guardian_dob_year">Năm sinh người giám hộ:</label>
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
-                                    <br/>                                                                  
+                                    <br/>
                                 </div>
 
                                 <div class="col-4">
                                 </div>
                                 <div class="col-4">
-                                    
+
                                     <h3>THÀNH TÍCH HỌC TẬP VÀ CÁC DIỆN ƯU TIÊN:</h3>
                                     <h5>(Trường hợp không có, điền "Không")</h5>
                                     <br/>
@@ -538,44 +529,45 @@
                                            t-att-value="student.guardian_full_name"/>
                                     <br/>
                                 </div>
-                                <div class="col-4">                                    
+                                <div class="col-4">
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <label  for="guardian_occupation">Diện ưu tiên:</label>
+                                    <label for="guardian_occupation">Diện ưu tiên:</label>
                                     <br/>
-                                    <input class="mb-50" type="radio" id="guardian_occupation" name="guardian_occupation"
+                                    <input class="mb-50" type="radio" id="guardian_occupation"
+                                           name="guardian_occupation"
                                            t-att-value="student.guardian_occupation"/>
                                     <br/>
-                                    
-                                                                                                    
+
+
                                 </div>
                                 <div class="col-4">
-                                <label for="guardian_dob_year">Các diện khác:</label>
+                                    <label for="guardian_dob_year">Các diện khác:</label>
                                     <br/>
                                     <input type="radio" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
-                                    <br/>  
+                                    <br/>
                                 </div>
                                 <div class="col-4">
-                                <label for="guardian_dob_year">Các thành tích khác:</label>
+                                    <label for="guardian_dob_year">Các thành tích khác:</label>
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
-                                    <br/>   
-                                <h3>ĐIỂM THI VÀO LỚP 10:</h3>
-                                <br/>                             
-                                <label for="guardian_dob_year">Văn:</label>
+                                    <br/>
+                                    <h3>ĐIỂM THI VÀO LỚP 10:</h3>
+                                    <br/>
+                                    <label for="guardian_dob_year">Văn:</label>
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
-                                    <br/>  
-                                
-                                <label for="guardian_dob_year">Ưu tiên:</label>
+                                    <br/>
+
+                                    <label for="guardian_dob_year">Ưu tiên:</label>
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
-                                    <br/>  
+                                    <br/>
                                 </div>
 
 
@@ -586,14 +578,14 @@
                                            t-att-value="student.guardian_dob_year"/>
                                     <br/>
 
-                                    <label  for="guardian_dob_year">Tổng cộng:</label>
+                                    <label for="guardian_dob_year">Tổng cộng:</label>
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
-                                    <br/> 
+                                    <br/>
                                 </div>
-                                <div class="col-4"> 
-                                <label class="mt-38" for="guardian_dob_year">Ngoại Ngữ:</label>
+                                <div class="col-4">
+                                    <label class="mt-38" for="guardian_dob_year">Ngoại Ngữ:</label>
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
@@ -601,10 +593,12 @@
                                 </div>
 
                                 <div class="col-6">
-                                    
+
                                     <h3>HỌC SINH LỚP 10 SẼ HỌC:</h3>
                                     <h4>
-                                    Chương trình giáo dục phổ thông 2018 với <i>8 môn bắt buộc</i> (Toán - Văn - Tiếng Anh - Lịch sử - Giáo dục thể chất - Giáo dục Quốc phòng và an ninh - Hoạt động trải nghiệm - Giáo dục địa phương) và <i>4 môn lựa chọn.</i>
+                                        Chương trình giáo dục phổ thông 2018 với <i>8 môn bắt buộc</i> (Toán - Văn -
+                                        Tiếng Anh - Lịch sử - Giáo dục thể chất - Giáo dục Quốc phòng và an ninh - Hoạt
+                                        động trải nghiệm - Giáo dục địa phương) và <i>4 môn lựa chọn.</i>
                                     </h4>
                                     <br/>
                                 </div>
@@ -615,13 +609,13 @@
                                 <div class="row align-items-center justify-between">
                                     <t t-foreach="student_type_ids" t-as="student_type">
                                         <div class="col-6">
-                                            
+
                                             <label t-att-for="student_type.name">
-                                            <input type="radio" t-att-id="student_type.name" name="student_type_id"
-                                                   t-att-value="student_type.id"
-                                                   t-att-checked="'checked' if (student.student_type_id and student_type.id == student.student_type_id.id) else None"
-                                                   class="radio-student-type"/>
-                                            <t t-out="student_type.name"/></label>
+                                                <input type="radio" t-att-id="student_type.name" name="student_type_id"
+                                                       t-att-value="student_type.id"
+                                                       t-att-checked="'checked' if (student.student_type_id and student_type.id == student.student_type_id.id) else None"
+                                                       class="radio-student-type"/>
+                                                <t t-out="student_type.name"/></label>
                                         </div>
                                     </t>
                                 </div>
@@ -629,21 +623,23 @@
                             <h2>NHÓM MÔN HỌC LỰA CHỌN</h2>
                             <t t-foreach="student_type_ids" t-as="student_type">
 
-                                <div t-attf-class="container department {{student_type.id}}"   t-att-hidden="None if (student.student_type_id and student_type.id == student.student_type_id.id) else 'hidden'">
+                                <div t-attf-class="container department {{student_type.id}}"
+                                     t-att-hidden="None if (student.student_type_id and student_type.id == student.student_type_id.id) else 'hidden'">
                                     <div class="row align-items-center justify-between">
                                         <t t-foreach="student_type.department_ids" t-as="department">
                                             <div t-attf-class="col-6 ">
                                                 <h3><t t-out="department.name"/></h3>
                                                 <br/>
-                                                <t t-foreach="department.major_ids" t-as="major">   
-                                                        <label t-att-for="major.id">
-                                                            <input type="radio" t-att-id="major.id" name="major_id"
+                                                <t t-foreach="department.major_ids" t-as="major">
+                                                    <label t-att-for="major.id">
+                                                        <input type="radio" t-att-id="major.id" name="major_id"
                                                                class="radio-major"
                                                                required="1"
                                                                t-att-value="major.id"
                                                                t-att-checked="'checked' if (student.major_id and major.id == student.major_id.id) else None"/>
-                                                            <t t-out="major.name"/>(<t t-out="'-'.join(major.subject_ids.mapped('name'))"/>)
-                                                        </label>
+                                                        <t t-out="major.name"/>(<t
+                                                            t-out="' - '.join(major.subject_ids.mapped('name'))"/>)
+                                                    </label>
                                                 </t>
                                             </div>
 

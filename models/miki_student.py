@@ -4,10 +4,12 @@ from odoo import fields, models, api
 class MikiStudent(models.Model):
     _name = 'miki.student'
 
-    name = fields.Char(compute='_compute_name')
+    name = fields.Char()
 
     last_name = fields.Char()
     first_name = fields.Char()
+
+    dob_date = fields.Date()
 
     dob_day = fields.Integer()
     dob_month = fields.Integer()
@@ -121,6 +123,15 @@ class MikiStudent(models.Model):
     major_id = fields.Many2one(
         comodel_name='miki.major'
     )
+
+    literature_grade = fields.Float()
+    math_grade = fields.Float()
+    foreign_language_grade = fields.Float()
+    french_grade = fields.Float()
+    integration_grade = fields.Float()
+    priority_grade = fields.Float()
+
+    sum_grade = fields.Float()
 
     @api.depends('first_name', 'last_name')
     def _compute_name(self):

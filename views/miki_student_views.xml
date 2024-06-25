@@ -21,14 +21,16 @@
 
                                 <field name="identification_number"/>
                                 <field name="student_code"/>
-                                <label class="o_form_label" for="dob_day">Date of birth</label>
-                                <div class="o_row">
-                                    <field name="dob_day"/>
-                                    <span>/</span>
-                                    <field name="dob_month"/>
-                                    <span>/</span>
-                                    <field name="dob_year"/>
-                                </div>
+                                <field name="dob_date"/>
+
+<!--                                <label class="o_form_label" for="dob_day">Date of birth</label>-->
+<!--                                <div class="o_row">-->
+<!--                                    <field name="dob_day"/>-->
+<!--                                    <span>/</span>-->
+<!--                                    <field name="dob_month"/>-->
+<!--                                    <span>/</span>-->
+<!--                                    <field name="dob_year"/>-->
+<!--                                </div>-->
                                 <field name="gender"/>
                             </group>
                             <group>

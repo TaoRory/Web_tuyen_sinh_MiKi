@@ -17,7 +17,7 @@ class Tuyensinh(http.Controller):
         ])
         data ={}
         if student_id:
-            data['student_name'] = student_id.name
+            data['student_name'] = student_id.last_name + ' ' + student_id.first_name
             data['day_of_birth'] = student_id.dob_temp
         else:
             data['error'] = True
@@ -67,13 +67,13 @@ class Tuyensinh(http.Controller):
         student_type_ids = request.env['miki.student.type'].sudo().search([(1,'=',1)])
         if not student:
             return http.request.redirect('/login_page')
-        if student.permanent_province_id:
-            province_ids = request.env['miki.province'].sudo().browse(student.permanent_province_id.id)
-            district_ids = request.env['miki.district'].sudo().search([
-                ('province_id', '=', student.permanent_province_id.id)
-            ])
-        else:
-            province_ids = request.env['miki.province'].sudo().search([(1,'=',1)])
+        # if student.permanent_province_id:
+        #     province_ids = request.env['miki.province'].sudo().browse(student.permanent_province_id.id)
+        #     district_ids = request.env['miki.district'].sudo().search([
+        #         ('province_id', '=', student.permanent_province_id.id)
+        #     ])
+        # else:
+        province_ids = request.env['miki.province'].sudo().search([(1,'=',1)])
 
         return http.request.render('Web-tuyen-sinh-MiKi.information_page', {
             'student': student,
@@ -105,6 +105,10 @@ class Tuyensinh(http.Controller):
         kw['current_ward_id'] = int(kw.get('current_ward_id')) if kw.get('current_ward_id') else 'None'
         kw['major_id'] = int(kw.get('major_id')) if kw.get('major_id') else 'None'
         kw['student_type_id'] = int(kw.get('student_type_id')) if kw.get('student_type_id') else 'None'
+        print(kw['gender'])
+
+        kw['gender'] = True if kw['gender'] == '2' else False
+        print(kw['gender'])
         student_id.sudo().write(kw)
 
 
