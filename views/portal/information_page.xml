@@ -569,28 +569,38 @@
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
-                                    <br/>  
-                                
-                                <label for="guardian_dob_year">Ưu tiên:</label>
+                                    <br/>
+
+                                <label for="guardian_dob_year">Song ngữ Tiếng Pháp:</label>
+                                    <br/>
+                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"
+                                           t-att-value="student.guardian_dob_year"/>
+                                    <br/>
+
+                                <label  for="guardian_dob_year">Tổng cộng:</label>
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
                                     <br/>  
+                                
+                                 
                                 </div>
 
 
                                 <div class="col-4">
-                                    <label class="mt-135" for="guardian_dob_year">Toán:</label>
+                                    <label class="mt-38" for="guardian_dob_year">Toán:</label>
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
                                     <br/>
 
-                                    <label  for="guardian_dob_year">Tổng cộng:</label>
+                                    <label class="" for="guardian_dob_year">Tích hợp:</label>
                                     <br/>
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
-                                    <br/> 
+                                    <br/>
+
+                                     
                                 </div>
                                 <div class="col-4"> 
                                 <label class="mt-38" for="guardian_dob_year">Ngoại Ngữ:</label>
@@ -598,6 +608,12 @@
                                     <input type="number" id="guardian_dob_year" name="guardian_dob_year"
                                            t-att-value="student.guardian_dob_year"/>
                                     <br/>
+
+                                <label for="guardian_dob_year">Ưu tiên:</label>
+                                    <br/>
+                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"
+                                           t-att-value="student.guardian_dob_year"/>
+                                    <br/> 
                                 </div>
 
                                 <div class="col-6">
