@@ -124,6 +124,18 @@ class MikiStudent(models.Model):
         comodel_name='miki.major'
     )
 
+    HSG_achievement = fields.Char()
+    TDTT_achievement = fields.Char()
+    other_achievement = fields.Char()
+
+    miki_priority_situation_id = fields.Many2one(
+        comodel_name='miki.priority.situation'
+    )
+    miki_other_situation_id = fields.Many2one(
+        comodel_name='miki.other.situation'
+    )
+
+    ## grade
     literature_grade = fields.Float()
     math_grade = fields.Float()
     foreign_language_grade = fields.Float()

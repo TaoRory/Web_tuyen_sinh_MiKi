@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="miki_priority_situation_form_view" model="ir.ui.view">
+            <field name="name">miki.miki_priority_situation.form</field>
+            <field name="model">miki.priority.situation</field>
+            <field name="arch" type="xml">
+                <form string="Priority Situation">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Title"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="miki_priority_situation_tree_view" model="ir.ui.view">
+            <field name="name">miki.miki_priority_situation.tree</field>
+            <field name="model">miki.priority.situation</field>
+            <field name="arch" type="xml">
+                <tree string="Priority Situation" create="1" editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="miki_priority_situation_search_view" model="ir.ui.view">
+            <field name="name">miki.miki_priority_situation.search</field>
+            <field name="model">miki.priority.situation</field>
+            <field name="arch" type="xml">
+                <search string="Priority Situation">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="miki_priority_situation_act_window" model="ir.actions.act_window">
+            <field name="name">Priority Situation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">miki.priority.situation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Priority Situation.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Priority Situation" id="miki_priority_situation_menu"
+                  action="miki_priority_situation_act_window"/>
+
+    </data>
+</odoo>

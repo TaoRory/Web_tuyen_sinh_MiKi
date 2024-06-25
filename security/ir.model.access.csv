@@ -7,3 +7,5 @@ access_web_tuyen_sinh_miki_miki_major,miki.major,model_miki_major,base.group_use
 access_web_tuyen_sinh_miki_miki_department,miki.department,model_miki_department,base.group_user,1,1,1,1
 access_web_tuyen_sinh_miki_miki_student,miki.student,model_miki_student,base.group_user,1,1,1,1
 access_web_tuyen_sinh_miki_miki_student_type,miki.student.type,model_miki_student_type,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_priority_situation,miki.other.situation,model_miki_other_situation,base.group_user,1,1,1,1
+access_web_tuyen_sinh_miki_miki_other_situation,miki.priority.situation,model_miki_priority_situation,base.group_user,1,1,1,1

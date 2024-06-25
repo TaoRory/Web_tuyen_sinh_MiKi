@@ -23,14 +23,14 @@
                                 <field name="student_code"/>
                                 <field name="dob_date"/>
 
-<!--                                <label class="o_form_label" for="dob_day">Date of birth</label>-->
-<!--                                <div class="o_row">-->
-<!--                                    <field name="dob_day"/>-->
-<!--                                    <span>/</span>-->
-<!--                                    <field name="dob_month"/>-->
-<!--                                    <span>/</span>-->
-<!--                                    <field name="dob_year"/>-->
-<!--                                </div>-->
+                                <!--                                <label class="o_form_label" for="dob_day">Date of birth</label>-->
+                                <!--                                <div class="o_row">-->
+                                <!--                                    <field name="dob_day"/>-->
+                                <!--                                    <span>/</span>-->
+                                <!--                                    <field name="dob_month"/>-->
+                                <!--                                    <span>/</span>-->
+                                <!--                                    <field name="dob_year"/>-->
+                                <!--                                </div>-->
                                 <field name="gender"/>
                             </group>
                             <group>
@@ -123,6 +123,34 @@
                                 <group>
                                     <field name="major_id"/>
                                     <field name="student_type_id"/>
+                                </group>
+                            </page>
+                            <page string="Grade">
+                                <group>
+                                    <group>
+                                        <field name="literature_grade"/>
+                                        <field name="math_grade"/>
+                                        <field name="foreign_language_grade"/>
+                                    </group>
+                                    <group>
+                                        <field name="french_grade"/>
+                                        <field name="integration_grade"/>
+                                        <field name="priority_grade"/>
+                                        <field name="sum_grade"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Achievement">
+                                <group>
+                                    <group>
+                                        <field name="HSG_achievement"/>
+                                        <field name="TDTT_achievement"/>
+                                        <field name="other_achievement"/>
+                                    </group>
+                                    <group>
+                                        <field name="miki_priority_situation_id" widget="many2one"/>
+                                        <field name="miki_other_situation_id" widget="many2one"/>
+                                    </group>
                                 </group>
                             </page>
                         </notebook>

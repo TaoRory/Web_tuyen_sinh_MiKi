@@ -518,15 +518,15 @@
                                     <label for="guardian_full_name">Giải HSG cấp TP,QG:</label>
                                     <h5>(Môn/cấp/hạng)</h5>
                                     <br/>
-                                    <input type="text" id="guardian_full_name" name="guardian_full_name"
-                                           t-att-value="student.guardian_full_name"/>
+                                    <input type="text" id="HSG_achievement" name="HSG_achievement"
+                                           t-att-value="student.HSG_achievement"/>
                                     <br/>
 
                                     <label for="guardian_full_name">Giải TDTT cấp TP,QG:</label>
                                     <h5>(Môn/cấp/huy chương)</h5>
                                     <br/>
-                                    <input type="text" id="guardian_full_name" name="guardian_full_name"
-                                           t-att-value="student.guardian_full_name"/>
+                                    <input type="text" id="TDTT_achievement" name="TDTT_achievement"
+                                           t-att-value="student.TDTT_achievement"/>
                                     <br/>
                                 </div>
                                 <div class="col-4">
@@ -535,9 +535,21 @@
                                     <br/>
                                     <label for="guardian_occupation">Diện ưu tiên:</label>
                                     <br/>
-                                    <input class="mb-50" type="radio" id="guardian_occupation"
-                                           name="guardian_occupation"
-                                           t-att-value="student.guardian_occupation"/>
+
+                                     <t t-foreach="miki_priority_situation_ids" t-as="situation">
+                                                    <label t-att-for="situation.name">
+                                                        <input type="radio"
+                                                               class="mb-50"
+                                                               t-att-id="situation.name"
+                                                               name="miki_priority_situation_id"
+                                                               required="1"
+                                                               t-att-value="situation.id"
+                                                               t-att-checked="'checked' if (student.miki_priority_situation_id and situation.id == student.miki_priority_situation_id.id) else None"/>
+                                                        <t t-out="situation.name"/>
+                                                    </label>
+                                                </t>
+
+
                                     <br/>
 
 
@@ -545,51 +557,83 @@
                                 <div class="col-4">
                                     <label for="guardian_dob_year">Các diện khác:</label>
                                     <br/>
-                                    <input type="radio" id="guardian_dob_year" name="guardian_dob_year"
-                                           t-att-value="student.guardian_dob_year"/>
+
+                                     <t t-foreach="miki_other_situation_ids" t-as="situation">
+                                                    <label t-att-for="situation.name">
+                                                        <input type="radio"
+                                                               class="mb-50"
+                                                               t-att-id="situation.name"
+                                                               name="miki_other_situation_id"
+                                                               required="1"
+                                                               t-att-value="situation.id"
+                                                               t-att-checked="'checked' if (student.miki_other_situation_id and situation.id == student.miki_other_situation_id.id) else None"/>
+                                                        <t t-out="situation.name"/>
+                                                    </label>
+                                                </t>
+
+
                                     <br/>
                                 </div>
                                 <div class="col-4">
                                     <label for="guardian_dob_year">Các thành tích khác:</label>
                                     <br/>
-                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"
-                                           t-att-value="student.guardian_dob_year"/>
+                                    <input type="number" id="other_achievement" name="other_achievement"
+                                           t-att-value="student.other_achievement"/>
                                     <br/>
                                     <h3>ĐIỂM THI VÀO LỚP 10:</h3>
                                     <br/>
                                     <label for="guardian_dob_year">Văn:</label>
                                     <br/>
-                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"
-                                           t-att-value="student.guardian_dob_year"/>
+                                    <input type="number" id="literature_grade" name="literature_grade"
+                                           t-att-value="student.literature_grade"/>
                                     <br/>
 
-                                    <label for="guardian_dob_year">Ưu tiên:</label>
+
+                                <label for="guardian_dob_year">Song ngữ Tiếng Pháp:</label>
                                     <br/>
-                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"
-                                           t-att-value="student.guardian_dob_year"/>
+                                    <input type="number" id="french_grade" name="french_grade"
+                                           t-att-value="student.french_grade"/>
                                     <br/>
+
+                                <label  for="guardian_dob_year">Tổng cộng:</label>
+                                    <br/>
+                                    <input type="number" id="sum_grade" name="sum_grade"
+                                           t-att-value="student.sum_grade"/>
+                                    <br/>  
+                                
+                                 
+
                                 </div>
 
 
                                 <div class="col-4">
-                                    <label class="mt-135" for="guardian_dob_year">Toán:</label>
+                                    <label class="mt-38" for="guardian_dob_year">Toán:</label>
                                     <br/>
-                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"
-                                           t-att-value="student.guardian_dob_year"/>
+                                    <input type="number" id="math_grade" name="math_grade"
+                                           t-att-value="student.math_grade"/>
                                     <br/>
 
-                                    <label for="guardian_dob_year">Tổng cộng:</label>
+
+                                    <label class="" for="guardian_dob_year">Tích hợp:</label>
+
                                     <br/>
-                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"
-                                           t-att-value="student.guardian_dob_year"/>
+                                    <input type="number" id="integration_grade" name="integration_grade"
+                                           t-att-value="student.integration_grade"/>
                                     <br/>
+
                                 </div>
                                 <div class="col-4">
                                     <label class="mt-38" for="guardian_dob_year">Ngoại Ngữ:</label>
                                     <br/>
-                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"
-                                           t-att-value="student.guardian_dob_year"/>
+                                    <input type="number" id="foreign_language_grade" name="foreign_language_grade"
+                                           t-att-value="student.foreign_language_grade"/>
                                     <br/>
+
+                                <label for="guardian_dob_year">Ưu tiên:</label>
+                                    <br/>
+                                    <input type="number" id="priority_grade" name="priority_grade"
+                                           t-att-value="student.priority_grade"/>
+                                    <br/> 
                                 </div>
 
                                 <div class="col-6">
