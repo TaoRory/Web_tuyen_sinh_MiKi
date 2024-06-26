@@ -18,7 +18,7 @@
                         </div>
                         <group>
                             <group>
-
+                                <field name="stt_trung_tuyen"/>
                                 <field name="identification_number"/>
                                 <field name="student_code"/>
                                 <field name="dob_date"/>
@@ -48,15 +48,16 @@
                                         <field name="contact_phone"/>
                                         <field name="citizen_identification_code"/>
                                         <field name="issued_by"/>
-                                        <label class="o_form_label" for="date_range_day">Date range</label>
-                                        <div class="o_row">
+                                        <field name="date_range_date"/>
+<!--                                        <label class="o_form_label" for="date_range_day">Date range</label>-->
+<!--                                        <div class="o_row">-->
 
-                                            <field name="date_range_day"/>
-                                            <span>/</span>
-                                            <field name="date_range_month"/>
-                                            <span>/</span>
-                                            <field name="date_range_year"/>
-                                        </div>
+<!--                                            <field name="date_range_day"/>-->
+<!--                                            <span>/</span>-->
+<!--                                            <field name="date_range_month"/>-->
+<!--                                            <span>/</span>-->
+<!--                                            <field name="date_range_year"/>-->
+<!--                                        </div>-->
                                         <field name="personal_identification_number"/>
                                     </group>
                                     <group>
@@ -76,6 +77,7 @@
                                             <field name="guardian_full_name"/>
                                             <field name="guardian_dob_year"/>
                                             <field name="guardian_occupation"/>
+                                            <field name="guardian_relation"/>
                                             <field name="guardian_phone"/>
                                         </group>
                                     </group>

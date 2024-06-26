@@ -4,12 +4,21 @@ from odoo import fields, models, api
 class MikiStudent(models.Model):
     _name = 'miki.student'
 
-    name = fields.Char()
+    name = fields.Char(
+        string='Ho ten'
+    )
 
-    last_name = fields.Char()
-    first_name = fields.Char()
+    last_name = fields.Char(
+        string='Ho'
+    )
 
-    dob_date = fields.Date()
+    first_name = fields.Char(
+        string='Ten'
+    )
+
+    dob_date = fields.Date(
+        string='ngay thang nam sinh'
+    )
 
     dob_day = fields.Integer()
     dob_month = fields.Integer()
@@ -18,13 +27,20 @@ class MikiStudent(models.Model):
     dob_temp = fields.Char()
 
     gender = fields.Boolean(
+        string='gioi tinh'
     )
 
-    ethnicity = fields.Char()
+    ethnicity = fields.Char(
+        string='Dan toc'
+    )
 
-    nationality = fields.Char()
+    nationality = fields.Char(
+        string='Quoc tich'
+    )
 
-    religion = fields.Char()
+    religion = fields.Char(
+        string='Ton giao'
+    )
 
     permanent_province_id = fields.Many2one(
         comodel_name='miki.province',
@@ -67,7 +83,9 @@ class MikiStudent(models.Model):
         comodel_name='miki.ward'
     )
 
-    birth_address = fields.Char()
+    birth_address = fields.Char(
+        string='Noi sinh'
+    )
 
     current_province_id = fields.Many2one(
         comodel_name='miki.province'
@@ -85,17 +103,28 @@ class MikiStudent(models.Model):
 
     current_address = fields.Char()
 
-    contact_phone = fields.Char()
+    contact_phone = fields.Char(
+        string='so dien thoai'
+    )
 
-    citizen_identification_code = fields.Char()
+    citizen_identification_code = fields.Char(
+        string='CCCD'
+    )
 
-    issued_by = fields.Char()
+    issued_by = fields.Char(
+        string='Noi cap'
+    )
+
+    date_range_date = fields.Date(
+        string='Ngay cap'
+    )
 
     date_range_day = fields.Integer()
     date_range_month = fields.Integer()
     date_range_year = fields.Integer()
 
-    personal_identification_number = fields.Char()
+    personal_identification_number = fields.Char(
+    )
 
     father_full_name = fields.Char()
     father_occupation = fields.Char()
@@ -109,12 +138,21 @@ class MikiStudent(models.Model):
 
     guardian_full_name = fields.Char()
     guardian_occupation = fields.Char()
+    guardian_relation = fields.Char()
     guardian_dob_year = fields.Integer()
     guardian_phone = fields.Char()
 
-    student_code = fields.Char()
+    student_code = fields.Char(
+        string='Ma hoc sinh'
+    )
 
-    identification_number = fields.Char()
+    identification_number = fields.Char(
+        string='So bao danh'
+    )
+
+    stt_trung_tuyen = fields.Char(
+        string='STT trong danh sach trung tuyen'
+    )
 
     student_type_id = fields.Many2one(
         comodel_name='miki.student.type'

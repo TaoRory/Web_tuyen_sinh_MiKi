@@ -394,10 +394,10 @@
                                     </select>
                                     <br/>
 
-                                    <label class="mt-220" for="date_range_day">Ngày cấp (dd/mm/yyyy):</label>
+                                    <label class="mt-220" for="date_range_date">Ngày cấp (dd/mm/yyyy):</label>
                                     <br/>
-                                    <input type="number" id="date_range_day" name="date_range_day"
-                                           t-att-value="student.date_range_day"/>
+                                    <input type="date" id="date_range_date" name="date_range_date"
+                                           t-att-value="student.date_range_date"/>
                                     <br/>
 
                                 </div>
@@ -499,6 +499,11 @@
                                     <br/>
                                     <input class="mb-50" type="text" id="guardian_occupation" name="guardian_occupation"
                                            t-att-value="student.guardian_occupation"/>
+                                    <br/>
+                                    <label for="guardian_occupation">Quan hệ với người giám hộ:</label>
+                                    <br/>
+                                    <input class="mb-50" type="text" id="guardian_relation" name="guardian_relation"
+                                           t-att-value="student.guardian_relation"/>
                                     <br/>
 
                                     <label for="guardian_dob_year">Năm sinh người giám hộ:</label>
