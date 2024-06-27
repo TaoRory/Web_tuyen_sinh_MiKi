@@ -135,7 +135,25 @@
 
                                 </div>
                                 <div class="col-4">
-
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <label for="nationality">Dân tộc:</label>
+                                    <br/>
+                                    <input required="required" type="text" id="ethnicity" name="ethnicity"
+                                           t-att-value="student.ethnicity"/>
+                                    <br/>
                                 </div>
                                 <div class="col-4">
 

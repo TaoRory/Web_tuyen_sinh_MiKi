@@ -112,87 +112,66 @@
                                                             t-out="student_id.stt_trung_tuyen"/></p>
                                                 </div>
                                             </div>
+                                            
                                             <div class="row align-items-center justify-between">
                                                 <div class="form-a4 col-6">
-                                                    <p>Họ tên học sinh:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="student_id.name"/></p>
-                                                    <p>Giới tính:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="'Nam' if student_id.gender else 'Nữ'"/></p>
-                                                    <p>Ngày sinh:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="student_id.dob_date"/></p>
-                                                    <p>Nơi sinh:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="student_id.birth_address"/></p>
-                                                    <p>Dân tộc:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="student_id.ethnicity"/></p>
+                                                    <p><strong><u>Họ tên học sinh:</u></strong><br/>
+                                                        <t t-out="student_id.name"/></p><br/>
+                                                    <p><strong><u>Giới tính:</u></strong><br/>
+                                                        <t t-out="'Nam' if student_id.gender else 'Nữ'"/></p><br/>
+                                                    <p><strong><u>Ngày sinh:</u></strong><br/>
+                                                        <t t-out="student_id.dob_date"/></p><br/>
+                                                    <p><strong><u>Nơi sinh:</u></strong><br/>
+                                                        <t t-out="student_id.birth_address"/></p><br/>
+                                                    <p><strong><u>Dân tộc:</u></strong><br/>
+                                                        <t t-out="student_id.ethnicity"/></p><br/>
 
                                                 </div>
                                                 <div class="form-a4 col-6">
-                                                    <p>Số căn cước công dân:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="student_id.citizen_identification_code"/></p>
-                                                    <p>Ngày cấp:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="student_id.date_range_date"/></p>
-                                                    <p>Nơi cấp:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="student_id.issued_by"/></p>
-                                                    <p>Tôn giáo:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="student_id.religion"/></p>
-                                                    <p>Số điện thoại đăng ký nhận SMS:
-                                                        <input type="text" class="form-input"
-                                                               t-att-value="student_id.contact_phone"/>
+                                                    <p><strong><u>Số căn cước công dân:</u></strong><br/>
+                                                        <t t-out="student_id.citizen_identification_code"/></p><br/>
+                                                    <p><strong><u>Ngày cấp:</u></strong><br/>
+                                                        <t t-out="student_id.date_range_date"/></p><br/>
+                                                    <p><strong><u>Nơi cấp:</u></strong><br/>
+                                                        <t t-out="student_id.issued_by"/></p><br/>
+                                                    <p><strong><u>Tôn giáo:</u></strong><br/>
+                                                        <t t-out="student_id.religion"/></p><br/>
+                                                    <p><strong><u>Số điện thoại đăng ký nhận SMS:</u></strong><br/>
+                                                        <t t-out="student_id.contact_phone"/>
                                                     </p>
                                                 </div>
                                                 <div class="form-a4 col-4">
-                                                    <p>Địa chỉ hộ khẩu:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.permanent_address"/>
-                                                        Họ tên cha:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.father_full_name"/>
-                                                        Họ tên mẹ:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.mother_full_name"/>
-                                                        Họ tên người giám hộ:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.guardian_full_name"/>
-                                                    </p>
+                                                    <p><strong><u>Địa chỉ hộ khẩu:</u></strong><br/>
+                                                        <t t-out="student_id.permanent_address"/></p><br/>
+                                                    <p><strong><u>Họ tên cha:</u></strong><br/>
+                                                        <t t-out="student_id.father_full_name"/></p><br/>
+                                                    <p><strong><u>Họ tên mẹ:</u></strong><br/>
+                                                        <t t-out="student_id.mother_full_name"/></p><br/>
+                                                    <p><strong><u>Họ tên người giám hộ:</u></strong><br/>
+                                                        <t t-out="student_id.guardian_full_name"/></p><br/>
+                                                    
                                                 </div>
                                                 <div class="form-a4 col-4">
-                                                    <p>Địa chỉ hiện tại:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.current_address"/>
-                                                        Nghề nghiệp cha:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.father_occupation"/>
-                                                        Nghề nghiệp mẹ:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.mother_occupation"/>
-                                                        Quan hệ với người giám hộ:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.guardian_relation"/>
-                                                    </p>
+                                                    <p><strong><u>Địa chỉ hiện tại</u></strong>: <br/>
+                                                        <t t-out="student_id.current_address"/></p><br/>
+                                                    <p><strong><u>Nghề nghiệp cha:</u></strong> <br/>
+                                                        <t t-out="student_id.father_occupation"/></p><br/>
+                                                    <p><strong><u>Nghề nghiệp mẹ:</u></strong> <br/>
+                                                        <t t-out="student_id.mother_occupation"/></p><br/>
+                                                    <p><strong><u>Quan hệ với người giám hộ</u></strong>: <br/>
+                                                        <t t-out="student_id.guardian_relation"/></p><br/>
+                                                    
                                                 </div>
                                                 <div class="form-a4 col-4">
-                                                    <p>Điện thoại liên lạc cha:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.father_phone"/>
-                                                        Điện thoại liên lạc mẹ:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.mother_phone"/>
-                                                        Điện thoại liên lạc:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.contact_phone"/>
-                                                        Số điện thoại liên lạc khác:
-                                                        <input type="texta4" class="form-input"
-                                                               t-att-value="student_id.guardian_phone"/>
-                                                    </p>
+                                                    <p><strong><u>Điện thoại liên lạc cha:</u></strong> <br/>
+                                                        <t t-out="student_id.father_phone"/></p><br/>
+                                                    <p><strong><u>Điện thoại liên lạc mẹ:</u></strong> <br/>
+                                                        <t t-out="student_id.mother_phone"/></p><br/>
+                                                    <p><strong><u>Điện thoại liên lạc:</u></strong> <br/>
+                                                        <t t-out="student_id.contact_phone"/></p><br/>
+                                                    <p><strong><u>Số điện thoại liên lạc khác:</u></strong> <br/>
+                                                        <t t-out="student_id.guardian_phone"/></p><br/>
+                                                    
 
                                                 </div>
                                             </div>
@@ -201,40 +180,29 @@
                                     <!-- Page 2 -->
                                     <div class="a4-page">
                                         <div class="content">
-                                            <h3>Thông tin học sinh - Trang 2</h3>
                                             <div class="row align-items-center justify-between">
-
                                                 <div class="form-a4 col-4">
                                                     <p><strong>THÀNH TÍCH HỌC TẬP VÀ CÁC DIỆN ƯU TIÊN</strong></p>
                                                     <br/>
-                                                    <p>Giải HSG cấp TP,QG:</p>
-                                                    <input required="required" type="texta4" id="HSG_achievement"
-                                                           name="HSG_achievement"
-                                                           t-att-value="student_id.HSG_achievement"/>
-                                                    <p>Giải TDTT cấp TP,QG:</p>
-                                                    <input required="required" type="texta4" id="TDTT_achievement"
-                                                           name="TDTT_achievement"
-                                                           t-att-value="student_id.TDTT_achievement"/>
-                                                    <p>Các thành tích khác:</p>
-                                                    <input required="required" type="texta4" id="other_achievement"
-                                                           name="other_achievement"
-                                                           t-att-value="student_id.other_achievement"/>
+                                                    <p><strong><u>Giải HSG cấp TP,QG:</u></strong></p>
+                                                    <p t-out="student_id.HSG_achievement"></p>
+                                                    <p><strong><u>Giải TDTT cấp TP,QG:</u></strong></p>
+                                                    <p t-out="student_id.TDTT_achievement"></p>
+                                                    <p><strong><u>Các thành tích khác:</u></strong></p>
+                                                    <p t-out="student_id.other_achievement"></p>
                                                     <br/>
                                                     <p><strong>ĐIỂM THI VÀO LỚP 10:</strong></p>
                                                     <br/>
-                                                    <p>Văn:</p>
-                                                    <input type="numbera4" id="literature_grade" name="literature_grade"
-                                                           t-att-value="student_id.literature_grade"/>
-                                                    <p>Song ngữ Tiếng Pháp:</p>
-                                                    <input type="numbera4" id="french_grade" name="french_grade"
-                                                           t-att-value="student_id.french_grade"/>
-                                                    <p>Tổng cộng:</p>
-                                                    <input type="numbera4" id="sum_grade" name="sum_grade"
-                                                           t-att-value="student_id.sum_grade"/>
+                                                    <p><strong><u>Văn:</u></strong></p>
+                                                    <p t-out="student_id.literature_grade"></p>
+                                                    <p><strong><u>Song ngữ Tiếng Pháp:</u></strong></p>
+                                                    <p t-out="student_id.french_grade"></p>
+                                                    <p><strong><u>Tổng cộng:</u></strong></p>
+                                                    <p t-out="student_id.sum_grade"></p>
                                                 </div>
 
                                                 <div class="form-a4 col-4">
-                                                    <p>Diện ưu tiên:</p>
+                                                    <p class="mt-20"><strong><u>Diện ưu tiên:</u></strong></p>
                                                     <label t-att-for="student_id.miki_priority_situation_id.name">
                                                         <input type="radio"
                                                                t-att-id="student_id.miki_priority_situation_id.name"
@@ -244,18 +212,14 @@
                                                                t-att-checked="'checked'"/>
                                                         <t t-out="student_id.miki_priority_situation_id.name"/>
                                                     </label>
-                                                    <br/>
-                                                    <p class="mt-100">Toán:</p>
-                                                    <input required="required" type="numbera4" id="math_grade"
-                                                           name="math_grade"
-                                                           t-att-value="student_id.math_grade"/>
-                                                    <p>Tích hợp:</p>
-                                                    <input type="numbera4" id="integration_grade"
-                                                           name="integration_grade"
-                                                           t-att-value="student_id.integration_grade"/>
+                                                    <p class="mt-170"><strong><u>Toán:</u></strong></p>
+                                                    <p t-out="student_id.math_grade"></p>
+                                                    <p><strong><u>Tích hợp:</u></strong></p>
+                                                    <p t-out="student_id.integration_grade"></p>
+                                                    
                                                 </div>
                                                 <div class="form-a4 col-4">
-                                                    <p>Các diện khác:</p>
+                                                    <p class="mt-40"><strong><u>Các diện khác:</u></strong></p>
                                                     <label t-att-for="student_id.miki_other_situation_id.name">
                                                         <input type="radio"
                                                                class="mb-50"
@@ -266,14 +230,10 @@
                                                                t-att-checked="'checked' "/>
                                                         <t t-out="student_id.miki_other_situation_id.name"/>
                                                     </label>
-                                                    <p class="mt-120">Ngoại Ngữ:</p>
-                                                    <input required="required" type="numbera4"
-                                                           id="foreign_language_grade" name="foreign_language_grade"
-                                                           t-att-value="student_id.foreign_language_grade"/>
-                                                    <p>Ưu tiên:</p>
-                                                    <input required="required" type="numbera4" id="priority_grade"
-                                                           name="priority_grade"
-                                                           t-att-value="student_id.priority_grade"/>
+                                                    <p class="mt-120"><strong><u>Ngoại Ngữ:</u></strong></p>
+                                                    <p t-out="student_id.foreign_language_grade"></p>
+                                                    <p><strong><u>Ưu tiên:</u></strong></p>
+                                                    <p t-out="student_id.priority_grade"></p>
                                                     <br/>
                                                 </div>
 
@@ -287,23 +247,13 @@
                                                             chọn.</i></p>
 
                                                     <p><strong>CHƯƠNG TRÌNH</strong></p>
-                                                    <div class="container">
-                                                        <div class="row align-items-center justify-between">
-                                                            <p t-out="student_id.student_type_id.name"></p>
-                                                        </div>
-                                                    </div>
+                                                    <p t-out="student_id.student_type_id.name"></p>
                                                     <p><strong>NHÓM MÔN HỌC LỰA CHỌN</strong></p>
                                                     <label t-att-for="student_id.major_id.id">
-                                                        <input type="radio" t-att-id="student_id.major_id.id"
-                                                               name="major_id"
-                                                               class="radio-major"
-                                                               t-att-value="student_id.major_id.id"
-                                                               t-att-checked="'checked'"/>
                                                         <t t-out="student_id.major_id.name"/>(<t
                                                             t-out="' - '.join(student_id.major_id.subject_ids.mapped('name'))"/>
                                                         )
                                                     </label>
-
                                                 </div>
                                             </div>
                                         </div>
