@@ -460,9 +460,10 @@ input[type="checkbox"] {
     text-align: left;
     margin-top: 7px;
     
+    
 }
 .form-a4 p {
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .form-input {
@@ -470,5 +471,18 @@ input[type="checkbox"] {
     border-bottom: 1px solid #000;
     width: 10px;
 }
+
+input[type="texta4"],
+input[type="emaila4"],
+input[type="tela4"],
+input[type="numbera4"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 
 
