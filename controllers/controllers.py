@@ -8,6 +8,10 @@ class Tuyensinh(http.Controller):
     def LoginPage(self, **kw):
         return http.request.render('Web-tuyen-sinh-MiKi.login_page')
 
+    @http.route('/', auth='public')
+    def Page(self, **kw):
+        return request.redirect('/login_page')
+
     @http.route('/check-student', auth='public', type='json', methods=['POST'])
     def Check(self, **kw):
         print(kw)
