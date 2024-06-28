@@ -23,6 +23,7 @@ class Tuyensinh(http.Controller):
         if student_id:
             data['student_name'] = student_id.last_name + ' ' + student_id.first_name
             data['day_of_birth'] = student_id.dob_temp
+            data['error'] = False
         else:
             data['error'] = True
         print(data)
