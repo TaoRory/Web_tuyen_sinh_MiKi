@@ -26,7 +26,7 @@
                             <div class="row ">
                                 <div class="col-7">
                                     <i class="fas fa-phone"></i>
-                                    1005 555
+                                    028 3933 0801
                                     <i class="fas fa-envelope ml-10"></i>
                                     thpt.hcm@minhkhai.edu.vn
                                     <i class="fas fa-map-marked ml-10"></i>
@@ -45,8 +45,8 @@
                     </div>
                     <nav>
                         <div class="container">
-                            <a href="/login_page" class="img-circle-10">
-                                <img src="images/logo.png"/>
+                            <a href="/information_page" class="img-circle-10">
+                                <img src="/Web-tuyen-sinh-MiKi/static/assets/img/logo.png" style="height: 90px;"/>
                             </a>
                             <div class="menu">
                                 <ul>
@@ -57,14 +57,6 @@
                                         <a href="https://thptnguyenthiminhkhai.hcm.edu.vn/homegd5">Tin tức- Sự kiện</a>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="nav-icon">
-                                <a href="#">
-                                    <i class="fas fa-user fa-lg"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fas fa-search fa-lg"></i>
-                                </a>
                             </div>
                         </div>
                     </nav>
@@ -222,7 +214,6 @@
                                                     <p class="mt-40"><strong><u>Các diện khác:</u></strong></p>
                                                     <label t-att-for="student_id.miki_other_situation_id.name">
                                                         <input type="radio"
-                                                               class="mb-50"
                                                                t-att-id="student_id.miki_other_situation_id.name"
                                                                name="miki_other_situation_id"
                                                                required="1"
@@ -289,14 +280,17 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-4 mt-20">
-                                        <img src="images/logo.png"/>
-                                        <p>Truy cập website của trường để nhận thêm thông tin mới nhất về tuyển sinh
+                                        <img src="/Web-tuyen-sinh-MiKi/static/assets/img/logo.png"
+                                             style="height: 90px;"/>
+                                        <p>Truy cập website của nhà trường để nhận thêm thông tin mới nhất về tuyển sinh
                                             Khối 10
                                         </p>
                                         <button type="button" class="btn-secondary mt-20">TRUY CẬP</button>
                                     </div>
+                                    <div class="col-2"></div>
+                                    <div class="col-2"></div>
                                     <div class="col-4">
-                                        <h3>THÔNG TIN LIÊN HỆ</h3>
+                                        <h8>THÔNG TIN LIÊN HỆ</h8>
                                         <p>
                                             <i class="fas fa-map-marker-alt text-secondary"></i>
                                             275 Điện Biên Phủ, P.Võ Thị Sáu, Q.3, TP.HCM

@@ -31,7 +31,7 @@
                             <div class="row ">
                                 <div class="col-7">
                                     <i class="fas fa-phone"></i>
-                                    1005 555
+                                    028 3933 0801
                                     <i class="fas fa-envelope ml-10"></i>
                                     thpt.hcm@minhkhai.edu.vn
                                     <i class="fas fa-map-marked ml-10"></i>
@@ -111,8 +111,10 @@
                                     <input required="required" type="date" id="dob_date" name="dob_date"
                                            t-att-value="student.dob_date"/>
                                     <br/>
+                                    <br/>
 
-                                    <p for="gender">Giới tính: (Nếu là nam thì tick vào)</p>
+
+                                    <p for="gender">Giới tính:</p>
                                     <br/>
                                     <label for="gender_male">Nam: <input required="required" type="radio" id="gender_male" name="gender"
                                                                          t-att-checked="'checked' if student.gender else None"
@@ -437,10 +439,10 @@
                                            t-att-value="student.father_full_name"/>
                                     <br/>
 
-                                    <label for="father_phone">Số điện thoại cha:</label>
+                                    <label for="father_occupation">Nghề nghiệp cha:</label>
                                     <br/>
-                                    <input required="required" type="text" id="father_phone" name="father_phone"
-                                           t-att-value="student.father_phone"/>
+                                    <input required="required" type="text" id="father_occupation" name="father_occupation"
+                                           t-att-value="student.father_occupation"/>
                                     <br/>
                                     <h3>THÔNG TIN MẸ</h3>
                                     <h5>(Trường hợp không có, điền "Không")</h5>
@@ -452,10 +454,10 @@
                                            t-att-value="student.mother_full_name"/>
                                     <br/>
 
-                                    <label for="mother_phone">Số điện thoại mẹ:</label>
+                                    <label for="mother_occupation">Nghề nghiệp mẹ:</label>
                                     <br/>
-                                    <input required="required" type="text" id="mother_phone" name="mother_phone"
-                                           t-att-value="student.mother_phone"/>
+                                    <input required="required" type="text" id="mother_occupation" name="mother_occupation"
+                                           t-att-value="student.mother_occupation"/>
                                     <br/>
 
 
@@ -464,32 +466,54 @@
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <label class="mt-95" for="father_occupation">Nghề nghiệp cha:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="father_occupation" name="father_occupation"
-                                           t-att-value="student.father_occupation"/>
-                                    <br/>
-                                    <label for="father_dob_year">Năm sinh cha:</label>
+                                    <label class="mt-95" for="father_dob_year">Năm sinh cha:</label>
                                     <br/>
                                     <input required="required" type="number" id="father_dob_year" name="father_dob_year"
                                            t-att-value="student.father_dob_year"/>
                                     <br/>
+                                    <label for="father_occupation">Chức vụ:</label>
+                                    <br/>
+                                    <input required="required" type="text" id="father_occupation" name="father_occupation"
+                                           t-att-value="student.father_occupation"/>
+                                    <br/>
+                                    
                                     <br/>
                                     <br/>
-                                    <br/>
-                                    <label for="mother_occupation">Nghề nghiệp mẹ:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="mother_occupation" name="mother_occupation"
-                                           t-att-value="student.mother_occupation"/>
                                     <br/>
                                     <label for="mother_dob_year">Năm sinh mẹ:</label>
                                     <br/>
                                     <input required="required" type="number" id="mother_dob_year" name="mother_dob_year"
                                            t-att-value="student.mother_dob_year"/>
                                     <br/>
+                                    <label for="mother_occupation">Chức vụ:</label>
+                                    <br/>
+                                    <input required="required" type="text" id="mother_occupation" name="mother_occupation"
+                                           t-att-value="student.mother_occupation"/>
+                                    <br/>
+                                    
 
                                 </div>
                                 <div class="col-4">
+                                <label class="mt-150" for="father_phone">Số điện thoại cha:</label>
+                                    <br/>
+                                    <input required="required" type="text" id="father_phone" name="father_phone"
+                                           t-att-value="student.father_phone"/>
+                                    <br/>
+                                    <label for="father_occupation">Nơi công tác:</label>
+                                    <br/>
+                                    <input required="required" type="text" id="father_occupation" name="father_occupation"
+                                           t-att-value="student.father_occupation"/>
+                                    <br/>
+                                    <label class="mt-55" for="mother_phone">Số điện thoại mẹ:</label>
+                                    <br/>
+                                    <input required="required" type="text" id="mother_phone" name="mother_phone"
+                                           t-att-value="student.mother_phone"/>
+                                    <br/>
+                                    <label for="mother_phone">Nơi công tác:</label>
+                                    <br/>
+                                    <input required="required" type="text" id="mother_phone" name="mother_phone"
+                                           t-att-value="student.mother_phone"/>
+                                    <br/>
 
 
                                 </div>
@@ -564,7 +588,6 @@
                                      <t t-foreach="miki_priority_situation_ids" t-as="situation">
                                                     <label t-att-for="situation.name">
                                                         <input type="radio"
-                                                               class="mb-50"
                                                                t-att-id="situation.name"
                                                                name="miki_priority_situation_id"
                                                                required="1"
@@ -586,7 +609,6 @@
                                      <t t-foreach="miki_other_situation_ids" t-as="situation">
                                                     <label t-att-for="situation.name">
                                                         <input type="radio"
-                                                               class="mb-50"
                                                                t-att-id="situation.name"
                                                                name="miki_other_situation_id"
                                                                required="1"
@@ -730,7 +752,7 @@
                                     <div class="col-4 mt-20">
                                         <img src="/Web-tuyen-sinh-MiKi/static/assets/img/logo.png"
                                              style="height: 90px;"/>
-                                        <p>Truy cập website của trường để nhận thêm thông tin mới nhất về tuyển sinh
+                                        <p>Truy cập website của nhà trường để nhận thêm thông tin mới nhất về tuyển sinh
                                             Khối 10
                                         </p>
                                         <button type="button" class="btn-secondary mt-20">TRUY CẬP</button>
