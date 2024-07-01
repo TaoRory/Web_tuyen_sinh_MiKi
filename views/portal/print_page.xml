@@ -8,16 +8,16 @@
                 <head>
                     <meta charset="utf-8"/>
                     <title>MINH KHAI TUYỂN SINH</title>
-                    <link rel="stylesheet" href="/Web-tuyen-sinh-MiKi/static/assets/css/thu-vien.css"/>
+                    <link rel="stylesheet" href="/Web_tuyen_sinh_MiKi/static/assets/css/thu-vien.css"/>
                     <link rel="stylesheet"
                           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"/>
-                    <link rel="stylesheet" href="/Web-tuyen-sinh-MiKi/static/assets/css/all.css"/>
-                    <link rel="stylesheet" href="/Web-tuyen-sinh-MiKi/static/assets/css/main-style.css"/>
-                    <link rel="shortcut icon" href="/Web-tuyen-sinh-MiKi/static/assets/img/logo.png"
+                    <link rel="stylesheet" href="/Web_tuyen_sinh_MiKi/static/assets/css/all.css"/>
+                    <link rel="stylesheet" href="/Web_tuyen_sinh_MiKi/static/assets/css/main-style.css"/>
+                    <link rel="shortcut icon" href="/Web_tuyen_sinh_MiKi/static/assets/img/logo.png"
                           type="image/x-icon"/>
-                    <link rel="stylesheet" href="/Web-tuyen-sinh-MiKi/static/assets/css/backtoTop.css"/>
-                    <link rel="stylesheet" href="/Web-tuyen-sinh-MiKi/static/assets/css/owl.carousel.css"/>
-                    <link rel="stylesheet" href="/Web-tuyen-sinh-MiKi/static/assets/css/owl.theme.default.css"/>
+                    <link rel="stylesheet" href="/Web_tuyen_sinh_MiKi/static/assets/css/backtoTop.css"/>
+                    <link rel="stylesheet" href="/Web_tuyen_sinh_MiKi/static/assets/css/owl.carousel.css"/>
+                    <link rel="stylesheet" href="/Web_tuyen_sinh_MiKi/static/assets/css/owl.theme.default.css"/>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
                 </head>
                 <body>
@@ -46,7 +46,7 @@
                     <nav>
                         <div class="container">
                             <a href="/information_page" class="img-circle-10">
-                                <img src="/Web-tuyen-sinh-MiKi/static/assets/img/logo.png" style="height: 90px;"/>
+                                <img src="/Web_tuyen_sinh_MiKi/static/assets/img/logo.png" style="height: 90px;"/>
                             </a>
                             <div class="menu">
                                 <ul>
@@ -280,7 +280,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-4 mt-20">
-                                        <img src="/Web-tuyen-sinh-MiKi/static/assets/img/logo.png"
+                                        <img src="/Web_tuyen_sinh_MiKi/static/assets/img/logo.png"
                                              style="height: 90px;"/>
                                         <p>Truy cập website của nhà trường để nhận thêm thông tin mới nhất về tuyển sinh
                                             Khối 10
@@ -321,13 +321,13 @@
                     <!--                    <script src="js/html2pdf.js"></script>-->
 
 
-                    <script src="/Web-tuyen-sinh-MiKi/static/assets/js/my-library.js"></script>
-                    <script src="/Web-tuyen-sinh-MiKi/static/assets/js/soanh-cu-moi.js"></script>
-                    <script src="/Web-tuyen-sinh-MiKi/static/assets/js/jquery-3.2.0.min.js"></script>
-                    <script src="/Web-tuyen-sinh-MiKi/static/assets/js/backtoTop.js"></script>
-                    <script src="/Web-tuyen-sinh-MiKi/static/assets/js/owl.carousel.js"></script>
-                    <script src="/Web-tuyen-sinh-MiKi/static/assets/js/custom-.js"></script>
-                    <script src="/Web-tuyen-sinh-MiKi/static/assets/js/html2pdf.js"></script>
+                    <script src="/Web_tuyen_sinh_MiKi/static/assets/js/my-library.js"></script>
+                    <script src="/Web_tuyen_sinh_MiKi/static/assets/js/soanh-cu-moi.js"></script>
+                    <script src="/Web_tuyen_sinh_MiKi/static/assets/js/jquery-3.2.0.min.js"></script>
+                    <script src="/Web_tuyen_sinh_MiKi/static/assets/js/backtoTop.js"></script>
+                    <script src="/Web_tuyen_sinh_MiKi/static/assets/js/owl.carousel.js"></script>
+                    <script src="/Web_tuyen_sinh_MiKi/static/assets/js/custom-.js"></script>
+                    <script src="/Web_tuyen_sinh_MiKi/static/assets/js/html2pdf.js"></script>
                 </body>
             </html>
 

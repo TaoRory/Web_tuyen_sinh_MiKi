@@ -6,7 +6,7 @@ class Tuyensinh(http.Controller):
     ## First page/ Login
     @http.route('/login_page', auth='public')
     def LoginPage(self, **kw):
-        return http.request.render('Web-tuyen-sinh-MiKi.login_page')
+        return http.request.render('Web_tuyen_sinh_MiKi.login_page')
 
     @http.route('/', auth='public')
     def Page(self, **kw):
@@ -84,7 +84,7 @@ class Tuyensinh(http.Controller):
         miki_priority_situation_ids = request.env['miki.priority.situation'].sudo().search([(1, '=', 1)])
         miki_other_situation_ids = request.env['miki.other.situation'].sudo().search([(1, '=', 1)])
 
-        return http.request.render('Web-tuyen-sinh-MiKi.information_page', {
+        return http.request.render('Web_tuyen_sinh_MiKi.information_page', {
             'student': student,
             'province_ids': province_ids,
             'department_ids': department_ids,
@@ -137,6 +137,6 @@ class Tuyensinh(http.Controller):
             ('student_code', '=', kw.get('student_code')),
             ('identification_number', '=', kw.get('identification_number'))
         ])
-        return http.request.render('Web-tuyen-sinh-MiKi.print_page',{
+        return http.request.render('Web_tuyen_sinh_MiKi.print_page',{
             'student_id': student_id
         })

@@ -3,7 +3,7 @@
     <data>
 
         <record id="miki_major_form_view" model="ir.ui.view">
-            <field name="name">web_tuyen_sinh_miki.miki_major.form</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_major.form</field>
             <field name="model">miki.major</field>
             <field name="arch" type="xml">
                 <form string="Major">

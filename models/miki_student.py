@@ -130,11 +130,23 @@ class MikiStudent(models.Model):
     father_occupation = fields.Char()
     father_dob_year = fields.Integer()
     father_phone = fields.Char()
+    father_job_title = fields.Char(
+        string='Chuc vu'
+    )
+    father_place_of_work = fields.Char(
+        string='Noi cong tac'
+    )
 
     mother_full_name = fields.Char()
     mother_occupation = fields.Char()
     mother_dob_year = fields.Integer()
     mother_phone = fields.Char()
+    mother_job_title = fields.Char(
+        string='Chuc vu'
+    )
+    mother_place_of_work = fields.Char(
+        string='Noi cong tac'
+    )
 
     guardian_full_name = fields.Char()
     guardian_occupation = fields.Char()
@@ -182,6 +194,8 @@ class MikiStudent(models.Model):
     priority_grade = fields.Float()
 
     sum_grade = fields.Float()
+
+
 
     @api.depends('first_name', 'last_name')
     def _compute_name(self):

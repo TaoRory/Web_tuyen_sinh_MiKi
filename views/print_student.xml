@@ -2,23 +2,37 @@
 <odoo>
     <data>
 
-        <report
-                id="report_print_student"
-                model="miki.student"
-                string="Report"
-                name="print_report_student"
-                file="report_student"
-                report_type="qweb-pdf"/>
+  <record id="print_student_report" model="ir.actions.report">
+        <field name="name">Print s</field>
+        <field name="model">miki.student</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">Web_tuyen_sinh_MiKi.print_report_student</field>
+        <field name="report_file">Web_tuyen_sinh_MiKi.print_report_student</field>
+        <field name="binding_model_id" ref="model_miki_student"/>
+        <field name="binding_type">report</field>
+    </record>
 
-        <template id="print_report_student">
-            <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="doc">
-                        <div class="page">
-                            <p>Họ tên học sinh: <span t-out="doc.name"/></p>
+        <template id="print_report_student_base">
+                   <t t-call="web.html_container" style="font-family: 'Times New Roman', Times, serif;">
+
+
+                        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                             t-att-data-oe-lang="o and o.env.context.get('lang')">
+                    <t t-raw="0"/>
 
                         </div>
-                    </t>
-            </t>
+
+                   </t>
+
+        </template>
+        <template id="print_report_student">
+                  <t t-call="Web_tuyen_sinh_MiKi.print_report_student_base">
+                      <t t-foreach="docs" t-as="doc">
+
+                          <p>học sinh có con cá <span t-out="doc.name"/></p>
+                      </t>
+                  </t>
+
         </template>
 
     </data>

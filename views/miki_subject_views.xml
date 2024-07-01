@@ -3,7 +3,7 @@
     <data>
 
 <!--        <record id="miki_province_form_view" model="ir.ui.view">-->
-<!--            <field name="name">web_tuyen_sinh_miki.miki_province.form</field>-->
+<!--            <field name="name">Web_tuyen_sinh_MiKi.miki_province.form</field>-->
 <!--            <field name="model">miki.province</field>-->
 <!--            <field name="arch" type="xml">-->
 <!--                <form string="Province">-->
@@ -28,7 +28,7 @@
 <!--        </record>-->
 
         <record id="miki_subject_tree_view" model="ir.ui.view">
-            <field name="name">web_tuyen_sinh_miki.miki_subject.tree</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_subject.tree</field>
             <field name="model">miki.subject</field>
             <field name="arch" type="xml">
                 <tree string="Subject" create="1" editable="top">
@@ -38,7 +38,7 @@
         </record>
 
         <record id="miki_subject_search_view" model="ir.ui.view">
-            <field name="name">web_tuyen_sinh_miki.miki_subject.search</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_subject.search</field>
             <field name="model">miki.subject</field>
             <field name="arch" type="xml">
                 <search string="Subject">
