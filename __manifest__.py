@@ -38,7 +38,9 @@ Long description of module's purpose
         'views/miki_major_views.xml',
         'views/miki_subject_views.xml',
         'views/miki_other_situation_views.xml',
-        'views/miki_priority_situation_views.xml'
+        'views/miki_priority_situation_views.xml',
+        'views/print_student.xml'
+
     ],
     # only loaded in demonstration mode
     'demo': [

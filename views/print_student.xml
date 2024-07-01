@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="report_print_student"
+                model="miki.student"
+                string="Report"
+                name="print_report_student"
+                file="report_student"
+                report_type="qweb-pdf"/>
+
+        <template id="print_report_student">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                        <div class="page">
+                            <p>Họ tên học sinh: <span t-out="doc.name"/></p>
+
+                        </div>
+                    </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>
