@@ -28,29 +28,33 @@
         <template id="print_report_student">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
+
                     <t t-call="Web_tuyen_sinh_MiKi.print_report_student_base">
-                        <section id="Thong tin" class="py-50">
+                        <div class="page" style="font-size:1.1rem; font-family: 'Times New Roman', Times, serif;">
                             <div class="">
                                 <div class="row align-items-center justify-between" id="pdf-content">
                                     <!-- Page 1 -->
-                                    <div class="">
-                                        <div class="row">
-                                            <div class="col-6">
+                                    <div >
+                                        <div class="d-flex justify-content-between row  pb-1">
+                                            <div class="header-left col-6 align-items-center text-center">
                                                 <p>SỞ GIÁO DỤC VÀ ĐÀO TẠO TP. HỒ CHÍ MINH</p>
                                                 <p>
                                                     <strong>TRƯỜNG THPT NGUYỄN THỊ MINH KHAI</strong>
                                                 </p>
+                                                <hr class="small-linea"/>
+
                                             </div>
-                                            <div class="col-6">
+                                            <div class="header-right col-6 align-items-center text-center">
                                                 <p>
                                                     <strong>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</strong>
                                                 </p>
                                                 <p>
                                                     <strong>Độc lập - Tự do - Hạnh phúc</strong>
                                                 </p>
+                                                <hr class="small-lineb"/>
                                             </div>
                                         </div>
-                                        <div class="">
+                                        <div class="text-center">
                                             <p>
                                                 <strong>ĐƠN XIN NHẬP HỌC LỚP 10</strong>
                                             </p>
@@ -60,18 +64,31 @@
                                             <p>
                                                 <strong>Năm học 2024 - 2025</strong>
                                             </p>
-                                            <div class="info">
-                                                <div class="info-boxa">
+                                            <div class="d-flex justify-content-end">
+                                                <div class="" style="    width: 15%;
+    text-align: justify;
+    border: 1px solid #000;
+    padding: 10px;
+    line-height: 1.2;
+    font-size: 10px; /* Giảm kích thước chữ */
+    margin: 0 0px;">
                                                     <p>SBD <span t-out="doc.identification_number"/></p>
                                                 </div>
-                                                <div class="info-boxb">
+                                                <div class="" style="    width: 30%;
+    text-align: justify;
+    border: 1px solid #000;
+    padding: 10px;
+    line-height: 1.2;
+    font-size: 10px; /* Giảm kích thước chữ */
+    margin: 0 0px;">
                                                     <p>STT trong DS trúng tuyển <span
                                                             t-out="doc.stt_trung_tuyen"/></p>
                                                 </div>
                                             </div>
-
+                                        </div>
+                                        <div class="pt-4">
                                             <div class="row align-items-center justify-between">
-                                                <div class="form-a4 col-6">
+                                                <div class=" col-6">
                                                     <p><strong><u>Họ tên học sinh:</u></strong><br/>
                                                         <t t-out="doc.name"/></p><br/>
                                                     <p><strong><u>Giới tính:</u></strong><br/>
@@ -84,7 +101,7 @@
                                                         <t t-out="doc.ethnicity"/></p><br/>
 
                                                 </div>
-                                                <div class="form-a4 col-6">
+                                                <div class=" col-6">
                                                     <p><strong><u>Số căn cước công dân:</u></strong><br/>
                                                         <t t-out="doc.citizen_identification_code"/></p><br/>
                                                     <p><strong><u>Ngày cấp:</u></strong><br/>
@@ -97,7 +114,10 @@
                                                         <t t-out="doc.contact_phone"/>
                                                     </p>
                                                 </div>
-                                                <div class="form-a4 col-4">
+                                            </div>
+                                            <div class="row align-items-center justify-between">
+
+                                                <div class=" col-4">
                                                     <p><strong><u>Địa chỉ hộ khẩu:</u></strong><br/>
                                                         <t t-out="doc.permanent_address"/></p><br/>
                                                     <p><strong><u>Họ tên cha:</u></strong><br/>
@@ -106,9 +126,9 @@
                                                         <t t-out="doc.mother_full_name"/></p><br/>
                                                     <p><strong><u>Họ tên người giám hộ:</u></strong><br/>
                                                         <t t-out="doc.guardian_full_name"/></p><br/>
-
+                                                    
                                                 </div>
-                                                <div class="form-a4 col-4">
+                                                <div class=" col-4">
                                                     <p><strong><u>Địa chỉ hiện tại</u></strong>: <br/>
                                                         <t t-out="doc.current_address"/></p><br/>
                                                     <p><strong><u>Nghề nghiệp cha:</u></strong> <br/>
@@ -117,9 +137,9 @@
                                                         <t t-out="doc.mother_occupation"/></p><br/>
                                                     <p><strong><u>Quan hệ với người giám hộ</u></strong>: <br/>
                                                         <t t-out="doc.guardian_relation"/></p><br/>
-
+                                                    
                                                 </div>
-                                                <div class="form-a4 col-4">
+                                                <div class=" col-4">
                                                     <p><strong><u>Điện thoại liên lạc cha:</u></strong> <br/>
                                                         <t t-out="doc.father_phone"/></p><br/>
                                                     <p><strong><u>Điện thoại liên lạc mẹ:</u></strong> <br/>
@@ -128,18 +148,25 @@
                                                         <t t-out="doc.contact_phone"/></p><br/>
                                                     <p><strong><u>Số điện thoại liên lạc khác:</u></strong> <br/>
                                                         <t t-out="doc.guardian_phone"/></p><br/>
-
+                                                    
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        <div class="page" style="font-size:1.1rem; font-family: 'Times New Roman', Times, serif; page-break-before: always;" >
+
                                     <!-- Page 2 -->
-                                    <div class="a4-page">
-                                        <div class="content">
+                                    <div class="">
+                                        <div class="">
+                                            <p><strong>THÀNH TÍCH HỌC TẬP VÀ CÁC DIỆN ƯU TIÊN</strong></p>
                                             <div class="row align-items-center justify-between">
-                                                <div class="form-a4 col-4">
-                                                    <p><strong>THÀNH TÍCH HỌC TẬP VÀ CÁC DIỆN ƯU TIÊN</strong></p>
+                                                <div class=" col-4">
                                                     <br/>
                                                     <p><strong><u>Giải HSG cấp TP,QG:</u></strong></p>
                                                     <p t-out="doc.HSG_achievement"></p>
@@ -148,18 +175,11 @@
                                                     <p><strong><u>Các thành tích khác:</u></strong></p>
                                                     <p t-out="doc.other_achievement"></p>
                                                     <br/>
-                                                    <p><strong>ĐIỂM THI VÀO LỚP 10:</strong></p>
-                                                    <br/>
-                                                    <p><strong><u>Văn:</u></strong></p>
-                                                    <p t-out="doc.literature_grade"></p>
-                                                    <p><strong><u>Song ngữ Tiếng Pháp:</u></strong></p>
-                                                    <p t-out="doc.french_grade"></p>
-                                                    <p><strong><u>Tổng cộng:</u></strong></p>
-                                                    <p t-out="doc.sum_grade"></p>
                                                 </div>
 
-                                                <div class="form-a4 col-4">
-                                                    <p class="mt-20"><strong><u>Diện ưu tiên:</u></strong></p>
+                                                <div class=" col-4">
+                                                    <br/>
+                                                    <p class=""><strong><u>Diện ưu tiên:</u></strong></p>
                                                     <label t-att-for="doc.miki_priority_situation_id.name">
                                                         <input type="radio"
                                                                t-att-id="doc.miki_priority_situation_id.name"
@@ -169,14 +189,11 @@
                                                                t-att-checked="'checked'"/>
                                                         <t t-out="doc.miki_priority_situation_id.name"/>
                                                     </label>
-                                                    <p class="mt-170"><strong><u>Toán:</u></strong></p>
-                                                    <p t-out="doc.math_grade"></p>
-                                                    <p><strong><u>Tích hợp:</u></strong></p>
-                                                    <p t-out="doc.integration_grade"></p>
 
                                                 </div>
-                                                <div class="form-a4 col-4">
-                                                    <p class="mt-40"><strong><u>Các diện khác:</u></strong></p>
+                                                <div class=" col-4">
+                                                    <br/>
+                                                    <p class=""><strong><u>Các diện khác:</u></strong></p>
                                                     <label t-att-for="doc.miki_other_situation_id.name">
                                                         <input type="radio"
                                                                t-att-id="doc.miki_other_situation_id.name"
@@ -186,14 +203,41 @@
                                                                t-att-checked="'checked' "/>
                                                         <t t-out="doc.miki_other_situation_id.name"/>
                                                     </label>
-                                                    <p class="mt-120"><strong><u>Ngoại Ngữ:</u></strong></p>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                                    <p><strong>ĐIỂM THI VÀO LỚP 10:</strong></p>
+                                            <div class="row align-items-center justify-between">
+                                                <div class=" col-4">
+                                                    <br/>
+                                                    <p><strong><u>Văn:</u></strong></p>
+                                                    <p t-out="doc.literature_grade"></p>
+                                                    <p><strong><u>Song ngữ Tiếng Pháp:</u></strong></p>
+                                                    <p t-out="doc.french_grade"></p>
+                                                    <p><strong><u>Tổng cộng:</u></strong></p>
+                                                    <p t-out="doc.sum_grade"></p>
+                                                </div>
+
+                                                <div class=" col-4">
+                                                    <br/>
+                                                    <p class=""><strong><u>Toán:</u></strong></p>
+                                                    <p t-out="doc.math_grade"></p>
+                                                    <p><strong><u>Tích hợp:</u></strong></p>
+                                                    <p t-out="doc.integration_grade"></p>
+
+                                                </div>
+                                                <div class=" col-4">
+                                                    <br/>
+                                                    <p class=""><strong><u>Ngoại Ngữ:</u></strong></p>
                                                     <p t-out="doc.foreign_language_grade"></p>
                                                     <p><strong><u>Ưu tiên:</u></strong></p>
                                                     <p t-out="doc.priority_grade"></p>
                                                     <br/>
                                                 </div>
+                                            </div>
+                                            <div class="row align-items-center justify-between">
 
-                                                <div class="form-a4 col-12">
+                                                <div class=" col-12">
                                                     <p><strong>HỌC SINH LỚP 10 SẼ HỌC:</strong></p>
                                                     <p>Chương trình giáo dục phổ thông 2018 với <i>8 môn bắt buộc</i> (Toán
                                                         - Văn -
@@ -213,37 +257,76 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="footer">
-                                            <div class="footer-section">
+                                        <style>
+
+                                            .f-s p {
+                                                margin: 0;
+                                            }
+
+                                            .signature-line {
+                                                margin-top: 100px;
+                                                border-bottom: 1px solid #000;
+                                                width: 100%;
+                                                display: inline-block;
+                                            }
+
+                                            .info-box-footer {
+                                                display: flex;
+                                                justify-content: right;
+                                                margin-top: 42px;
+                                            }
+
+                                            .info-box-footer p {
+                                                margin-top: -20px;
+                                                margin-bottom: 13px;
+                                                font-size: 9px;
+                                            }
+
+                                            .box-footera {
+                                                width: 80px;
+                                                text-align: center;
+                                                border: 1px solid #000;
+                                                padding: 20px;
+                                                line-height: 1.2;
+                                            }
+
+                                            .box-footerb {
+                                                width: 150px;
+                                                text-align: center;
+                                                border: 1px solid #000;
+                                                padding: 20px;
+                                                line-height: 1.2;
+                                            }
+                                        </style>
+                                        <div class="row" style="font-size: 1rem; padding-top: 3rem">
+                                            <div class="text-center" style="width:32%">
                                                 <p>Học sinh ký và ghi rõ họ tên</p>
-                                                <div class="signature-line"></div>
+                                                <div class="signature-line"/>
                                             </div>
-                                            <div class="footer-section">
+                                            <div class=" text-center"  style="width:32%">
                                                 <p>Cha Mẹ học sinh ký và ghi rõ họ tên</p>
-                                                <div class="signature-line"></div>
+                                                <div class="signature-line"/>
                                             </div>
-                                            <div class="footer-section">
+                                            <div class=" text-center"  style="width:32%">
                                                 <p>Ngày ...... tháng ... năm 2024</p>
-                                                <div class="info-box-footer">
+                                                <div class="info-box-footer d-flex justify-content-end" >
                                                     <div class="box-footera">
                                                         <p>SBD</p>
+                                                        <p t-out="doc.identification_number" class=""/>
                                                     </div>
                                                     <div class="box-footerb">
                                                         <p>STT trong DS trúng tuyển</p>
+                                                        <p t-out="doc.stt_trung_tuyen"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                    </t>
 
+                    </t>
                 </t>
             </t>
-
         </template>
-
     </data>
 </odoo>

@@ -29,11 +29,16 @@ $(document).ready(function () {
 
         if (!checkStudent.result.error)
         {
+            document.querySelector('.empty-box').style.display = 'none'
 
             document.querySelector('.info-box').style.display = 'block'
             document.querySelector('#result_name').innerHTML = checkStudent.result.student_name
             document.querySelector('#result_dob').innerHTML = checkStudent.result.day_of_birth
             btnLoginPage.style.display='none'
+        }
+        else {
+            document.querySelector('.info-box').style.display = 'none'
+            document.querySelector('.empty-box').style.display = 'block'
         }
 
     })
