@@ -3,7 +3,7 @@
     <data>
 
 <!--        <record id="miki_ward_form_view" model="ir.ui.view">-->
-<!--            <field name="name">web_tuyen_sinh_miki.miki_ward.form</field>-->
+<!--            <field name="name">Web_tuyen_sinh_MiKi.miki_ward.form</field>-->
 <!--            <field name="model">miki.ward</field>-->
 <!--            <field name="arch" type="xml">-->
 <!--                <form string="ward">-->
@@ -28,7 +28,7 @@
 <!--        </record>-->
 
         <record id="miki_ward_tree_view" model="ir.ui.view">
-            <field name="name">web_tuyen_sinh_miki.miki_ward.tree</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_ward.tree</field>
             <field name="model">miki.ward</field>
             <field name="arch" type="xml">
                 <tree string="Ward">
@@ -41,7 +41,7 @@
         </record>
 
         <record id="miki_ward_search_view" model="ir.ui.view">
-            <field name="name">web_tuyen_sinh_miki.miki_ward.search</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_ward.search</field>
             <field name="model">miki.ward</field>
             <field name="arch" type="xml">
                 <search string="ward">

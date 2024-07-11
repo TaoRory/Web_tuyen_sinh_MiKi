@@ -4,21 +4,19 @@
 
 
         <template id="login_page">
-
-
             <html>
                 <head>
                     <meta charset="UTF-8"/>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                     <title>Login Page</title>
-                    <link rel="stylesheet" type="text/css" href="/Web-tuyen-sinh-MiKi/static/assets/css/styles.css"/>
-                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <link rel="stylesheet" type="text/css" href="/Web_tuyen_sinh_MiKi/static/assets/css/styles.css"/>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
                 </head>
                 <div class="container">
-                    <img src="/Web-tuyen-sinh-MiKi/static/assets/img/logo.png" alt="Logo" class="logo"/>
+                    <img src="/Web_tuyen_sinh_MiKi/static/assets/img/logo.png" alt="Logo" class="logo"/>
                     <div class="column column1">
-                        <img src="/Web-tuyen-sinh-MiKi/static/assets/img/background.jpg" alt="Hình ảnh"/>
+                        <img src="/Web_tuyen_sinh_MiKi/static/assets/img/background.jpg" alt="Hình ảnh"/>
                     </div>
                     <div class="column column2">
                         <div class="header">
@@ -57,7 +55,7 @@
                         </form>
                     </div>
                 </div>
-            <script src="/Web-tuyen-sinh-MiKi/static/assets/js/login_page.js"/>
+            <script src="/Web_tuyen_sinh_MiKi/static/assets/js/login_page.js"/>
 
             </html>
 

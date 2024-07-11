@@ -3,7 +3,7 @@
     <data>
 
         <record id="miki_student_type_form_view" model="ir.ui.view">
-            <field name="name">Web-tuyen-sinh-MiKi.miki_student_type.form</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_student_type.form</field>
             <field name="model">miki.student.type</field>
             <field name="arch" type="xml">
                 <form string="Student Type">
@@ -27,7 +27,7 @@
         </record>
 
         <record id="miki_student_type_tree_view" model="ir.ui.view">
-            <field name="name">Web-tuyen-sinh-MiKi.miki_student_type.tree</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_student_type.tree</field>
             <field name="model">miki.student.type</field>
             <field name="arch" type="xml">
                 <tree string="Student Type">
@@ -38,7 +38,7 @@
         </record>
 
         <record id="miki_student_type_search_view" model="ir.ui.view">
-            <field name="name">Web-tuyen-sinh-MiKi.miki_student_type.search</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_student_type.search</field>
             <field name="model">miki.student.type</field>
             <field name="arch" type="xml">
                 <search string="Student Type">

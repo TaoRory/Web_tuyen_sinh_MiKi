@@ -3,7 +3,7 @@
     <data>
 
         <record id="miki_department_form_view" model="ir.ui.view">
-            <field name="name">web_tuyen_sinh_miki.miki_department.form</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_department.form</field>
             <field name="model">miki.department</field>
             <field name="arch" type="xml">
                 <form string="Department">
@@ -25,7 +25,7 @@
         </record>
 
         <record id="miki_department_tree_view" model="ir.ui.view">
-            <field name="name">web_tuyen_sinh_miki.miki_department.tree</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_department.tree</field>
             <field name="model">miki.department</field>
             <field name="arch" type="xml">
                 <tree string="Department">
@@ -36,7 +36,7 @@
         </record>
 
         <record id="miki_department_search_view" model="ir.ui.view">
-            <field name="name">web_tuyen_sinh_miki.miki_department.search</field>
+            <field name="name">Web_tuyen_sinh_MiKi.miki_department.search</field>
             <field name="model">miki.department</field>
             <field name="arch" type="xml">
                 <search string="Department" >
