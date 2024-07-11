@@ -636,17 +636,13 @@
                                     <br/>
 
 
-                                <label for="guardian_dob_year">Song ngữ Tiếng Pháp:</label>
+                                <label for="guardian_dob_year">Ưu tiên:</label>
                                     <br/>
-                                    <input type="number" id="french_grade" name="french_grade"
-                                           t-att-value="student.french_grade"/>
-                                    <br/>
+                                    <input required="required" type="number" id="priority_grade" name="priority_grade"
+                                           t-att-value="student.priority_grade"/>
+                                    <br/> 
 
-                                <label  for="guardian_dob_year">Tổng cộng:</label>
-                                    <br/>
-                                    <input required="required" type="number" id="sum_grade" name="sum_grade"
-                                           t-att-value="student.sum_grade"/>
-                                    <br/>  
+                                
                                 
                                  
 
@@ -654,19 +650,18 @@
 
 
                                 <div class="col-4">
-                                    <label class="mt-38" for="guardian_dob_year">Toán:</label>
+                                    <label class="mt-135" for="guardian_dob_year">Toán:</label>
                                     <br/>
                                     <input required="required" type="number" id="math_grade" name="math_grade"
                                            t-att-value="student.math_grade"/>
                                     <br/>
 
 
-                                    <label class="" for="guardian_dob_year">Tích hợp:</label>
-
+                                    <label  for="guardian_dob_year">Tổng cộng:</label>
                                     <br/>
-                                    <input type="number" id="integration_grade" name="integration_grade"
-                                           t-att-value="student.integration_grade"/>
-                                    <br/>
+                                    <input required="required" type="number" id="sum_grade" name="sum_grade"
+                                           t-att-value="student.sum_grade"/>
+                                    <br/>  
 
                                 </div>
                                 <div class="col-4">
@@ -676,11 +671,7 @@
                                            t-att-value="student.foreign_language_grade"/>
                                     <br/>
 
-                                <label for="guardian_dob_year">Ưu tiên:</label>
-                                    <br/>
-                                    <input required="required" type="number" id="priority_grade" name="priority_grade"
-                                           t-att-value="student.priority_grade"/>
-                                    <br/> 
+                                
                                 </div>
 
                                 <div class="col-6">
