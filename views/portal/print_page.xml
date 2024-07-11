@@ -285,7 +285,7 @@
                                         <p>Truy cập website của nhà trường để nhận thêm thông tin mới nhất về tuyển sinh
                                             Khối 10
                                         </p>
-                                        <button type="button" class="btn-secondary mt-20">TRUY CẬP</button>
+                                        <a href="https://thptnguyenthiminhkhai.hcm.edu.vn/homegd5" type="button" class="btn-secondary mt-20">TRUY CẬP</a>
                                     </div>
                                     <div class="col-2"></div>
                                     <div class="col-2"></div>
