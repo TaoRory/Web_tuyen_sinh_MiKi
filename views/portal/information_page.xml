@@ -22,6 +22,9 @@
                     <link rel="stylesheet" href="/Web_tuyen_sinh_MiKi/static/assets/css/backtoTop.css"/>
                     <link rel="stylesheet" href="/Web_tuyen_sinh_MiKi/static/assets/css/owl.carousel.css"/>
                     <link rel="stylesheet" href="/Web_tuyen_sinh_MiKi/static/assets/css/owl.theme.default.css"/>
+
+
+                    <script src="/Web_tuyen_sinh_MiKi/static/assets/js/jquery-3.2.0.min.js"></script>
                     <!-- InstanceBeginEditable name="head" -->
                     <!-- InstanceEndEditable -->
                 </head>
@@ -100,16 +103,17 @@
                             <div class="row align-items-center justify-between">
 
                                 <div class="col-4">
-                                    <label  for="name">Họ và tên:</label>
+                                    <label for="name">Họ và tên:</label>
                                     <h5>(In hoa có dấu) </h5>
                                     <br/>
                                     <input required="required" type="text" id="name" name="name"
                                            t-att-value="student.name"/>
                                     <br/>
                                     <label for="dob_date">Ngày tháng năm sinh:</label>
-                                    <h5>(dd/mm/yyyy)</h5>
+                                    <h5>(mm/dd/yyyy)</h5>
                                     <br/>
-                                    <input required="required" type="date" id="dob_date" name="dob_date"
+                                    <input required="required" type="date"
+                                           id="dob_date" name="dob_date"
                                            t-att-value="student.dob_date"/>
                                     <br/>
                                     <br/>
@@ -117,11 +121,13 @@
 
                                     <p for="gender">Giới tính:</p>
                                     <br/>
-                                    <label for="gender_male">Nam: <input required="required" type="radio" id="gender_male" name="gender"
+                                    <label for="gender_male">Nam: <input required="required" type="radio"
+                                                                         id="gender_male" name="gender"
                                                                          t-att-checked="'checked' if student.gender else None"
                                                                          t-att-value="2"/></label>
                                     <br/>
-                                    <label for="gender_female">Nữ: <input required="required" type="radio" id="gender_female" name="gender"
+                                    <label for="gender_female">Nữ: <input required="required" type="radio"
+                                                                          id="gender_female" name="gender"
                                                                           t-att-checked="'checked' if (not student.gender) else None"
                                                                           t-att-value="3"/></label>
                                     <br/>
@@ -134,25 +140,26 @@
                                     <br/>
                                     <label for="religion">Tôn giáo:</label>
                                     <br/>
-                                    <input required="required" type="text" id="religion" name="religion" t-att-value="student.religion"/>
+                                    <input required="required" type="text" id="religion" name="religion"
+                                           t-att-value="student.religion"/>
 
                                 </div>
                                 <div class="col-4">
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <label for="nationality">Dân tộc:</label>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <label for="nationality">Dân tộc:</label>
                                     <br/>
                                     <input required="required" type="text" id="ethnicity" name="ethnicity"
                                            t-att-value="student.ethnicity"/>
@@ -168,7 +175,8 @@
                                     <label for="permanent_province_id">Tỉnh/Thành phố thường trú:</label>
                                     <h5>(Theo CCCD)</h5>
                                     <br/>
-                                    <select required="required" type="select" id="permanent_province_id" name="permanent_province_id"
+                                    <select required="required" type="select" id="permanent_province_id"
+                                            name="permanent_province_id"
                                             onchange="updateDistricts('permanent')">
                                         <option value="">Select City</option>
                                         <t t-foreach="province_ids" t-as="province">
@@ -236,7 +244,8 @@
                                     <label for="permanent_address">Số nhà, tên đường thường trú:</label>
                                     <h5>(Theo CCCD)</h5>
                                     <br/>
-                                    <input required="required" type="text" id="permanent_address" name="permanent_address"
+                                    <input required="required" type="text" id="permanent_address"
+                                           name="permanent_address"
                                            t-att-value="student.permanent_address"/>
                                     <br/>
 
@@ -392,7 +401,8 @@
 
                                     <label class="mt-110" for="issued_by">Nơi cấp:</label>
                                     <br/>
-                                    <input required="required" type="text" id="issued_by" name="issued_by" t-att-value="student.issued_by"/>
+                                    <input required="required" type="text" id="issued_by" name="issued_by"
+                                           t-att-value="student.issued_by"/>
                                     <br/>
 
                                 </div>
@@ -414,7 +424,7 @@
                                     </select>
                                     <br/>
 
-                                    <label class="mt-220" for="date_range_date">Ngày cấp (dd/mm/yyyy):</label>
+                                    <label class="mt-220" for="date_range_date">Ngày cấp (mm/dd/yyyy):</label>
                                     <br/>
 
                                     <input required="required" type="date" id="date_range_date" name="date_range_date"
@@ -441,7 +451,8 @@
 
                                     <label for="father_occupation">Nghề nghiệp cha:</label>
                                     <br/>
-                                    <input required="required" type="text" id="father_occupation" name="father_occupation"
+                                    <input required="required" type="text" id="father_occupation"
+                                           name="father_occupation"
                                            t-att-value="student.father_occupation"/>
                                     <br/>
                                     <h3>THÔNG TIN MẸ</h3>
@@ -456,7 +467,8 @@
 
                                     <label for="mother_occupation">Nghề nghiệp mẹ:</label>
                                     <br/>
-                                    <input required="required" type="text" id="mother_occupation" name="mother_occupation"
+                                    <input required="required" type="text" id="mother_occupation"
+                                           name="mother_occupation"
                                            t-att-value="student.mother_occupation"/>
                                     <br/>
 
@@ -476,7 +488,7 @@
                                     <input required="required" type="text" id="father_job_title" name="father_job_title"
                                            t-att-value="student.father_job_title"/>
                                     <br/>
-                                    
+
                                     <br/>
                                     <br/>
                                     <br/>
@@ -490,18 +502,19 @@
                                     <input required="required" type="text" id="mother_job_title" name="mother_job_title"
                                            t-att-value="student.mother_job_title"/>
                                     <br/>
-                                    
+
 
                                 </div>
                                 <div class="col-4">
-                                <label class="mt-150" for="father_phone">Số điện thoại cha:</label>
+                                    <label class="mt-150" for="father_phone">Số điện thoại cha:</label>
                                     <br/>
                                     <input required="required" type="text" id="father_phone" name="father_phone"
                                            t-att-value="student.father_phone"/>
                                     <br/>
                                     <label for="father_place_of_work">Nơi công tác:</label>
                                     <br/>
-                                    <input required="required" type="text" id="father_place_of_work" name="father_place_of_work"
+                                    <input required="required" type="text" id="father_place_of_work"
+                                           name="father_place_of_work"
                                            t-att-value="student.father_place_of_work"/>
                                     <br/>
                                     <label class="mt-55" for="mother_phone">Số điện thoại mẹ:</label>
@@ -511,7 +524,8 @@
                                     <br/>
                                     <label for="mother_place_of_work">Nơi công tác:</label>
                                     <br/>
-                                    <input required="required" type="text" id="mother_place_of_work" name="mother_place_of_work"
+                                    <input required="required" type="text" id="mother_place_of_work"
+                                           name="mother_place_of_work"
                                            t-att-value="student.mother_place_of_work"/>
                                     <br/>
 
@@ -585,17 +599,17 @@
                                     <label for="guardian_occupation">Diện ưu tiên:</label>
                                     <br/>
 
-                                     <t t-foreach="miki_priority_situation_ids" t-as="situation">
-                                                    <label t-att-for="situation.name">
-                                                        <input type="radio"
-                                                               t-att-id="situation.name"
-                                                               name="miki_priority_situation_id"
-                                                               required="1"
-                                                               t-att-value="situation.id"
-                                                               t-att-checked="'checked' if (student.miki_priority_situation_id and situation.id == student.miki_priority_situation_id.id) else None"/>
-                                                        <t t-out="situation.name"/>
-                                                    </label>
-                                                </t>
+                                    <t t-foreach="miki_priority_situation_ids" t-as="situation">
+                                        <label t-att-for="situation.name">
+                                            <input type="radio"
+                                                   t-att-id="situation.name"
+                                                   name="miki_priority_situation_id"
+                                                   required="1"
+                                                   t-att-value="situation.id"
+                                                   t-att-checked="'checked' if (student.miki_priority_situation_id and situation.id == student.miki_priority_situation_id.id) else None"/>
+                                            <t t-out="situation.name"/>
+                                        </label>
+                                    </t>
 
 
                                     <br/>
@@ -606,17 +620,17 @@
                                     <label for="guardian_dob_year">Các diện khác:</label>
                                     <br/>
 
-                                     <t t-foreach="miki_other_situation_ids" t-as="situation">
-                                                    <label t-att-for="situation.name">
-                                                        <input type="radio"
-                                                               t-att-id="situation.name"
-                                                               name="miki_other_situation_id"
-                                                               required="1"
-                                                               t-att-value="situation.id"
-                                                               t-att-checked="'checked' if (student.miki_other_situation_id and situation.id == student.miki_other_situation_id.id) else None"/>
-                                                        <t t-out="situation.name"/>
-                                                    </label>
-                                                </t>
+                                    <t t-foreach="miki_other_situation_ids" t-as="situation">
+                                        <label t-att-for="situation.name">
+                                            <input type="radio"
+                                                   t-att-id="situation.name"
+                                                   name="miki_other_situation_id"
+                                                   required="1"
+                                                   t-att-value="situation.id"
+                                                   t-att-checked="'checked' if (student.miki_other_situation_id and situation.id == student.miki_other_situation_id.id) else None"/>
+                                            <t t-out="situation.name"/>
+                                        </label>
+                                    </t>
 
 
                                     <br/>
@@ -624,31 +638,32 @@
                                 <div class="col-4">
                                     <label for="guardian_dob_year">Các thành tích khác:</label>
                                     <br/>
-                                    <input required="required" type="number" id="other_achievement" name="other_achievement"
+                                    <input required="required" type="number" id="other_achievement"
+                                           name="other_achievement"
                                            t-att-value="student.other_achievement"/>
                                     <br/>
                                     <h3>ĐIỂM THI VÀO LỚP 10:</h3>
                                     <br/>
                                     <label for="guardian_dob_year">Văn:</label>
                                     <br/>
-                                    <input required="required" type="number" id="literature_grade" name="literature_grade"
+                                    <input required="required" type="number" id="literature_grade"
+                                           name="literature_grade"
                                            t-att-value="student.literature_grade"/>
                                     <br/>
 
 
-                                <label for="guardian_dob_year">Song ngữ Tiếng Pháp:</label>
+                                    <label for="guardian_dob_year">Song ngữ Tiếng Pháp:</label>
                                     <br/>
                                     <input type="number" id="french_grade" name="french_grade"
                                            t-att-value="student.french_grade"/>
                                     <br/>
 
-                                <label  for="guardian_dob_year">Tổng cộng:</label>
+                                    <label for="guardian_dob_year">Tổng cộng:</label>
                                     <br/>
                                     <input required="required" type="number" id="sum_grade" name="sum_grade"
                                            t-att-value="student.sum_grade"/>
-                                    <br/>  
-                                
-                                 
+                                    <br/>
+
 
                                 </div>
 
@@ -672,15 +687,16 @@
                                 <div class="col-4">
                                     <label class="mt-38" for="guardian_dob_year">Ngoại Ngữ:</label>
                                     <br/>
-                                    <input required="required" type="number" id="foreign_language_grade" name="foreign_language_grade"
+                                    <input required="required" type="number" id="foreign_language_grade"
+                                           name="foreign_language_grade"
                                            t-att-value="student.foreign_language_grade"/>
                                     <br/>
 
-                                <label for="guardian_dob_year">Ưu tiên:</label>
+                                    <label for="guardian_dob_year">Ưu tiên:</label>
                                     <br/>
                                     <input required="required" type="number" id="priority_grade" name="priority_grade"
                                            t-att-value="student.priority_grade"/>
-                                    <br/> 
+                                    <br/>
                                 </div>
 
                                 <div class="col-6">
@@ -702,7 +718,8 @@
                                         <div class="col-6">
 
                                             <label t-att-for="student_type.name">
-                                                <input required="required" type="radio" t-att-id="student_type.name" name="student_type_id"
+                                                <input required="required" type="radio" t-att-id="student_type.name"
+                                                       name="student_type_id"
                                                        t-att-value="student_type.id"
                                                        t-att-checked="'checked' if (student.student_type_id and student_type.id == student.student_type_id.id) else None"
                                                        class="radio-student-type"/>
@@ -755,7 +772,8 @@
                                         <p>Truy cập website của nhà trường để nhận thêm thông tin mới nhất về tuyển sinh
                                             Khối 10
                                         </p>
-                                        <button href="https://thptnguyenthiminhkhai.hcm.edu.vn/homegd5" type="button" class="btn-secondary mt-20">TRUY CẬP</button>
+                                        <button href="https://thptnguyenthiminhkhai.hcm.edu.vn/homegd5" type="button"
+                                                class="btn-secondary mt-20">TRUY CẬP</button>
                                     </div>
                                     <div class="col-2"></div>
                                     <div class="col-2"></div>
@@ -784,7 +802,6 @@
                         </div>
                     </footer>
                     <a href="#0" class="cd-top"></a>
-                    <script src="/Web_tuyen_sinh_MiKi/static/assets/js/jquery-3.2.0.min.js"></script>
                     <script src="/Web_tuyen_sinh_MiKi/static/assets/js/living.js"/>
                     <script src="/Web_tuyen_sinh_MiKi/static/assets/js/student_type.js"/>
                     <script src="/Web_tuyen_sinh_MiKi/static/assets/js/my-library.js"></script>

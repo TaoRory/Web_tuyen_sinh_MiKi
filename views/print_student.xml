@@ -32,7 +32,7 @@
                     <t t-call="Web_tuyen_sinh_MiKi.print_report_student_base">
                         <div class="page" style="font-size:1.1rem; font-family: 'Times New Roman', Times, serif;">
                             <div class="">
-                                <div class="row align-items-center justify-between" id="pdf-content">
+                                <div class=" align-items-center justify-between" id="pdf-content">
                                     <!-- Page 1 -->
                                     <div >
                                         <div class="d-flex justify-content-between row  pb-1">
@@ -66,22 +66,20 @@
                                             </p>
                                             <div class="d-flex justify-content-end">
                                                 <div class="" style="    width: 15%;
-    text-align: justify;
+    text-align: center;
     border: 1px solid #000;
     padding: 10px;
     line-height: 1.2;
-    font-size: 10px; /* Giảm kích thước chữ */
     margin: 0 0px;">
                                                     <p>SBD <span t-out="doc.identification_number"/></p>
                                                 </div>
                                                 <div class="" style="    width: 30%;
-    text-align: justify;
+    text-align: center;
     border: 1px solid #000;
     padding: 10px;
     line-height: 1.2;
-    font-size: 10px; /* Giảm kích thước chữ */
     margin: 0 0px;">
-                                                    <p>STT trong DS trúng tuyển <span
+                                                    <p>STT <span
                                                             t-out="doc.stt_trung_tuyen"/></p>
                                                 </div>
                                             </div>
@@ -94,7 +92,7 @@
                                                     <p><strong><u>Giới tính:</u></strong><br/>
                                                         <t t-out="'Nam' if doc.gender else 'Nữ'"/></p><br/>
                                                     <p><strong><u>Ngày sinh:</u></strong><br/>
-                                                        <t t-out="doc.dob_date"/></p><br/>
+                                                        <t t-out="doc.dob_date.strftime('%d-%m-%Y')"/></p><br/>
                                                     <p><strong><u>Nơi sinh:</u></strong><br/>
                                                         <t t-out="doc.birth_address"/></p><br/>
                                                     <p><strong><u>Dân tộc:</u></strong><br/>
@@ -105,7 +103,7 @@
                                                     <p><strong><u>Số căn cước công dân:</u></strong><br/>
                                                         <t t-out="doc.citizen_identification_code"/></p><br/>
                                                     <p><strong><u>Ngày cấp:</u></strong><br/>
-                                                        <t t-out="doc.date_range_date"/></p><br/>
+                                                        <t t-out="doc.date_range_date.strftime('%d-%m-%Y')"/></p><br/>
                                                     <p><strong><u>Nơi cấp:</u></strong><br/>
                                                         <t t-out="doc.issued_by"/></p><br/>
                                                     <p><strong><u>Tôn giáo:</u></strong><br/>
@@ -124,6 +122,8 @@
                                                         <t t-out="doc.father_full_name"/></p><br/>
                                                     <p><strong><u>Họ tên mẹ:</u></strong><br/>
                                                         <t t-out="doc.mother_full_name"/></p><br/>
+                                                    <p><strong><u>Nơi công tác của cha:</u></strong><br/>
+                                                        <t t-out="doc.father_place_of_work"/></p><br/>
                                                     <p><strong><u>Họ tên người giám hộ:</u></strong><br/>
                                                         <t t-out="doc.guardian_full_name"/></p><br/>
                                                     
@@ -135,21 +135,23 @@
                                                         <t t-out="doc.father_occupation"/></p><br/>
                                                     <p><strong><u>Nghề nghiệp mẹ:</u></strong> <br/>
                                                         <t t-out="doc.mother_occupation"/></p><br/>
+                                                    <p><strong><u>Nơi công tác của mẹ:</u></strong><br/>
+                                                        <t t-out="doc.mother_place_of_work"/></p><br/>
                                                     <p><strong><u>Quan hệ với người giám hộ</u></strong>: <br/>
                                                         <t t-out="doc.guardian_relation"/></p><br/>
                                                     
                                                 </div>
-                                                <div class=" col-4">
+                                                <div class="col-4">
                                                     <p><strong><u>Điện thoại liên lạc cha:</u></strong> <br/>
                                                         <t t-out="doc.father_phone"/></p><br/>
+                                                    <p><strong><u>Chức vụ công việc cha:</u></strong> <br/>
+                                                        <t t-out="doc.father_job_title"/></p><br/>
+                                                    <p><strong><u>Chức vụ công việc mẹ:</u></strong> <br/>
+                                                        <t t-out="doc.mother_job_title"/></p><br/>
                                                     <p><strong><u>Điện thoại liên lạc mẹ:</u></strong> <br/>
                                                         <t t-out="doc.mother_phone"/></p><br/>
-                                                    <p><strong><u>Điện thoại liên lạc:</u></strong> <br/>
-                                                        <t t-out="doc.contact_phone"/></p><br/>
                                                     <p><strong><u>Số điện thoại liên lạc khác:</u></strong> <br/>
                                                         <t t-out="doc.guardian_phone"/></p><br/>
-                                                    
-
                                                 </div>
                                             </div>
                                         </div>
@@ -181,12 +183,7 @@
                                                     <br/>
                                                     <p class=""><strong><u>Diện ưu tiên:</u></strong></p>
                                                     <label t-att-for="doc.miki_priority_situation_id.name">
-                                                        <input type="radio"
-                                                               t-att-id="doc.miki_priority_situation_id.name"
-                                                               name="miki_priority_situation_id"
-                                                               required="1"
-                                                               t-att-value="doc.miki_priority_situation_id.id"
-                                                               t-att-checked="'checked'"/>
+
                                                         <t t-out="doc.miki_priority_situation_id.name"/>
                                                     </label>
 
@@ -195,12 +192,7 @@
                                                     <br/>
                                                     <p class=""><strong><u>Các diện khác:</u></strong></p>
                                                     <label t-att-for="doc.miki_other_situation_id.name">
-                                                        <input type="radio"
-                                                               t-att-id="doc.miki_other_situation_id.name"
-                                                               name="miki_other_situation_id"
-                                                               required="1"
-                                                               t-att-value="doc.miki_other_situation_id.id"
-                                                               t-att-checked="'checked' "/>
+
                                                         <t t-out="doc.miki_other_situation_id.name"/>
                                                     </label>
                                                     <br/>
@@ -212,8 +204,6 @@
                                                     <br/>
                                                     <p><strong><u>Văn:</u></strong></p>
                                                     <p t-out="doc.literature_grade"></p>
-                                                    <p><strong><u>Song ngữ Tiếng Pháp:</u></strong></p>
-                                                    <p t-out="doc.french_grade"></p>
                                                     <p><strong><u>Tổng cộng:</u></strong></p>
                                                     <p t-out="doc.sum_grade"></p>
                                                 </div>
@@ -222,17 +212,14 @@
                                                     <br/>
                                                     <p class=""><strong><u>Toán:</u></strong></p>
                                                     <p t-out="doc.math_grade"></p>
-                                                    <p><strong><u>Tích hợp:</u></strong></p>
-                                                    <p t-out="doc.integration_grade"></p>
 
+                                                    <p><strong><u>Ưu tiên:</u></strong></p>
+                                                    <p t-out="doc.priority_grade"></p>
                                                 </div>
                                                 <div class=" col-4">
                                                     <br/>
                                                     <p class=""><strong><u>Ngoại Ngữ:</u></strong></p>
                                                     <p t-out="doc.foreign_language_grade"></p>
-                                                    <p><strong><u>Ưu tiên:</u></strong></p>
-                                                    <p t-out="doc.priority_grade"></p>
-                                                    <br/>
                                                 </div>
                                             </div>
                                             <div class="row align-items-center justify-between">
@@ -279,7 +266,6 @@
                                             .info-box-footer p {
                                                 margin-top: -20px;
                                                 margin-bottom: 13px;
-                                                font-size: 9px;
                                             }
 
                                             .box-footera {
@@ -299,11 +285,11 @@
                                             }
                                         </style>
                                         <div class="row" style="font-size: 1rem; padding-top: 3rem">
-                                            <div class="text-center" style="width:32%">
+                                            <div class="text-center p-3" style="width:32%">
                                                 <p>Học sinh ký và ghi rõ họ tên</p>
                                                 <div class="signature-line"/>
                                             </div>
-                                            <div class=" text-center"  style="width:32%">
+                                            <div class=" text-center p-3"  style="width:32%">
                                                 <p>Cha Mẹ học sinh ký và ghi rõ họ tên</p>
                                                 <div class="signature-line"/>
                                             </div>
@@ -311,11 +297,11 @@
                                                 <p>Ngày ...... tháng ... năm 2024</p>
                                                 <div class="info-box-footer d-flex justify-content-end" >
                                                     <div class="box-footera">
-                                                        <p>SBD</p>
+                                                        <p>SBD </p>
                                                         <p t-out="doc.identification_number" class=""/>
                                                     </div>
                                                     <div class="box-footerb">
-                                                        <p>STT trong DS trúng tuyển</p>
+                                                        <p>STT </p>
                                                         <p t-out="doc.stt_trung_tuyen"/>
                                                     </div>
                                                 </div>

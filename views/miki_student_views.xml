@@ -170,7 +170,10 @@
             <field name="model">miki.student</field>
             <field name="arch" type="xml">
                 <tree string="Student">
+                    <field name="stt_trung_tuyen"/>
                     <field name="name"/>
+                    <field name="dob_date" optional="show"/>
+                    <field name="major_id" optional="show"/>
                 </tree>
             </field>
         </record>
@@ -184,9 +187,11 @@
                     <group expand="1" string="Group By">
                         <filter string="Permanent Province" name="permanent_province" domain="[]"
                                 context="{'group_by':'permanent_province_id'}"/>
-                    </group><group expand="1" string="Group By">
+                    </group>
+                    <group expand="1" string="Group By">
                     <filter string="Permanent District" name="permanent_district" domain="[]"
                             context="{'group_by':'permanent_district_id'}"/>
+                        <filter string="Major" name="major_id" domain="[]" context="{'group_by': 'major_id'}"/>
                 </group>
                 </search>
             </field>
