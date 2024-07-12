@@ -640,6 +640,7 @@
                                     <br/>
                                     <input required="required" type="number" id="other_achievement"
                                            name="other_achievement"
+                                           step="0.01"
                                            t-att-value="student.other_achievement"/>
                                     <br/>
                                     <h3>ĐIỂM THI VÀO LỚP 10:</h3>
@@ -647,20 +648,18 @@
                                     <label for="guardian_dob_year">Văn:</label>
                                     <br/>
                                     <input required="required" type="number" id="literature_grade"
-                                           name="literature_grade"
+                                           name="literature_grade" step="0.01"
+
                                            t-att-value="student.literature_grade"/>
                                     <br/>
 
 
-
-
-
                                     <label for="guardian_dob_year">Tổng cộng:</label>
                                     <br/>
-                                    <input required="required" type="number" id="sum_grade" name="sum_grade"
+                                    <input required="required" type="number" id="sum_grade" name="sum_grade" step="0.01"
+
                                            t-att-value="student.sum_grade"/>
                                     <br/>
-
 
 
                                 </div>
@@ -670,26 +669,29 @@
                                     <label class="mt-135" for="guardian_dob_year">Toán:</label>
                                     <br/>
                                     <input required="required" type="number" id="math_grade" name="math_grade"
+                                           step="0.01"
+
                                            t-att-value="student.math_grade"/>
                                     <br/>
 
                                     <label for="guardian_dob_year">Ưu tiên:</label>
                                     <br/>
                                     <input required="required" type="number" id="priority_grade" name="priority_grade"
+                                           step="0.01"
+
                                            t-att-value="student.priority_grade"/>
                                     <br/>
-
 
 
                                 </div>
                                 <div class="col-4">
                                     <label class="mt-38" for="guardian_dob_year">Ngoại Ngữ:</label>
                                     <br/>
-                                    <input required="required" type="number" id="foreign_language_grade"
+                                    <input required="required" type="number" id="foreign_language_grade" step="0.01"
+
                                            name="foreign_language_grade"
                                            t-att-value="student.foreign_language_grade"/>
                                     <br/>
-
 
 
                                 </div>
@@ -702,7 +704,8 @@
                                         Tiếng Anh - Lịch sử - Giáo dục thể chất - Giáo dục Quốc phòng và an ninh - Hoạt
                                         động trải nghiệm - Giáo dục địa phương) và <i>4 môn lựa chọn.</i>
                                     </h4>
-                                    <h4>Chương trình giáo dục nhà trường: Tăng cường Tiếng Anh; Tin học theo chuẩn quốc tế MOS;  Kỹ năng sống.</h4>
+                                    <h4>Chương trình giáo dục nhà trường: Tăng cường Tiếng Anh; Tin học theo chuẩn quốc
+                                        tế MOS; Kỹ năng sống.</h4>
                                     <br/>
                                 </div>
 
@@ -769,7 +772,9 @@
                                             Khối 10
                                         </p>
                                         <button href="https://thptnguyenthiminhkhai.hcm.edu.vn/homegd5" type="button"
-                                                class="btn-secondary mt-20"><a  href="https://thptnguyenthiminhkhai.hcm.edu.vn/homegd5" style="text-decoration: none">TRUY CẬP</a></button>
+                                                class="btn-secondary mt-20"><a
+                                                href="https://thptnguyenthiminhkhai.hcm.edu.vn/homegd5"
+                                                style="text-decoration: none">TRUY CẬP</a></button>
                                     </div>
                                     <div class="col-2"></div>
                                     <div class="col-2"></div>

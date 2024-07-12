@@ -187,8 +187,6 @@
                                                     <br/>
                                                     <p><strong><u>Văn:</u></strong></p>
                                                     <p t-out="student_id.literature_grade"></p>
-                                                    <p><strong><u>Song ngữ Tiếng Pháp:</u></strong></p>
-                                                    <p t-out="student_id.french_grade"></p>
                                                     <p><strong><u>Tổng cộng:</u></strong></p>
                                                     <p t-out="student_id.sum_grade"></p>
                                                 </div>
@@ -206,8 +204,6 @@
                                                     </label>
                                                     <p class="mt-170"><strong><u>Toán:</u></strong></p>
                                                     <p t-out="student_id.math_grade"></p>
-                                                    <p><strong><u>Tích hợp:</u></strong></p>
-                                                    <p t-out="student_id.integration_grade"></p>
                                                     
                                                 </div>
                                                 <div class="form-a4 col-4">
