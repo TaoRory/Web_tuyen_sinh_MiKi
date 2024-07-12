@@ -21,7 +21,7 @@ class Tuyensinh(http.Controller):
         ])
         data = {}
         if student_id:
-            data['student_name'] = (student_id.last_name or '') + ' ' + (student_id.first_name or '')
+            data['student_name'] = student_id.name or ''
             data['day_of_birth'] = student_id.dob_temp
             data['error'] = False
         else:
