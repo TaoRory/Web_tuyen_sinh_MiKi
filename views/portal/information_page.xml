@@ -702,6 +702,7 @@
                                         Tiếng Anh - Lịch sử - Giáo dục thể chất - Giáo dục Quốc phòng và an ninh - Hoạt
                                         động trải nghiệm - Giáo dục địa phương) và <i>4 môn lựa chọn.</i>
                                     </h4>
+                                    <h4>Chương trình giáo dục nhà trường: Tăng cường Tiếng Anh; Tin học theo chuẩn quốc tế MOS;  Kỹ năng sống.</h4>
                                     <br/>
                                 </div>
 
@@ -768,7 +769,7 @@
                                             Khối 10
                                         </p>
                                         <button href="https://thptnguyenthiminhkhai.hcm.edu.vn/homegd5" type="button"
-                                                class="btn-secondary mt-20">TRUY CẬP</button>
+                                                class="btn-secondary mt-20"><a  href="https://thptnguyenthiminhkhai.hcm.edu.vn/homegd5" style="text-decoration: none">TRUY CẬP</a></button>
                                     </div>
                                     <div class="col-2"></div>
                                     <div class="col-2"></div>
