@@ -624,7 +624,7 @@
                                 <div class="col-4">
                                     <label for="guardian_dob_year">Các thành tích khác:</label>
                                     <br/>
-                                    <input required="required" type="number" id="other_achievement" name="other_achievement"
+                                    <input required="required" type="text" id="other_achievement" name="other_achievement"
                                            t-att-value="student.other_achievement"/>
                                     <br/>
                                     <h3>ĐIỂM THI VÀO LỚP 10:</h3>
