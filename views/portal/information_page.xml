@@ -97,667 +97,668 @@
                     </div> -->
                     <section id="Thong_tin" class="py-50">
                         <h2>THÔNG TIN HỌC SINH</h2>
-                        <form action="/information_page/submit">
-                            <input name="student_code" t-att-value="student.student_code" hidden="1"/>
-                            <input name="identification_number" t-att-value="student.identification_number" hidden="1"/>
-                            <div class="row align-items-center justify-between">
-
-                                <div class="col-4">
-                                    <label for="name">Họ và tên:</label>
-                                    <h5>(In hoa có dấu) </h5>
-                                    <br/>
-                                    <input required="required" type="text" id="name" name="name"
-                                           t-att-value="student.name"/>
-                                    <br/>
-                                    <label for="dob_date">Ngày tháng năm sinh:</label>
-                                    <h5>(mm/dd/yyyy)</h5>
-                                    <br/>
-                                    <input required="required" type="date"
-                                           id="dob_date" name="dob_date"
-                                           t-att-value="student.dob_date"/>
-                                    <br/>
-                                    <br/>
-
-
-                                    <p for="gender">Giới tính:</p>
-                                    <br/>
-                                    <label for="gender_male">Nam: <input required="required" type="radio"
-                                                                         id="gender_male" name="gender"
-                                                                         t-att-checked="'checked' if student.gender else None"
-                                                                         t-att-value="2"/></label>
-                                    <br/>
-                                    <label for="gender_female">Nữ: <input required="required" type="radio"
-                                                                          id="gender_female" name="gender"
-                                                                          t-att-checked="'checked' if (not student.gender) else None"
-                                                                          t-att-value="3"/></label>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <label for="nationality">Quốc tịch:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="nationality" name="nationality"
-                                           t-att-value="student.nationality"/>
-                                    <br/>
-                                    <label for="religion">Tôn giáo:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="religion" name="religion"
-                                           t-att-value="student.religion"/>
-
-                                </div>
-                                <div class="col-4">
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <label for="nationality">Dân tộc:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="ethnicity" name="ethnicity"
-                                           t-att-value="student.ethnicity"/>
-                                    <br/>
-                                </div>
-                                <div class="col-4">
-
-                                </div>
-
-
-                                <div class="col-4">
-
-                                    <label for="permanent_province_id">Tỉnh/Thành phố thường trú:</label>
-                                    <h5>(Theo CCCD)</h5>
-                                    <br/>
-                                    <select required="required" type="select" id="permanent_province_id"
-                                            name="permanent_province_id"
-                                            onchange="updateDistricts('permanent')">
-                                        <option value="">Select City</option>
-                                        <t t-foreach="province_ids" t-as="province">
-                                            <option t-att-value="province.id"
-                                                    t-att-selected="'selected' if (student.permanent_province_id and province.id == student.permanent_province_id.id) else None"><t
-                                                    t-out="province.name"/></option>
-                                        </t>
-                                        <br/>
-                                    </select>
-
-                                    <label for="permanent_hamlet">Tổ/Thôn/Xóm thường trú:</label>
-                                    <h5>(Theo CCCD)</h5>
-                                    <br/>
-                                    <input required="required" type="text" id="permanent_hamlet" name="permanent_hamlet"
-                                           t-att-value="student.permanent_hamlet"/>
-                                    <br/>
-
-                                    <label for="home_town_province_id">Tỉnh/Thành phố Quê quán:</label>
-                                    <h5>(Theo giấy khai sinh)</h5>
-                                    <br/>
-                                    <select required="required" name="home_town_province_id" id="home_town_province_id"
-                                            onchange="updateDistricts('home_town')">
-                                        <option value="">Select City</option>
-                                        <t t-foreach="province_ids" t-as="province">
-                                            <option t-att-value="province.id"
-                                                    t-att-selected="'selected' if (student.home_town_province_id and province.id == student.home_town_province_id.id) else None"><t
-                                                    t-out="province.name"/></option>
-                                        </t>
-                                    </select>
-                                    <br/>
-
-                                    <label for="birth_province_id">Tỉnh/Thành Phố Nơi khai sinh:</label>
-                                    <h5>(Theo giấy khai sinh)</h5>
-                                    <br/>
-                                    <select required="required" name="birth_province_id" id="birth_province_id"
-                                            onchange="updateDistricts('birth')">
-                                        <option value="">Select City</option>
-                                        <t t-foreach="province_ids" t-as="province">
-                                            <option t-att-value="province.id"
-                                                    t-att-selected="'selected' if (student.birth_province_id and province.id == student.birth_province_id.id) else None"><t
-                                                    t-out="province.name"/></option>
-                                        </t>
-                                    </select>
-                                    <br/>
-
-                                </div>
-                                <div class="col-4">
-                                    <label for="permanent_district_id">Quận/Huyện thường trú:</label>
-                                    <h5>(Theo CCCD)</h5>
-                                    <br/>
-                                    <select required="required" id="permanent_district_id" name="permanent_district_id"
-                                            onchange="updateWards('permanent')"
-                                            t-att-value="student.permanent_district_id.id">
-                                        <option value="">Select District</option>
-                                        <t t-foreach="request.env['miki.district'].sudo().search([('province_id', '=', student.permanent_province_id.id)])"
-                                           t-as="district">
-                                            <option t-att-value="district.id"
-                                                    t-att-selected="'selected' if (student.permanent_district_id and district.id == student.permanent_district_id.id) else None"><t
-                                                    t-out="district.name"/></option>
-                                        </t>
-                                    </select>
-                                    <br/>
-
-
-                                    <label for="permanent_address">Số nhà, tên đường thường trú:</label>
-                                    <h5>(Theo CCCD)</h5>
-                                    <br/>
-                                    <input required="required" type="text" id="permanent_address"
-                                           name="permanent_address"
-                                           t-att-value="student.permanent_address"/>
-                                    <br/>
-
-
-                                    <label for="home_town_district_id">Quận/Huyện Quê quán:</label>
-                                    <h5>(Theo giấy khai sinh)</h5>
-                                    <br/>
-                                    <select required="required" name="home_town_district_id" id="home_town_district_id"
-                                            onchange="updateWards('home_town')">
-                                        <option value="">Select Ward</option>
-                                        <t t-foreach="request.env['miki.district'].sudo().search([('province_id', '=', student.home_town_province_id.id)])"
-                                           t-as="district">
-                                            <option t-att-value="district.id"
-                                                    t-att-selected="'selected' if (student.home_town_district_id and district.id == student.home_town_district_id.id) else None"><t
-                                                    t-out="district.name"/></option>
-                                        </t>
-                                    </select>
-                                    <br/>
-
-                                    <label for="birth_district_id">Quận/Huyện Nơi khai sinh:</label>
-                                    <h5>(Theo giấy khai sinh)</h5>
-                                    <br/>
-                                    <select required="required" name="birth_district_id" id="birth_district_id"
-                                            onchange="updateWards('birth')">
-                                        <option value="">Select district</option>
-                                        <t t-foreach="request.env['miki.district'].sudo().search([('province_id', '=', student.birth_province_id.id)])"
-                                           t-as="district">
-                                            <option t-att-value="district.id"
-                                                    t-att-selected="'selected' if (student.birth_district_id and district.id == student.birth_district_id.id) else None"><t
-                                                    t-out="district.name"/></option>
-                                        </t>
-                                    </select>
-                                    <br/>
-                                </div>
-                                <div class="col-4">
-
-                                    <label for="permanent_ward_id">Xã/Phường thường trú:</label>
-                                    <h5>(Theo CCCD)</h5>
-                                    <br/>
-                                    <select required="required" id="permanent_ward_id" name="permanent_ward_id">
-                                        <option value="">Select Ward</option>
-                                        <t t-foreach="request.env['miki.ward'].sudo().search([('district_id', '=', student.permanent_district_id.id)])"
-                                           t-as="ward">
-                                            <option t-att-value="ward.id"
-                                                    t-att-selected="'selected' if (student.permanent_ward_id and ward.id == student.permanent_ward_id.id) else None"><t
-                                                    t-out="ward.name"/></option>
-                                        </t>
-                                    </select>
-
-
-                                    <label class="mt-100" for="home_town_ward_id">Xã/Phường Quê quán:</label>
-                                    <h5>(Theo giấy khai sinh)</h5>
-                                    <br/>
-                                    <select required="required" name="home_town_ward_id" id="home_town_ward_id">
-                                        <option value="">Select District</option>
-                                        <t t-foreach="request.env['miki.ward'].sudo().search([('district_id', '=', student.home_town_district_id.id)])"
-                                           t-as="ward">
-                                            <option t-att-value="ward.id"
-                                                    t-att-selected="'selected' if (student.home_town_ward_id and ward.id == student.home_town_ward_id.id) else None"><t
-                                                    t-out="ward.name"/></option>
-                                        </t>
-                                    </select>
-                                    <br/>
-
-
-                                    <label for="birth_ward_id">Xã/Phường nơi khai sinh:</label>
-                                    <h5>(Theo giấy khai sinh)</h5>
-                                    <br/>
-                                    <select required="required" name="birth_ward_id" id="birth_ward_id">
-                                        <option value="">Select ward</option>
-                                        <t t-foreach="request.env['miki.ward'].sudo().search([('district_id', '=', student.birth_district_id.id)])"
-                                           t-as="ward">
-                                            <option t-att-value="ward.id"
-                                                    t-att-selected="'selected' if (student.birth_ward_id and ward.id == student.birth_ward_id.id) else None"><t
-                                                    t-out="ward.name"/></option>
-                                        </t>
-                                    </select>
-                                    <br/>
-                                </div>
-
-                                <div class="col-4">
-
-
-                                    <label for="birth_address">Nơi sinh:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="birth_address" name="birth_address"
-                                           t-att-value="student.birth_address"/>
-                                    <br/>
-
-
-                                    <label for="current_province_id">Tỉnh/Thành phố Chỗ ở hiện nay:</label>
-                                    <h5>(Theo chỗ ở hiện nay)</h5>
-                                    <br/>
-                                    <select required="required" name="current_province_id" id="current_province_id"
-                                            onchange="updateDistricts('current')">
-                                        <option value="">Select City</option>
-                                        <t t-foreach="province_ids" t-as="province">
-                                            <option t-att-value="province.id"
-                                                    t-att-selected="'selected' if (student.current_province_id and province.id == student.current_province_id.id) else None"><t
-                                                    t-out="province.name"/></option>
-                                        </t>
-                                    </select>
-                                    <br/>
-
-                                    <label for="current_hamlet">Khu phố/Ấp Chỗ ở hiện nay:</label>
-                                    <h5>(Theo chỗ ở hiện nay)</h5>
-                                    <br/>
-                                    <input required="required" type="text" id="current_hamlet" name="current_hamlet"
-                                           t-att-value="student.current_hamlet"/>
-                                    <br/>
-
-                                    <label for="contact_phone">Số điện thoại liên hệ:</label>
-                                    <h5>(Số điện thoại của học sinh)</h5>
-                                    <br/>
-                                    <input required="required" type="text" id="contact_phone" name="contact_phone"
-                                           t-att-value="student.contact_phone"/>
-                                    <br/>
-
-
-                                    <label for="citizen_identification_code">Số CCCD:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="citizen_identification_code"
-                                           name="citizen_identification_code"
-                                           t-att-value="student.citizen_identification_code"/>
-                                    <br/>
-                                    <br/>
-
-
-                                </div>
-                                <div class="col-4">
-
-                                    <label class="mt-95" for="current_district_id">Quận/Huyện Chỗ ở hiện nay:</label>
-                                    <h5>(Theo chỗ ở hiện nay)</h5>
-                                    <br/>
-                                    <select required="required" name="current_district_id" id="current_district_id"
-                                            onchange="updateWards('current')">
-                                        <option value="">Select District</option>
-                                        <t t-foreach="request.env['miki.district'].sudo().search([('province_id', '=', student.current_province_id.id)])"
-                                           t-as="district">
-                                            <option t-att-value="district.id"
-                                                    t-att-selected="'selected' if (student.current_district_id and district.id == student.current_district_id.id) else None"><t
-                                                    t-out="district.name"/></option>
-                                        </t>
-                                    </select>
-                                    <br/>
-
-                                    <label for="current_address">Số nhà, tên đường Chỗ ở hiện nay:</label>
-                                    <h5>(Theo chỗ ở hiện nay)</h5>
-                                    <br/>
-                                    <input required="required" type="text" id="current_address" name="current_address"
-                                           t-att-value="student.current_address"/>
-                                    <br/>
-
-                                    <label class="mt-110" for="issued_by">Nơi cấp:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="issued_by" name="issued_by"
-                                           t-att-value="student.issued_by"/>
-                                    <br/>
-
-                                </div>
-                                <div class="col-4">
-                                    <label class="mt-95" for="current_ward_id">Xã/Phường Chỗ ở hiện nay:</label>
-                                    <h5>(Theo chỗ ở hiện nay)</h5>
-                                    <br/>
-                                    <select required="required" name="current_ward_id" id="current_ward_id">
-                                        <option value="">Select ward</option>
-                                        <t t-if="student.current_ward_id">
-
-                                            <t t-foreach="request.env['miki.ward'].sudo().search([('district_id', '=', student.current_district_id.id)])"
-                                               t-as="ward">
-                                                <option t-att-value="ward.id"
-                                                        t-att-selected="'selected' if (student.current_ward_id and ward.id == student.current_ward_id.id) else None"><t
-                                                        t-out="ward.name"/></option>
-                                            </t>
-                                        </t>
-                                    </select>
-                                    <br/>
-
-                                    <label class="mt-220" for="date_range_date">Ngày cấp (mm/dd/yyyy):</label>
-                                    <br/>
-
-                                    <input required="required" type="date" id="date_range_date" name="date_range_date"
-                                           t-att-value="student.date_range_date"/>
-
-                                    <br/>
-
-                                </div>
-                                <div class="col-4">
-                                    <label for="personal_identification_number">Số định danh cá nhân:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="personal_identification_number"
-                                           name="personal_identification_number"
-                                           t-att-value="student.personal_identification_number"/>
-                                    <br/>
-                                    <h3>THÔNG TIN CHA</h3>
-                                    <h5>(Trường hợp không có, điền "Không")</h5>
-                                    <br/>
-                                    <label for="father_full_name">Họ tên cha:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="father_full_name" name="father_full_name"
-                                           t-att-value="student.father_full_name"/>
-                                    <br/>
-
-                                    <label for="father_occupation">Nghề nghiệp cha:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="father_occupation"
-                                           name="father_occupation"
-                                           t-att-value="student.father_occupation"/>
-                                    <br/>
-                                    <h3>THÔNG TIN MẸ</h3>
-                                    <h5>(Trường hợp không có, điền "Không")</h5>
-                                    <br/>
-
-                                    <label for="mother_full_name">Họ tên mẹ:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="mother_full_name" name="mother_full_name"
-                                           t-att-value="student.mother_full_name"/>
-                                    <br/>
-
-                                    <label for="mother_occupation">Nghề nghiệp mẹ:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="mother_occupation"
-                                           name="mother_occupation"
-                                           t-att-value="student.mother_occupation"/>
-                                    <br/>
-
-
-                                </div>
-                                <div class="col-4">
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <label class="mt-95" for="father_dob_year">Năm sinh cha:</label>
-                                    <br/>
-                                    <input required="required" type="number" id="father_dob_year" name="father_dob_year"
-                                           t-att-value="student.father_dob_year"/>
-                                    <br/>
-                                    <label for="father_job_title">Chức vụ:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="father_job_title" name="father_job_title"
-                                           t-att-value="student.father_job_title"/>
-                                    <br/>
-
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <label for="mother_dob_year">Năm sinh mẹ:</label>
-                                    <br/>
-                                    <input required="required" type="number" id="mother_dob_year" name="mother_dob_year"
-                                           t-att-value="student.mother_dob_year"/>
-                                    <br/>
-                                    <label for="mother_job_title">Chức vụ:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="mother_job_title" name="mother_job_title"
-                                           t-att-value="student.mother_job_title"/>
-                                    <br/>
-
-
-                                </div>
-                                <div class="col-4">
-                                    <label class="mt-150" for="father_phone">Số điện thoại cha:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="father_phone" name="father_phone"
-                                           t-att-value="student.father_phone"/>
-                                    <br/>
-                                    <label for="father_place_of_work">Nơi công tác:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="father_place_of_work"
-                                           name="father_place_of_work"
-                                           t-att-value="student.father_place_of_work"/>
-                                    <br/>
-                                    <label class="mt-55" for="mother_phone">Số điện thoại mẹ:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="mother_phone" name="mother_phone"
-                                           t-att-value="student.mother_phone"/>
-                                    <br/>
-                                    <label for="mother_place_of_work">Nơi công tác:</label>
-                                    <br/>
-                                    <input required="required" type="text" id="mother_place_of_work"
-                                           name="mother_place_of_work"
-                                           t-att-value="student.mother_place_of_work"/>
-                                    <br/>
-
-
-                                </div>
-                                <div class="col-4">
-
-                                    <h3>THÔNG TIN NGƯỜI GIÁM HỘ</h3>
-                                    <h5>(Trường hợp không có, điền "Không")</h5>
-                                    <br/>
-                                    <label for="guardian_full_name">Họ tên người giám hộ:</label>
-                                    <br/>
-                                    <input type="text" id="guardian_full_name" name="guardian_full_name"
-                                           t-att-value="student.guardian_full_name"/>
-                                    <br/>
-
-                                    <label for="guardian_phone">Số điện thoại người giám hộ:</label>
-                                    <br/>
-                                    <input type="text" id="guardian_phone" name="guardian_phone"
-                                           t-att-value="student.guardian_phone"/>
-                                    <br/>
-
-                                </div>
-                                <div class="col-4">
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <label for="guardian_occupation">Nghề nghiệp người giám hộ:</label>
-                                    <br/>
-                                    <input class="mb-50" type="text" id="guardian_occupation" name="guardian_occupation"
-                                           t-att-value="student.guardian_occupation"/>
-                                    <br/>
-                                    <label for="guardian_occupation">Quan hệ với người giám hộ:</label>
-                                    <br/>
-                                    <input class="mb-50" type="text" id="guardian_relation" name="guardian_relation"
-                                           t-att-value="student.guardian_relation"/>
-                                    <br/>
-
-                                    <label for="guardian_dob_year">Năm sinh người giám hộ:</label>
-                                    <br/>
-                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"
-                                           t-att-value="student.guardian_dob_year"/>
-                                    <br/>
-                                </div>
-
-                                <div class="col-4">
-                                </div>
-                                <div class="col-4">
-
-                                    <h3>THÀNH TÍCH HỌC TẬP VÀ CÁC DIỆN ƯU TIÊN:</h3>
-                                    <h5>(Trường hợp không có, điền "Không")</h5>
-                                    <br/>
-                                    <label for="guardian_full_name">Giải HSG cấp TP,QG:</label>
-                                    <h5>(Môn/cấp/hạng)</h5>
-                                    <br/>
-                                    <input required="required" type="text" id="HSG_achievement" name="HSG_achievement"
-                                           t-att-value="student.HSG_achievement"/>
-                                    <br/>
-
-                                    <label for="guardian_full_name">Giải TDTT cấp TP,QG:</label>
-                                    <h5>(Môn/cấp/huy chương)</h5>
-                                    <br/>
-                                    <input required="required" type="text" id="TDTT_achievement" name="TDTT_achievement"
-                                           t-att-value="student.TDTT_achievement"/>
-                                    <br/>
-                                </div>
-                                <div class="col-4">
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <label for="guardian_occupation">Diện ưu tiên:</label>
-                                    <br/>
-
-                                    <t t-foreach="miki_priority_situation_ids" t-as="situation">
-                                        <label t-att-for="situation.name">
-                                            <input type="radio"
-                                                   t-att-id="situation.name"
-                                                   name="miki_priority_situation_id"
-                                                   required="1"
-                                                   t-att-value="situation.id"
-                                                   t-att-checked="'checked' if (student.miki_priority_situation_id and situation.id == student.miki_priority_situation_id.id) else None"/>
-                                            <t t-out="situation.name"/>
-                                        </label>
-                                    </t>
-
-
-                                    <br/>
-
-
-                                </div>
-                                <div class="col-4">
-                                    <label for="guardian_dob_year">Các diện khác:</label>
-                                    <br/>
-
-                                    <t t-foreach="miki_other_situation_ids" t-as="situation">
-                                        <label t-att-for="situation.name">
-                                            <input type="radio"
-                                                   t-att-id="situation.name"
-                                                   name="miki_other_situation_id"
-                                                   required="1"
-                                                   t-att-value="situation.id"
-                                                   t-att-checked="'checked' if (student.miki_other_situation_id and situation.id == student.miki_other_situation_id.id) else None"/>
-                                            <t t-out="situation.name"/>
-                                        </label>
-                                    </t>
-
-
-                                    <br/>
-                                </div>
-                                <div class="col-4">
-                                    <label for="guardian_dob_year">Các thành tích khác:</label>
-                                    <br/>
-
-                                    <input required="required" type="text" id="other_achievement" name="other_achievement"
-                                           t-att-value="student.other_achievement"/>
-                                    <br/>
-                                    <h3>ĐIỂM THI VÀO LỚP 10:</h3>
-                                    <br/>
-                                    <label for="guardian_dob_year">Văn:</label>
-                                    <br/>
-                                    <input required="required" type="number" id="literature_grade"
-                                           name="literature_grade" step="0.01"
-
-                                           t-att-value="student.literature_grade"/>
-                                    <br/>
-
-
-                                    <label for="guardian_dob_year">Tổng cộng:</label>
-                                    <br/>
-                                    <input required="required" type="number" id="sum_grade" name="sum_grade" step="0.01"
-
-                                           t-att-value="student.sum_grade"/>
-                                    <br/>
-
-
-                                </div>
-
-
-                                <div class="col-4">
-                                    <label class="mt-135" for="guardian_dob_year">Toán:</label>
-                                    <br/>
-                                    <input required="required" type="number" id="math_grade" name="math_grade"
-                                           step="0.01"
-
-                                           t-att-value="student.math_grade"/>
-                                    <br/>
-
-                                    <label for="guardian_dob_year">Ưu tiên:</label>
-                                    <br/>
-                                    <input required="required" type="number" id="priority_grade" name="priority_grade"
-                                           step="0.01"
-
-                                           t-att-value="student.priority_grade"/>
-                                    <br/>
-
-
-                                </div>
-                                <div class="col-4">
-                                    <label class="mt-38" for="guardian_dob_year">Ngoại Ngữ:</label>
-                                    <br/>
-                                    <input required="required" type="number" id="foreign_language_grade" step="0.01"
-
-                                           name="foreign_language_grade"
-                                           t-att-value="student.foreign_language_grade"/>
-                                    <br/>
-
-
-                                </div>
-
-                                <div class="col-6">
-
-                                    <h3>HỌC SINH LỚP 10 SẼ HỌC:</h3>
-                                    <h4>
-                                        Chương trình giáo dục phổ thông 2018 với <i>8 môn bắt buộc</i> (Toán - Văn -
-                                        Tiếng Anh - Lịch sử - Giáo dục thể chất - Giáo dục Quốc phòng và an ninh - Hoạt
-                                        động trải nghiệm - Giáo dục địa phương) và <i>4 môn lựa chọn.</i>
-                                    </h4>
-                                    <h4>Chương trình giáo dục nhà trường: Tăng cường Tiếng Anh; Tin học theo chuẩn quốc
-                                        tế MOS; Kỹ năng sống.</h4>
-                                    <br/>
-                                </div>
-
-                            </div>
-                            <h2>CHƯƠNG TRÌNH</h2>
-                            <div class="container">
-                                <div class="row align-items-center justify-between">
-                                    <t t-foreach="student_type_ids" t-as="student_type">
-                                        <div class="col-6">
-
-                                            <label t-att-for="student_type.name">
-                                                <input required="required" type="radio" t-att-id="student_type.name"
-                                                       name="student_type_id"
-                                                       t-att-value="student_type.id"
-                                                       t-att-checked="'checked' if (student.student_type_id and student_type.id == student.student_type_id.id) else None"
-                                                       class="radio-student-type"/>
-                                                <t t-out="student_type.name"/></label>
-                                        </div>
-                                    </t>
-                                </div>
-                            </div>
-                            <h2>NHÓM MÔN HỌC LỰA CHỌN</h2>
-                            <t t-foreach="student_type_ids" t-as="student_type">
-
-                                <div t-attf-class="container department {{student_type.id}}"
-                                     t-att-hidden="None if (student.student_type_id and student_type.id == student.student_type_id.id) else 'hidden'">
-                                    <div class="row align-items-center justify-between">
-                                        <t t-foreach="student_type.department_ids" t-as="department">
-                                            <div t-attf-class="col-6 ">
-                                                <h3><t t-out="department.name"/></h3>
-                                                <br/>
-                                                <t t-foreach="department.major_ids" t-as="major">
-                                                    <label t-att-for="major.id">
-                                                        <input type="radio" t-att-id="major.id" name="major_id"
-                                                               class="radio-major"
-                                                               required="1"
-                                                               t-att-value="major.id"
-                                                               t-att-checked="'checked' if (student.major_id and major.id == student.major_id.id) else None"/>
-                                                        <t t-out="major.name"/>(<t
-                                                            t-out="' - '.join(major.subject_ids.mapped('name'))"/>)
-                                                    </label>
-                                                </t>
-                                            </div>
-
-                                        </t>
-
-                                    </div>
-                                </div>
-                            </t>
-
-                            <!-- Add more checkboxes as needed -->
-                            <input type="submit" value="Submit"/>
-                        </form>
+                        <p>Đã hết thời hạn đăng ký online</p>
+<!--                        <form action="/information_page/submit">-->
+<!--                            <input name="student_code" t-att-value="student.student_code" hidden="1"/>-->
+<!--                            <input name="identification_number" t-att-value="student.identification_number" hidden="1"/>-->
+<!--                            <div class="row align-items-center justify-between">-->
+
+<!--                                <div class="col-4">-->
+<!--                                    <label for="name">Họ và tên:</label>-->
+<!--                                    <h5>(In hoa có dấu) </h5>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="name" name="name"-->
+<!--                                           t-att-value="student.name"/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="dob_date">Ngày tháng năm sinh:</label>-->
+<!--                                    <h5>(mm/dd/yyyy)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="date"-->
+<!--                                           id="dob_date" name="dob_date"-->
+<!--                                           t-att-value="student.dob_date"/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+
+
+<!--                                    <p for="gender">Giới tính:</p>-->
+<!--                                    <br/>-->
+<!--                                    <label for="gender_male">Nam: <input required="required" type="radio"-->
+<!--                                                                         id="gender_male" name="gender"-->
+<!--                                                                         t-att-checked="'checked' if student.gender else None"-->
+<!--                                                                         t-att-value="2"/></label>-->
+<!--                                    <br/>-->
+<!--                                    <label for="gender_female">Nữ: <input required="required" type="radio"-->
+<!--                                                                          id="gender_female" name="gender"-->
+<!--                                                                          t-att-checked="'checked' if (not student.gender) else None"-->
+<!--                                                                          t-att-value="3"/></label>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="nationality">Quốc tịch:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="nationality" name="nationality"-->
+<!--                                           t-att-value="student.nationality"/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="religion">Tôn giáo:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="religion" name="religion"-->
+<!--                                           t-att-value="student.religion"/>-->
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="nationality">Dân tộc:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="ethnicity" name="ethnicity"-->
+<!--                                           t-att-value="student.ethnicity"/>-->
+<!--                                    <br/>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+
+<!--                                </div>-->
+
+
+<!--                                <div class="col-4">-->
+
+<!--                                    <label for="permanent_province_id">Tỉnh/Thành phố thường trú:</label>-->
+<!--                                    <h5>(Theo CCCD)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" type="select" id="permanent_province_id"-->
+<!--                                            name="permanent_province_id"-->
+<!--                                            onchange="updateDistricts('permanent')">-->
+<!--                                        <option value="">Select City</option>-->
+<!--                                        <t t-foreach="province_ids" t-as="province">-->
+<!--                                            <option t-att-value="province.id"-->
+<!--                                                    t-att-selected="'selected' if (student.permanent_province_id and province.id == student.permanent_province_id.id) else None"><t-->
+<!--                                                    t-out="province.name"/></option>-->
+<!--                                        </t>-->
+<!--                                        <br/>-->
+<!--                                    </select>-->
+
+<!--                                    <label for="permanent_hamlet">Tổ/Thôn/Xóm thường trú:</label>-->
+<!--                                    <h5>(Theo CCCD)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="permanent_hamlet" name="permanent_hamlet"-->
+<!--                                           t-att-value="student.permanent_hamlet"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="home_town_province_id">Tỉnh/Thành phố Quê quán:</label>-->
+<!--                                    <h5>(Theo giấy khai sinh)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" name="home_town_province_id" id="home_town_province_id"-->
+<!--                                            onchange="updateDistricts('home_town')">-->
+<!--                                        <option value="">Select City</option>-->
+<!--                                        <t t-foreach="province_ids" t-as="province">-->
+<!--                                            <option t-att-value="province.id"-->
+<!--                                                    t-att-selected="'selected' if (student.home_town_province_id and province.id == student.home_town_province_id.id) else None"><t-->
+<!--                                                    t-out="province.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="birth_province_id">Tỉnh/Thành Phố Nơi khai sinh:</label>-->
+<!--                                    <h5>(Theo giấy khai sinh)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" name="birth_province_id" id="birth_province_id"-->
+<!--                                            onchange="updateDistricts('birth')">-->
+<!--                                        <option value="">Select City</option>-->
+<!--                                        <t t-foreach="province_ids" t-as="province">-->
+<!--                                            <option t-att-value="province.id"-->
+<!--                                                    t-att-selected="'selected' if (student.birth_province_id and province.id == student.birth_province_id.id) else None"><t-->
+<!--                                                    t-out="province.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <label for="permanent_district_id">Quận/Huyện thường trú:</label>-->
+<!--                                    <h5>(Theo CCCD)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" id="permanent_district_id" name="permanent_district_id"-->
+<!--                                            onchange="updateWards('permanent')"-->
+<!--                                            t-att-value="student.permanent_district_id.id">-->
+<!--                                        <option value="">Select District</option>-->
+<!--                                        <t t-foreach="request.env['miki.district'].sudo().search([('province_id', '=', student.permanent_province_id.id)])"-->
+<!--                                           t-as="district">-->
+<!--                                            <option t-att-value="district.id"-->
+<!--                                                    t-att-selected="'selected' if (student.permanent_district_id and district.id == student.permanent_district_id.id) else None"><t-->
+<!--                                                    t-out="district.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+
+
+<!--                                    <label for="permanent_address">Số nhà, tên đường thường trú:</label>-->
+<!--                                    <h5>(Theo CCCD)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="permanent_address"-->
+<!--                                           name="permanent_address"-->
+<!--                                           t-att-value="student.permanent_address"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                    <label for="home_town_district_id">Quận/Huyện Quê quán:</label>-->
+<!--                                    <h5>(Theo giấy khai sinh)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" name="home_town_district_id" id="home_town_district_id"-->
+<!--                                            onchange="updateWards('home_town')">-->
+<!--                                        <option value="">Select Ward</option>-->
+<!--                                        <t t-foreach="request.env['miki.district'].sudo().search([('province_id', '=', student.home_town_province_id.id)])"-->
+<!--                                           t-as="district">-->
+<!--                                            <option t-att-value="district.id"-->
+<!--                                                    t-att-selected="'selected' if (student.home_town_district_id and district.id == student.home_town_district_id.id) else None"><t-->
+<!--                                                    t-out="district.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="birth_district_id">Quận/Huyện Nơi khai sinh:</label>-->
+<!--                                    <h5>(Theo giấy khai sinh)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" name="birth_district_id" id="birth_district_id"-->
+<!--                                            onchange="updateWards('birth')">-->
+<!--                                        <option value="">Select district</option>-->
+<!--                                        <t t-foreach="request.env['miki.district'].sudo().search([('province_id', '=', student.birth_province_id.id)])"-->
+<!--                                           t-as="district">-->
+<!--                                            <option t-att-value="district.id"-->
+<!--                                                    t-att-selected="'selected' if (student.birth_district_id and district.id == student.birth_district_id.id) else None"><t-->
+<!--                                                    t-out="district.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+
+<!--                                    <label for="permanent_ward_id">Xã/Phường thường trú:</label>-->
+<!--                                    <h5>(Theo CCCD)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" id="permanent_ward_id" name="permanent_ward_id">-->
+<!--                                        <option value="">Select Ward</option>-->
+<!--                                        <t t-foreach="request.env['miki.ward'].sudo().search([('district_id', '=', student.permanent_district_id.id)])"-->
+<!--                                           t-as="ward">-->
+<!--                                            <option t-att-value="ward.id"-->
+<!--                                                    t-att-selected="'selected' if (student.permanent_ward_id and ward.id == student.permanent_ward_id.id) else None"><t-->
+<!--                                                    t-out="ward.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+
+
+<!--                                    <label class="mt-100" for="home_town_ward_id">Xã/Phường Quê quán:</label>-->
+<!--                                    <h5>(Theo giấy khai sinh)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" name="home_town_ward_id" id="home_town_ward_id">-->
+<!--                                        <option value="">Select District</option>-->
+<!--                                        <t t-foreach="request.env['miki.ward'].sudo().search([('district_id', '=', student.home_town_district_id.id)])"-->
+<!--                                           t-as="ward">-->
+<!--                                            <option t-att-value="ward.id"-->
+<!--                                                    t-att-selected="'selected' if (student.home_town_ward_id and ward.id == student.home_town_ward_id.id) else None"><t-->
+<!--                                                    t-out="ward.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+
+
+<!--                                    <label for="birth_ward_id">Xã/Phường nơi khai sinh:</label>-->
+<!--                                    <h5>(Theo giấy khai sinh)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" name="birth_ward_id" id="birth_ward_id">-->
+<!--                                        <option value="">Select ward</option>-->
+<!--                                        <t t-foreach="request.env['miki.ward'].sudo().search([('district_id', '=', student.birth_district_id.id)])"-->
+<!--                                           t-as="ward">-->
+<!--                                            <option t-att-value="ward.id"-->
+<!--                                                    t-att-selected="'selected' if (student.birth_ward_id and ward.id == student.birth_ward_id.id) else None"><t-->
+<!--                                                    t-out="ward.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+<!--                                </div>-->
+
+<!--                                <div class="col-4">-->
+
+
+<!--                                    <label for="birth_address">Nơi sinh:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="birth_address" name="birth_address"-->
+<!--                                           t-att-value="student.birth_address"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                    <label for="current_province_id">Tỉnh/Thành phố Chỗ ở hiện nay:</label>-->
+<!--                                    <h5>(Theo chỗ ở hiện nay)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" name="current_province_id" id="current_province_id"-->
+<!--                                            onchange="updateDistricts('current')">-->
+<!--                                        <option value="">Select City</option>-->
+<!--                                        <t t-foreach="province_ids" t-as="province">-->
+<!--                                            <option t-att-value="province.id"-->
+<!--                                                    t-att-selected="'selected' if (student.current_province_id and province.id == student.current_province_id.id) else None"><t-->
+<!--                                                    t-out="province.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="current_hamlet">Khu phố/Ấp Chỗ ở hiện nay:</label>-->
+<!--                                    <h5>(Theo chỗ ở hiện nay)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="current_hamlet" name="current_hamlet"-->
+<!--                                           t-att-value="student.current_hamlet"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="contact_phone">Số điện thoại liên hệ:</label>-->
+<!--                                    <h5>(Số điện thoại của học sinh)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="contact_phone" name="contact_phone"-->
+<!--                                           t-att-value="student.contact_phone"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                    <label for="citizen_identification_code">Số CCCD:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="citizen_identification_code"-->
+<!--                                           name="citizen_identification_code"-->
+<!--                                           t-att-value="student.citizen_identification_code"/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+
+<!--                                    <label class="mt-95" for="current_district_id">Quận/Huyện Chỗ ở hiện nay:</label>-->
+<!--                                    <h5>(Theo chỗ ở hiện nay)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" name="current_district_id" id="current_district_id"-->
+<!--                                            onchange="updateWards('current')">-->
+<!--                                        <option value="">Select District</option>-->
+<!--                                        <t t-foreach="request.env['miki.district'].sudo().search([('province_id', '=', student.current_province_id.id)])"-->
+<!--                                           t-as="district">-->
+<!--                                            <option t-att-value="district.id"-->
+<!--                                                    t-att-selected="'selected' if (student.current_district_id and district.id == student.current_district_id.id) else None"><t-->
+<!--                                                    t-out="district.name"/></option>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="current_address">Số nhà, tên đường Chỗ ở hiện nay:</label>-->
+<!--                                    <h5>(Theo chỗ ở hiện nay)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="current_address" name="current_address"-->
+<!--                                           t-att-value="student.current_address"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <label class="mt-110" for="issued_by">Nơi cấp:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="issued_by" name="issued_by"-->
+<!--                                           t-att-value="student.issued_by"/>-->
+<!--                                    <br/>-->
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <label class="mt-95" for="current_ward_id">Xã/Phường Chỗ ở hiện nay:</label>-->
+<!--                                    <h5>(Theo chỗ ở hiện nay)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <select required="required" name="current_ward_id" id="current_ward_id">-->
+<!--                                        <option value="">Select ward</option>-->
+<!--                                        <t t-if="student.current_ward_id">-->
+
+<!--                                            <t t-foreach="request.env['miki.ward'].sudo().search([('district_id', '=', student.current_district_id.id)])"-->
+<!--                                               t-as="ward">-->
+<!--                                                <option t-att-value="ward.id"-->
+<!--                                                        t-att-selected="'selected' if (student.current_ward_id and ward.id == student.current_ward_id.id) else None"><t-->
+<!--                                                        t-out="ward.name"/></option>-->
+<!--                                            </t>-->
+<!--                                        </t>-->
+<!--                                    </select>-->
+<!--                                    <br/>-->
+
+<!--                                    <label class="mt-220" for="date_range_date">Ngày cấp (mm/dd/yyyy):</label>-->
+<!--                                    <br/>-->
+
+<!--                                    <input required="required" type="date" id="date_range_date" name="date_range_date"-->
+<!--                                           t-att-value="student.date_range_date"/>-->
+
+<!--                                    <br/>-->
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <label for="personal_identification_number">Số định danh cá nhân:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="personal_identification_number"-->
+<!--                                           name="personal_identification_number"-->
+<!--                                           t-att-value="student.personal_identification_number"/>-->
+<!--                                    <br/>-->
+<!--                                    <h3>THÔNG TIN CHA</h3>-->
+<!--                                    <h5>(Trường hợp không có, điền "Không")</h5>-->
+<!--                                    <br/>-->
+<!--                                    <label for="father_full_name">Họ tên cha:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="father_full_name" name="father_full_name"-->
+<!--                                           t-att-value="student.father_full_name"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="father_occupation">Nghề nghiệp cha:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="father_occupation"-->
+<!--                                           name="father_occupation"-->
+<!--                                           t-att-value="student.father_occupation"/>-->
+<!--                                    <br/>-->
+<!--                                    <h3>THÔNG TIN MẸ</h3>-->
+<!--                                    <h5>(Trường hợp không có, điền "Không")</h5>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="mother_full_name">Họ tên mẹ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="mother_full_name" name="mother_full_name"-->
+<!--                                           t-att-value="student.mother_full_name"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="mother_occupation">Nghề nghiệp mẹ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="mother_occupation"-->
+<!--                                           name="mother_occupation"-->
+<!--                                           t-att-value="student.mother_occupation"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <label class="mt-95" for="father_dob_year">Năm sinh cha:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="number" id="father_dob_year" name="father_dob_year"-->
+<!--                                           t-att-value="student.father_dob_year"/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="father_job_title">Chức vụ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="father_job_title" name="father_job_title"-->
+<!--                                           t-att-value="student.father_job_title"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="mother_dob_year">Năm sinh mẹ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="number" id="mother_dob_year" name="mother_dob_year"-->
+<!--                                           t-att-value="student.mother_dob_year"/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="mother_job_title">Chức vụ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="mother_job_title" name="mother_job_title"-->
+<!--                                           t-att-value="student.mother_job_title"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <label class="mt-150" for="father_phone">Số điện thoại cha:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="father_phone" name="father_phone"-->
+<!--                                           t-att-value="student.father_phone"/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="father_place_of_work">Nơi công tác:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="father_place_of_work"-->
+<!--                                           name="father_place_of_work"-->
+<!--                                           t-att-value="student.father_place_of_work"/>-->
+<!--                                    <br/>-->
+<!--                                    <label class="mt-55" for="mother_phone">Số điện thoại mẹ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="mother_phone" name="mother_phone"-->
+<!--                                           t-att-value="student.mother_phone"/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="mother_place_of_work">Nơi công tác:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="mother_place_of_work"-->
+<!--                                           name="mother_place_of_work"-->
+<!--                                           t-att-value="student.mother_place_of_work"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+
+<!--                                    <h3>THÔNG TIN NGƯỜI GIÁM HỘ</h3>-->
+<!--                                    <h5>(Trường hợp không có, điền "Không")</h5>-->
+<!--                                    <br/>-->
+<!--                                    <label for="guardian_full_name">Họ tên người giám hộ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input type="text" id="guardian_full_name" name="guardian_full_name"-->
+<!--                                           t-att-value="student.guardian_full_name"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="guardian_phone">Số điện thoại người giám hộ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input type="text" id="guardian_phone" name="guardian_phone"-->
+<!--                                           t-att-value="student.guardian_phone"/>-->
+<!--                                    <br/>-->
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="guardian_occupation">Nghề nghiệp người giám hộ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input class="mb-50" type="text" id="guardian_occupation" name="guardian_occupation"-->
+<!--                                           t-att-value="student.guardian_occupation"/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="guardian_occupation">Quan hệ với người giám hộ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input class="mb-50" type="text" id="guardian_relation" name="guardian_relation"-->
+<!--                                           t-att-value="student.guardian_relation"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="guardian_dob_year">Năm sinh người giám hộ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input type="number" id="guardian_dob_year" name="guardian_dob_year"-->
+<!--                                           t-att-value="student.guardian_dob_year"/>-->
+<!--                                    <br/>-->
+<!--                                </div>-->
+
+<!--                                <div class="col-4">-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+
+<!--                                    <h3>THÀNH TÍCH HỌC TẬP VÀ CÁC DIỆN ƯU TIÊN:</h3>-->
+<!--                                    <h5>(Trường hợp không có, điền "Không")</h5>-->
+<!--                                    <br/>-->
+<!--                                    <label for="guardian_full_name">Giải HSG cấp TP,QG:</label>-->
+<!--                                    <h5>(Môn/cấp/hạng)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="HSG_achievement" name="HSG_achievement"-->
+<!--                                           t-att-value="student.HSG_achievement"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="guardian_full_name">Giải TDTT cấp TP,QG:</label>-->
+<!--                                    <h5>(Môn/cấp/huy chương)</h5>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="text" id="TDTT_achievement" name="TDTT_achievement"-->
+<!--                                           t-att-value="student.TDTT_achievement"/>-->
+<!--                                    <br/>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <br/>-->
+<!--                                    <label for="guardian_occupation">Diện ưu tiên:</label>-->
+<!--                                    <br/>-->
+
+<!--                                    <t t-foreach="miki_priority_situation_ids" t-as="situation">-->
+<!--                                        <label t-att-for="situation.name">-->
+<!--                                            <input type="radio"-->
+<!--                                                   t-att-id="situation.name"-->
+<!--                                                   name="miki_priority_situation_id"-->
+<!--                                                   required="1"-->
+<!--                                                   t-att-value="situation.id"-->
+<!--                                                   t-att-checked="'checked' if (student.miki_priority_situation_id and situation.id == student.miki_priority_situation_id.id) else None"/>-->
+<!--                                            <t t-out="situation.name"/>-->
+<!--                                        </label>-->
+<!--                                    </t>-->
+
+
+<!--                                    <br/>-->
+
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <label for="guardian_dob_year">Các diện khác:</label>-->
+<!--                                    <br/>-->
+
+<!--                                    <t t-foreach="miki_other_situation_ids" t-as="situation">-->
+<!--                                        <label t-att-for="situation.name">-->
+<!--                                            <input type="radio"-->
+<!--                                                   t-att-id="situation.name"-->
+<!--                                                   name="miki_other_situation_id"-->
+<!--                                                   required="1"-->
+<!--                                                   t-att-value="situation.id"-->
+<!--                                                   t-att-checked="'checked' if (student.miki_other_situation_id and situation.id == student.miki_other_situation_id.id) else None"/>-->
+<!--                                            <t t-out="situation.name"/>-->
+<!--                                        </label>-->
+<!--                                    </t>-->
+
+
+<!--                                    <br/>-->
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <label for="guardian_dob_year">Các thành tích khác:</label>-->
+<!--                                    <br/>-->
+
+<!--                                    <input required="required" type="text" id="other_achievement" name="other_achievement"-->
+<!--                                           t-att-value="student.other_achievement"/>-->
+<!--                                    <br/>-->
+<!--                                    <h3>ĐIỂM THI VÀO LỚP 10:</h3>-->
+<!--                                    <br/>-->
+<!--                                    <label for="guardian_dob_year">Văn:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="number" id="literature_grade"-->
+<!--                                           name="literature_grade" step="0.01"-->
+
+<!--                                           t-att-value="student.literature_grade"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                    <label for="guardian_dob_year">Tổng cộng:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="number" id="sum_grade" name="sum_grade" step="0.01"-->
+
+<!--                                           t-att-value="student.sum_grade"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                </div>-->
+
+
+<!--                                <div class="col-4">-->
+<!--                                    <label class="mt-135" for="guardian_dob_year">Toán:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="number" id="math_grade" name="math_grade"-->
+<!--                                           step="0.01"-->
+
+<!--                                           t-att-value="student.math_grade"/>-->
+<!--                                    <br/>-->
+
+<!--                                    <label for="guardian_dob_year">Ưu tiên:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="number" id="priority_grade" name="priority_grade"-->
+<!--                                           step="0.01"-->
+
+<!--                                           t-att-value="student.priority_grade"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                </div>-->
+<!--                                <div class="col-4">-->
+<!--                                    <label class="mt-38" for="guardian_dob_year">Ngoại Ngữ:</label>-->
+<!--                                    <br/>-->
+<!--                                    <input required="required" type="number" id="foreign_language_grade" step="0.01"-->
+
+<!--                                           name="foreign_language_grade"-->
+<!--                                           t-att-value="student.foreign_language_grade"/>-->
+<!--                                    <br/>-->
+
+
+<!--                                </div>-->
+
+<!--                                <div class="col-6">-->
+
+<!--                                    <h3>HỌC SINH LỚP 10 SẼ HỌC:</h3>-->
+<!--                                    <h4>-->
+<!--                                        Chương trình giáo dục phổ thông 2018 với <i>8 môn bắt buộc</i> (Toán - Văn - -->
+<!--                                        Tiếng Anh - Lịch sử - Giáo dục thể chất - Giáo dục Quốc phòng và an ninh - Hoạt-->
+<!--                                        động trải nghiệm - Giáo dục địa phương) và <i>4 môn lựa chọn.</i>-->
+<!--                                    </h4>-->
+<!--                                    <h4>Chương trình giáo dục nhà trường: Tăng cường Tiếng Anh; Tin học theo chuẩn quốc-->
+<!--                                        tế MOS; Kỹ năng sống.</h4>-->
+<!--                                    <br/>-->
+<!--                                </div>-->
+
+<!--                            </div>-->
+<!--                            <h2>CHƯƠNG TRÌNH</h2>-->
+<!--                            <div class="container">-->
+<!--                                <div class="row align-items-center justify-between">-->
+<!--                                    <t t-foreach="student_type_ids" t-as="student_type">-->
+<!--                                        <div class="col-6">-->
+
+<!--                                            <label t-att-for="student_type.name">-->
+<!--                                                <input required="required" type="radio" t-att-id="student_type.name"-->
+<!--                                                       name="student_type_id"-->
+<!--                                                       t-att-value="student_type.id"-->
+<!--                                                       t-att-checked="'checked' if (student.student_type_id and student_type.id == student.student_type_id.id) else None"-->
+<!--                                                       class="radio-student-type"/>-->
+<!--                                                <t t-out="student_type.name"/></label>-->
+<!--                                        </div>-->
+<!--                                    </t>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <h2>NHÓM MÔN HỌC LỰA CHỌN</h2>-->
+<!--                            <t t-foreach="student_type_ids" t-as="student_type">-->
+
+<!--                                <div t-attf-class="container department {{student_type.id}}"-->
+<!--                                     t-att-hidden="None if (student.student_type_id and student_type.id == student.student_type_id.id) else 'hidden'">-->
+<!--                                    <div class="row align-items-center justify-between">-->
+<!--                                        <t t-foreach="student_type.department_ids" t-as="department">-->
+<!--                                            <div t-attf-class="col-6 ">-->
+<!--                                                <h3><t t-out="department.name"/></h3>-->
+<!--                                                <br/>-->
+<!--                                                <t t-foreach="department.major_ids" t-as="major">-->
+<!--                                                    <label t-att-for="major.id">-->
+<!--                                                        <input type="radio" t-att-id="major.id" name="major_id"-->
+<!--                                                               class="radio-major"-->
+<!--                                                               required="1"-->
+<!--                                                               t-att-value="major.id"-->
+<!--                                                               t-att-checked="'checked' if (student.major_id and major.id == student.major_id.id) else None"/>-->
+<!--                                                        <t t-out="major.name"/>(<t-->
+<!--                                                            t-out="' - '.join(major.subject_ids.mapped('name'))"/>)-->
+<!--                                                    </label>-->
+<!--                                                </t>-->
+<!--                                            </div>-->
+
+<!--                                        </t>-->
+
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </t>-->
+
+<!--                            &lt;!&ndash; Add more checkboxes as needed &ndash;&gt;-->
+<!--                            <input type="submit" value="Submit"/>-->
+<!--                        </form>-->
                     </section>
                     <!-- InstanceEndEditable -->
                     <footer>

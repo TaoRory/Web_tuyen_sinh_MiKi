@@ -31,284 +31,368 @@
 
                     <t t-call="Web_tuyen_sinh_MiKi.print_report_student_base">
                         <div class="page" style="font-size:1.1rem; font-family: 'Times New Roman', Times, serif;">
-                            <div class="">
-                                <div class=" align-items-center justify-between" id="pdf-content">
-                                    <!-- Page 1 -->
-                                    <div >
-                                        <div class="d-flex justify-content-between row  pb-1">
-                                            <div class="header-left col-6 align-items-center text-center">
-                                                <p>SỞ GIÁO DỤC VÀ ĐÀO TẠO TP. HỒ CHÍ MINH</p>
-                                                <p>
-                                                    <strong>TRƯỜNG THPT NGUYỄN THỊ MINH KHAI</strong>
-                                                </p>
-                                                <hr class="small-linea"/>
+                            <!-- Page 1 -->
+                            <div class="d-flex justify-content-between row  pb-1">
+                                <div class="header-left col-6 align-items-center text-center">
+                                    <p>SỞ GIÁO DỤC VÀ ĐÀO TẠO TP. HỒ CHÍ MINH</p>
+                                    <p>
+                                        <strong>TRƯỜNG THPT NGUYỄN THỊ MINH KHAI</strong>
+                                    </p>
+                                    <hr class="small-linea"/>
 
-                                            </div>
-                                            <div class="header-right col-6 align-items-center text-center">
-                                                <p>
-                                                    <strong>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</strong>
-                                                </p>
-                                                <p>
-                                                    <strong>Độc lập - Tự do - Hạnh phúc</strong>
-                                                </p>
-                                                <hr class="small-lineb"/>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <p>
-                                                <strong>ĐƠN XIN NHẬP HỌC LỚP 10</strong>
-                                            </p>
-                                            <p>
-                                                <strong>(CHƯƠNG TRÌNH 02 BUỔI/NGÀY)</strong>
-                                            </p>
-                                            <p>
-                                                <strong>Năm học 2024 - 2025</strong>
-                                            </p>
-                                            <div class="d-flex justify-content-end">
-                                                <div class="" style="    width: 15%;
-    text-align: center;
-    border: 1px solid #000;
-    padding: 10px;
-    line-height: 1.2;
-    margin: 0 0px;">
-                                                    <p>SBD <span t-out="doc.identification_number"/></p>
-                                                </div>
-                                                <div class="" style="    width: 30%;
-    text-align: center;
-    border: 1px solid #000;
-    padding: 10px;
-    line-height: 1.2;
-    margin: 0 0px;">
-                                                    <p>STT <span
-                                                            t-out="doc.stt_trung_tuyen"/></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pt-4">
-                                            <div class="row align-items-center justify-between">
-                                                <div class=" col-6">
-                                                    <p><strong><u>Họ tên học sinh:</u></strong><br/>
-                                                        <t t-out="doc.name"/></p><br/>
-                                                    <p><strong><u>Giới tính:</u></strong><br/>
-                                                        <t t-out="'Nam' if doc.gender else 'Nữ'"/></p><br/>
-                                                    <p><strong><u>Ngày sinh:</u></strong><br/>
-                                                        <t t-out="doc.dob_date.strftime('%d-%m-%Y')"/></p><br/>
-                                                    <p><strong><u>Nơi sinh:</u></strong><br/>
-                                                        <t t-out="doc.birth_address"/></p><br/>
-                                                    <p><strong><u>Dân tộc:</u></strong><br/>
-                                                        <t t-out="doc.ethnicity"/></p><br/>
+                                </div>
+                                <div class="header-right col-6 align-items-center text-center">
+                                    <p>
+                                        <strong>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</strong>
+                                    </p>
+                                    <p>
+                                        <strong>Độc lập - Tự do - Hạnh phúc</strong>
+                                    </p>
+                                    <hr class="small-lineb"/>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <p>
+                                    <strong>ĐƠN XIN NHẬP HỌC LỚP 10</strong>
+                                </p>
+                                <p>
+                                    <strong>(CHƯƠNG TRÌNH 02 BUỔI/NGÀY)</strong>
+                                </p>
+                                <p>
+                                    <strong>Năm học 2024 - 2025</strong>
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <div class="" style="   width: 15%;
+                                                            text-align: center;
+                                                            border: 1px solid #000;
+                                                            padding: 10px;
+                                                            line-height: 1.2;
+                                                            margin: 0px 0px;"
+                                    >
+                                        <p>SBD <span t-out="doc.identification_number"/></p>
+                                    </div>
+                                    <div class="" style="   width: 30%;
+                                                            text-align: center;
+                                                            border: 1px solid #000;
+                                                            padding: 10px;
+                                                            line-height: 1.2;
+                                                            margin: 0px 0px;"
+                                    >
+                                        <p>STT <span
+                                                t-out="doc.stt_trung_tuyen"/></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4">
+                                <div class="row align-items-center justify-between">
+                                    <div class=" col-4">
+                                        <p><strong><u>Họ tên học sinh:</u></strong><br/>
+                                            <t t-out="doc.name"/></p><br/>
+                                        <p><strong><u>Nơi sinh:</u></strong><br/>
+                                            <t t-out="doc.birth_address"/></p><br/>
+                                        <p><strong><u>Số căn cước công dân:</u></strong><br/>
+                                            <t t-out="doc.citizen_identification_code"/></p><br/>
+                                    </div>
+                                    <div class=" col-4">
+                                        <p><strong><u>Giới tính:</u></strong><br/>
+                                            <t t-out="'Nam' if doc.gender else 'Nữ'"/></p><br/>
+                                        <p><strong><u>Tôn giáo:</u></strong><br/>
+                                            <t t-out="doc.religion"/></p><br/>
+                                        <p><strong><u>Ngày cấp:</u></strong><br/>
+                                            <t t-out="doc.date_range_date.strftime('%d-%m-%Y') if doc.date_range_date else ''"/></p><br/>
+                                    </div>
+                                    <div class=" col-4">
+                                        <p><strong><u>Ngày sinh:</u></strong><br/>
+                                            <t t-out="doc.dob_date.strftime('%d-%m-%Y') if doc.dob_date else ''"/></p><br/>
+                                        <p><strong><u>Dân tộc:</u></strong><br/>
+                                            <t t-out="doc.ethnicity"/></p><br/>
+                                        <p><strong><u>Nơi cấp:</u></strong><br/>
+                                            <t t-out="doc.issued_by"/></p><br/>
 
-                                                </div>
-                                                <div class=" col-6">
-                                                    <p><strong><u>Số căn cước công dân:</u></strong><br/>
-                                                        <t t-out="doc.citizen_identification_code"/></p><br/>
-                                                    <p><strong><u>Ngày cấp:</u></strong><br/>
-                                                        <t t-out="doc.date_range_date.strftime('%d-%m-%Y')"/></p><br/>
-                                                    <p><strong><u>Nơi cấp:</u></strong><br/>
-                                                        <t t-out="doc.issued_by"/></p><br/>
-                                                    <p><strong><u>Tôn giáo:</u></strong><br/>
-                                                        <t t-out="doc.religion"/></p><br/>
-                                                    <p><strong><u>Số điện thoại đăng ký nhận SMS:</u></strong><br/>
-                                                        <t t-out="doc.contact_phone"/>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row align-items-center justify-between">
+                                    </div>
+                                </div>
 
-                                                <div class=" col-4">
-                                                    <p><strong><u>Địa chỉ hộ khẩu:</u></strong><br/>
-                                                        <t t-out="doc.permanent_address"/></p><br/>
-                                                    <p><strong><u>Họ tên cha:</u></strong><br/>
-                                                        <t t-out="doc.father_full_name"/></p><br/>
-                                                    <p><strong><u>Họ tên mẹ:</u></strong><br/>
-                                                        <t t-out="doc.mother_full_name"/></p><br/>
-                                                    <p><strong><u>Nơi công tác của cha:</u></strong><br/>
-                                                        <t t-out="doc.father_place_of_work"/></p><br/>
-                                                    <p><strong><u>Họ tên người giám hộ:</u></strong><br/>
-                                                        <t t-out="doc.guardian_full_name"/></p><br/>
-                                                    
-                                                </div>
-                                                <div class=" col-4">
-                                                    <p><strong><u>Địa chỉ hiện tại</u></strong>: <br/>
-                                                        <t t-out="doc.current_address"/></p><br/>
-                                                    <p><strong><u>Nghề nghiệp cha:</u></strong> <br/>
-                                                        <t t-out="doc.father_occupation"/></p><br/>
-                                                    <p><strong><u>Nghề nghiệp mẹ:</u></strong> <br/>
-                                                        <t t-out="doc.mother_occupation"/></p><br/>
-                                                    <p><strong><u>Nơi công tác của mẹ:</u></strong><br/>
-                                                        <t t-out="doc.mother_place_of_work"/></p><br/>
-                                                    <p><strong><u>Quan hệ với người giám hộ</u></strong>: <br/>
-                                                        <t t-out="doc.guardian_relation"/></p><br/>
-                                                    
-                                                </div>
-                                                <div class="col-4">
-                                                    <p><strong><u>Điện thoại liên lạc cha:</u></strong> <br/>
-                                                        <t t-out="doc.father_phone"/></p><br/>
-                                                    <p><strong><u>Chức vụ công việc cha:</u></strong> <br/>
-                                                        <t t-out="doc.father_job_title"/></p><br/>
-                                                    <p><strong><u>Chức vụ công việc mẹ:</u></strong> <br/>
-                                                        <t t-out="doc.mother_job_title"/></p><br/>
-                                                    <p><strong><u>Điện thoại liên lạc mẹ:</u></strong> <br/>
-                                                        <t t-out="doc.mother_phone"/></p><br/>
-                                                    <p><strong><u>Số điện thoại liên lạc khác:</u></strong> <br/>
-                                                        <t t-out="doc.guardian_phone"/></p><br/>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="row align-items-center justify-between">
+                                    <div class=" col-3">
+                                        <p><strong><u>Địa chỉ hộ khẩu:</u></strong><br/>
+                                            <t t-out="doc.permanent_address"/></p>
+                                    </div>
+                                    <div class=" col-3 ">
+                                        <p><strong><u>Phường:</u></strong><br/>
+                                            <t t-out="doc.permanent_ward_id.name"/></p>
+                                    </div>
+                                    <div class="col-3 ">
+                                        <p><strong><u>Quận:</u></strong><br/>
+                                            <t t-out="doc.permanent_district_id.name"/></p>
+                                    </div>
+                                    <div class="col-3 ">
+                                        <p><strong><u>Tỉnh /thành phố:</u></strong><br/>
+                                            <t t-out="doc.permanent_province_id.name"/></p>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center justify-between">
+                                    <div class=" col-3">
+                                        <p><strong><u>Địa chỉ hiện tại</u></strong>: <br/>
+                                            <t t-out="doc.current_address"/></p><br/>
+                                    </div>
+                                    <div class=" col-3 ">
+                                        <p><strong><u>Phường:</u></strong><br/>
+                                            <t t-out="doc.current_ward_id.name"/></p><br/>
+                                    </div>
+                                    <div class="col-3 ">
+                                        <p><strong><u>Quận:</u></strong><br/>
+                                            <t t-out="doc.current_district_id.name"/></p><br/>
+                                    </div>
+                                    <div class="col-3 ">
+                                        <p><strong><u>Tỉnh /thành phố:</u></strong><br/>
+                                            <t t-out="doc.current_province_id.name"/></p><br/>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center justify-between">
+                                    <div class=" col-3">
+                                        <p><strong><u>Họ tên cha:</u></strong><br/>
+                                            <t t-out="doc.father_full_name"/></p>
+                                    </div>
+                                    <div class=" col-3 ">
+                                        <p><strong><u>Nghề nghiệp cha:</u></strong> <br/>
+                                            <t t-out="doc.father_occupation"/></p>
+                                    </div>
+                                    <div class="col-3 ">
+                                        <p><strong><u>Chức vụ công việc cha:</u></strong> <br/>
+                                            <t t-out="doc.father_job_title"/></p>
+                                    </div>
+                                    <div class="col-3 ">
+                                        <p><strong><u>Nơi công tác của cha:</u></strong><br/>
+                                            <t t-out="doc.father_place_of_work"/></p>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center justify-between">
+                                    <div class=" col-3">
+                                        <p><strong><u>Họ tên mẹ:</u></strong><br/>
+                                            <t t-out="doc.mother_full_name"/></p><br/>
+                                    </div>
+                                    <div class=" col-3 ">
+                                        <p><strong><u>Nghề nghiệp mẹ:</u></strong> <br/>
+                                            <t t-out="doc.mother_occupation"/></p><br/>
+
+                                    </div>
+                                    <div class="col-3 ">
+                                        <p><strong><u>Chức vụ công việc mẹ:</u></strong> <br/>
+                                            <t t-out="doc.mother_job_title"/></p><br/>
+                                    </div>
+                                    <div class="col-3 ">
+                                        <p><strong><u>Nơi công tác của mẹ:</u></strong><br/>
+                                            <t t-out="doc.mother_place_of_work"/></p><br/>
+                                    </div>
+                                </div>
+
+                                <div class="row align-items-center justify-between">
+                                    <div class=" col-4">
+                                        <p><strong><u>Số điện thoại đăng ký nhận SMS:</u></strong><br/>
+                                            <t t-out="doc.contact_phone"/></p>
+                                        <p><strong><u>Họ tên người giám hộ:</u></strong><br/>
+                                            <t t-out="doc.guardian_full_name"/></p>
+                                    </div>
+                                    <div class=" col-4">
+                                        <p><strong><u>Điện thoại liên lạc cha:</u></strong> <br/>
+                                            <t t-out="doc.father_phone"/></p>
+                                        <p><strong><u>Quan hệ với người giám hộ</u></strong>: <br/>
+                                            <t t-out="doc.guardian_relation"/></p>
+                                    </div>
+                                    <div class=" col-4">
+                                        <p><strong><u>Điện thoại liên lạc mẹ:</u></strong> <br/>
+                                            <t t-out="doc.mother_phone"/></p>
+                                        <p><strong><u>Số điện thoại liên lạc khác:</u></strong> <br/>
+                                            <t t-out="doc.guardian_phone"/></p>
                                     </div>
                                 </div>
                             </div>
 
-                            
+
                         </div>
-                        <div class="page" style="font-size:1.1rem; font-family: 'Times New Roman', Times, serif; page-break-before: always;" >
+                        <div class="page"
+                             style="font-size:1.1rem; font-family: 'Times New Roman', Times, serif; page-break-before: always; ">
 
-                                    <!-- Page 2 -->
-                                    <div class="">
-                                        <div class="">
-                                            <p><strong>THÀNH TÍCH HỌC TẬP VÀ CÁC DIỆN ƯU TIÊN</strong></p>
-                                            <div class="row align-items-center justify-between">
-                                                <div class=" col-4">
-                                                    <br/>
-                                                    <p><strong><u>Giải HSG cấp TP,QG:</u></strong></p>
-                                                    <p t-out="doc.HSG_achievement"></p>
-                                                    <p><strong><u>Giải TDTT cấp TP,QG:</u></strong></p>
-                                                    <p t-out="doc.TDTT_achievement"></p>
-                                                    <p><strong><u>Các thành tích khác:</u></strong></p>
-                                                    <p t-out="doc.other_achievement"></p>
-                                                    <br/>
-                                                </div>
+                            <!-- Page 2 -->
+                                    <p><strong>THÀNH TÍCH HỌC TẬP VÀ CÁC DIỆN ƯU TIÊN</strong></p>
+                                    <div class="row align-items-center justify-between">
+                                        <div class=" col-6">
+                                            <br/>
+                                            <p class=""><strong><u>Diện ưu tiên:</u></strong></p>
+                                            <label t-att-for="doc.miki_priority_situation_id.name">
 
-                                                <div class=" col-4">
-                                                    <br/>
-                                                    <p class=""><strong><u>Diện ưu tiên:</u></strong></p>
-                                                    <label t-att-for="doc.miki_priority_situation_id.name">
+                                                <t t-out="doc.miki_priority_situation_id.name"/>
+                                            </label>
 
-                                                        <t t-out="doc.miki_priority_situation_id.name"/>
-                                                    </label>
-
-                                                </div>
-                                                <div class=" col-4">
-                                                    <br/>
-                                                    <p class=""><strong><u>Các diện khác:</u></strong></p>
-                                                    <label t-att-for="doc.miki_other_situation_id.name">
-
-                                                        <t t-out="doc.miki_other_situation_id.name"/>
-                                                    </label>
-                                                    <br/>
-                                                </div>
-                                            </div>
-                                                    <p><strong>ĐIỂM THI VÀO LỚP 10:</strong></p>
-                                            <div class="row align-items-center justify-between">
-                                                <div class=" col-4">
-                                                    <br/>
-                                                    <p><strong><u>Văn:</u></strong></p>
-                                                    <p t-out="doc.literature_grade"></p>
-                                                    <p><strong><u>Tổng cộng:</u></strong></p>
-                                                    <p t-out="doc.sum_grade"></p>
-                                                </div>
-
-                                                <div class=" col-4">
-                                                    <br/>
-                                                    <p class=""><strong><u>Toán:</u></strong></p>
-                                                    <p t-out="doc.math_grade"></p>
-
-                                                    <p><strong><u>Ưu tiên:</u></strong></p>
-                                                    <p t-out="doc.priority_grade"></p>
-                                                </div>
-                                                <div class=" col-4">
-                                                    <br/>
-                                                    <p class=""><strong><u>Ngoại Ngữ:</u></strong></p>
-                                                    <p t-out="doc.foreign_language_grade"></p>
-                                                </div>
-                                            </div>
-                                            <div class="row align-items-center justify-between">
-
-                                                <div class=" col-12">
-                                                    <p><strong>HỌC SINH LỚP 10 SẼ HỌC:</strong></p>
-                                                    <p>Chương trình giáo dục phổ thông 2018 với <i>8 môn bắt buộc</i> (Toán
-                                                        - Văn -
-                                                        Tiếng Anh - Lịch sử - Giáo dục thể chất - Giáo dục Quốc phòng và
-                                                        an ninh - Hoạt
-                                                        động trải nghiệm - Giáo dục địa phương) và <i>4 môn lựa
-                                                            chọn.</i></p>
-
-                                                    <p><strong>CHƯƠNG TRÌNH</strong></p>
-                                                    <p t-out="doc.student_type_id.name"></p>
-                                                    <p><strong>NHÓM MÔN HỌC LỰA CHỌN</strong></p>
-                                                    <label t-att-for="doc.major_id.id">
-                                                        <t t-out="doc.major_id.name"/>(<t
-                                                            t-out="' - '.join(doc.major_id.subject_ids.mapped('name'))"/>
-                                                        )
-                                                    </label>
-                                                </div>
-                                            </div>
                                         </div>
-                                        <style>
+                                        <div class=" col-6">
+                                            <br/>
+                                            <p class=""><strong><u>Các diện khác:</u></strong></p>
+                                            <label t-att-for="doc.miki_other_situation_id.name">
 
-                                            .f-s p {
-                                                margin: 0;
-                                            }
-
-                                            .signature-line {
-                                                margin-top: 100px;
-                                                border-bottom: 1px solid #000;
-                                                width: 100%;
-                                                display: inline-block;
-                                            }
-
-                                            .info-box-footer {
-                                                display: flex;
-                                                justify-content: right;
-                                                margin-top: 42px;
-                                            }
-
-                                            .info-box-footer p {
-                                                margin-top: -20px;
-                                                margin-bottom: 13px;
-                                            }
-
-                                            .box-footera {
-                                                width: 80px;
-                                                text-align: center;
-                                                border: 1px solid #000;
-                                                padding: 20px;
-                                                line-height: 1.2;
-                                            }
-
-                                            .box-footerb {
-                                                width: 150px;
-                                                text-align: center;
-                                                border: 1px solid #000;
-                                                padding: 20px;
-                                                line-height: 1.2;
-                                            }
-                                        </style>
-                                        <div class="row" style="font-size: 1rem; padding-top: 3rem">
-                                            <div class="text-center p-3" style="width:32%">
-                                                <p>Học sinh ký và ghi rõ họ tên</p>
-                                                <div class="signature-line"/>
-                                            </div>
-                                            <div class=" text-center p-3"  style="width:32%">
-                                                <p>Cha Mẹ học sinh ký và ghi rõ họ tên</p>
-                                                <div class="signature-line"/>
-                                            </div>
-                                            <div class=" text-center"  style="width:32%">
-                                                <p>Ngày ...... tháng ... năm 2024</p>
-                                                <div class="info-box-footer d-flex justify-content-end" >
-                                                    <div class="box-footera">
-                                                        <p>SBD </p>
-                                                        <p t-out="doc.identification_number" class=""/>
-                                                    </div>
-                                                    <div class="box-footerb">
-                                                        <p>STT </p>
-                                                        <p t-out="doc.stt_trung_tuyen"/>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                <t t-out="doc.miki_other_situation_id.name"/>
+                                            </label>
+                                            <br/>
                                         </div>
                                     </div>
+                                    <div class="row align-items-center justify-between">
+                                        <div class=" col-4">
+                                            <br/>
+                                            <p><strong><u>Giải HSG cấp TP,QG:</u></strong></p>
+                                            <p t-out="doc.HSG_achievement"></p>
+
+                                        </div>
+
+                                        <div class=" col-3">
+                                            <br/>
+                                            <p><strong><u>Giải TDTT cấp TP,QG:</u></strong></p>
+                                            <p t-out="doc.TDTT_achievement"></p>
+                                        </div>
+                                        <div class=" col-5">
+                                            <br/>
+                                            <p><strong><u>Các thành tích khác:</u></strong></p>
+                                            <p t-out="doc.other_achievement" ></p>
+
+                                        </div>
+                                    </div>
+                                    <p><strong>ĐIỂM THI VÀO LỚP 10:</strong></p>
+                                    <div class="row align-items-center justify-between">
+                                        <div class=" col-4">
+                                            <br/>
+                                            <p><strong><u>Văn:</u></strong></p>
+                                            <p t-out="doc.literature_grade"></p>
+                                            <p><strong><u>Tổng cộng:</u></strong></p>
+                                            <p t-out="doc.sum_grade"></p>
+                                        </div>
+
+                                        <div class=" col-4">
+                                            <br/>
+                                            <p class=""><strong><u>Toán:</u></strong></p>
+                                            <p t-out="doc.math_grade"></p>
+
+                                            <p><strong><u>Ưu tiên:</u></strong></p>
+                                            <p t-out="doc.priority_grade"></p>
+                                        </div>
+                                        <div class=" col-4">
+                                            <br/>
+                                            <p class=""><strong><u>Ngoại Ngữ:</u></strong></p>
+                                            <p t-out="doc.foreign_language_grade"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center justify-between">
+
+                                        <div class=" col-12">
+                                            <p><strong>HỌC SINH LỚP 10 SẼ HỌC:</strong></p>
+                                            <p>Chương trình giáo dục phổ thông 2018 với <i>8 môn bắt buộc</i> (Toán
+                                                - Văn -
+                                                Tiếng Anh - Lịch sử - Giáo dục thể chất - Giáo dục Quốc phòng và
+                                                an ninh - Hoạt
+                                                động trải nghiệm - Giáo dục địa phương) và <i>4 môn lựa
+                                                    chọn.</i></p>
+                                            <p>Chương trình giáo dục nhà trường: Tăng cường Tiếng Anh; Tin học theo chuẩn quốc tế MOS; Kỹ năng sống.</p>
+
+                                            <p><strong>CHƯƠNG TRÌNH</strong></p>
+                                            <p t-out="doc.student_type_id.name"></p>
+                                            <p><strong>NHÓM MÔN HỌC LỰA CHỌN</strong></p>
+                                            <label t-att-for="doc.major_id.id">
+                                                <t t-out="doc.major_id.name"/>(<t
+                                                    t-out="' - '.join(doc.major_id.subject_ids.mapped('name'))"/>
+                                                )
+                                            </label>
+                                        </div>
+                                    </div>
+                                <style>
+
+                                    .f-s p {
+                                        margin: 0;
+                                    }
+
+                                    .signature-line {
+                                        margin-top: 100px;
+                                        border-bottom: 1px solid #000;
+                                        width: 100%;
+                                        display: inline-block;
+                                    }
+
+                                    .info-box-footer {
+                                        display: flex;
+                                        justify-content: right;
+                                        margin-top: 42px;
+                                    }
+
+                                    .info-box-footer p {
+                                        margin-top: -20px;
+                                        margin-bottom: 13px;
+                                    }
+
+                                    .box-footera {
+                                        width: 80px;
+                                        text-align: center;
+                                        border: 1px solid #000;
+                                        padding: 20px;
+                                        line-height: 1.2;
+                                    }
+
+                                    .box-footerb {
+                                        width: 150px;
+                                        text-align: center;
+                                        border: 1px solid #000;
+                                        padding: 20px;
+                                        line-height: 1.2;
+                                    }
+                                </style>
+                                <p class="d-flex justify-content-end pt-4">Ngày ...... tháng ... năm 2024</p>
+
+                                <div class="d-flex justify-content-end">
+
+                                    <div  style="   width: 15%;
+                                                            text-align: center;
+                                                            border: 1px solid #000;
+                                                            padding: 10px;
+                                                            line-height: 1.2;
+                                                            margin: 0px 0px;"
+                                    >
+                                        <p>SBD <span t-out="doc.identification_number"/></p>
+                                    </div>
+                                    <div style="   width: 30%;
+                                                            text-align: center;
+                                                            border: 1px solid #000;
+                                                            padding: 10px;
+                                                            line-height: 1.2;
+                                                            margin: 0px 0px;"
+                                    >
+                                        <p>STT <span
+                                                t-out="doc.stt_trung_tuyen"/></p>
+                                    </div>
                                 </div>
+
+<!--                               <div>-->
+<!--                                <div class=" text-center" style="width:32%">-->
+<!--                                        <p>Ngày ...... tháng ... năm 2024</p>-->
+<!--                                        <div class="info-box-footer d-flex justify-content-end">-->
+<!--                                            <div class="box-footera">-->
+<!--                                                <p>SBD </p>-->
+<!--                                                <p t-out="doc.identification_number" class=""/>-->
+<!--                                            </div>-->
+<!--                                            <div class="box-footerb">-->
+<!--                                                <p>STT </p>-->
+<!--                                                <p t-out="doc.stt_trung_tuyen"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                            </div>-->
+                                <div class="row" style="font-size: 1rem; padding-top: 1.5rem;">
+                                    <div class="col-6 text-center p-3">
+                                        <p>Học sinh ký và ghi rõ họ tên</p>
+                                        <div class="signature-line"/>
+                                    </div>
+                                    <div class="col-6 text-center p-3">
+                                        <p>Cha Mẹ học sinh ký và ghi rõ họ tên</p>
+                                        <div class="signature-line"/>
+                                    </div>
+                                </div>
+
+                        </div>
 
                     </t>
                 </t>

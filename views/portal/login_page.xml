@@ -27,32 +27,32 @@
                                 Website: thptnguyenthiminhkhai.hcm.edu.vn</h3>
 
                         </div>
+                        <p>Đã hết thời hạn đăng ký online</p>
+<!--                        <form action="/information_page">-->
 
-                        <form action="/information_page">
+<!--                            <div class="login-form">-->
+<!--                                <h2>HỆ THỐNG ĐIỀN THÔNG TIN NHẬP HỌC</h2>-->
+<!--                                <h4>Số báo danh</h4>-->
+<!--                                <input type="text" placeholder="Nhập số báo danh" id="sbd" name="sbd"/>-->
+<!--                                <h4>Mã số học sinh</h4>-->
+<!--                                <input type="password" placeholder="Mã số học sinh" id="mhs" name="mhs"/>-->
+<!--                                <button type="submit" class="btn_login_page">LOG IN</button>-->
 
-                            <div class="login-form">
-                                <h2>HỆ THỐNG ĐIỀN THÔNG TIN NHẬP HỌC</h2>
-                                <h4>Số báo danh</h4>
-                                <input type="text" placeholder="Nhập số báo danh" id="sbd" name="sbd"/>
-                                <h4>Mã số học sinh</h4>
-                                <input type="password" placeholder="Mã số học sinh" id="mhs" name="mhs"/>
-                                <button type="submit" class="btn_login_page">LOG IN</button>
+<!--                            </div>-->
+<!--                            <div class="info-section">-->
+<!--                                <div class="info-box" style="display: none;">-->
+<!--                                    <h5>Họ và tên:</h5>-->
+<!--                                    <p id="result_name">Thông tin người dùng sẽ hiển thị ở đây</p>-->
+<!--                                    <h5>Ngày sinh:</h5>-->
+<!--                                    <p id="result_dob">Thông tin người dùng sẽ hiển thị ở đây</p>-->
+<!--                                <input type="submit"/>-->
 
-                            </div>
-                            <div class="info-section">
-                                <div class="info-box" style="display: none;">
-                                    <h5>Họ và tên:</h5>
-                                    <p id="result_name">Thông tin người dùng sẽ hiển thị ở đây</p>
-                                    <h5>Ngày sinh:</h5>
-                                    <p id="result_dob">Thông tin người dùng sẽ hiển thị ở đây</p>
-                                <input type="submit"/>
-
-                                </div>
-                                <div class="empty-box" style="display: none;">
-                                    <p>Không có học sinh này</p>
-                                </div>
-                            </div>
-                        </form>
+<!--                                </div>-->
+<!--                                <div class="empty-box" style="display: none;">-->
+<!--                                    <p>Không có học sinh này</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </form>-->
                     </div>
                 </div>
             <script src="/Web_tuyen_sinh_MiKi/static/assets/js/login_page.js"/>
