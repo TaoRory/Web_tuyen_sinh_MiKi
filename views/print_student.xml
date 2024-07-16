@@ -217,7 +217,7 @@
                                     <p><strong>THÀNH TÍCH HỌC TẬP VÀ CÁC DIỆN ƯU TIÊN</strong></p>
                                     <div class="row align-items-center justify-between">
                                         <div class=" col-6">
-                                            <br/>
+
                                             <p class=""><strong><u>Diện ưu tiên:</u></strong></p>
                                             <label t-att-for="doc.miki_priority_situation_id.name">
 
@@ -226,7 +226,7 @@
 
                                         </div>
                                         <div class=" col-6">
-                                            <br/>
+
                                             <p class=""><strong><u>Các diện khác:</u></strong></p>
                                             <label t-att-for="doc.miki_other_situation_id.name">
 
@@ -255,10 +255,11 @@
 
                                         </div>
                                     </div>
+
                                     <p><strong>ĐIỂM THI VÀO LỚP 10:</strong></p>
                                     <div class="row align-items-center justify-between">
                                         <div class=" col-4">
-                                            <br/>
+
                                             <p><strong><u>Văn:</u></strong></p>
                                             <p t-out="doc.literature_grade"></p>
                                             <p><strong><u>Tổng cộng:</u></strong></p>
@@ -266,7 +267,7 @@
                                         </div>
 
                                         <div class=" col-4">
-                                            <br/>
+
                                             <p class=""><strong><u>Toán:</u></strong></p>
                                             <p t-out="doc.math_grade"></p>
 
@@ -274,13 +275,13 @@
                                             <p t-out="doc.priority_grade"></p>
                                         </div>
                                         <div class=" col-4">
-                                            <br/>
+
                                             <p class=""><strong><u>Ngoại Ngữ:</u></strong></p>
                                             <p t-out="doc.foreign_language_grade"></p>
                                         </div>
                                     </div>
+                            <br/>
                                     <div class="row align-items-center justify-between">
-
                                         <div class=" col-12">
                                             <p><strong>HỌC SINH LỚP 10 SẼ HỌC:</strong></p>
                                             <p>Chương trình giáo dục phổ thông 2018 với <i>8 môn bắt buộc</i> (Toán
@@ -289,7 +290,7 @@
                                                 an ninh - Hoạt
                                                 động trải nghiệm - Giáo dục địa phương) và <i>4 môn lựa
                                                     chọn.</i></p>
-                                            <p>Chương trình giáo dục nhà trường: Tăng cường Tiếng Anh; Tin học theo chuẩn quốc tế MOS; Kỹ năng sống.</p>
+                                            <p>Chương trình giáo dục nhà trường: Tăng cường tiếng Anh với GV bản ngữ; Tin học để thi lấy Chứng chỉ quốc tế MOS;  Kỹ năng sống.</p>
 
                                             <p><strong>CHƯƠNG TRÌNH</strong></p>
                                             <p t-out="doc.student_type_id.name"></p>
@@ -381,7 +382,7 @@
 <!--                                        </div>-->
 <!--                                    </div>-->
 <!--                            </div>-->
-                                <div class="row" style="font-size: 1rem; padding-top: 1.5rem;">
+                                <div class="row" style="font-size: 1rem; padding-top: 1rem;">
                                     <div class="col-6 text-center p-3">
                                         <p>Học sinh ký và ghi rõ họ tên</p>
                                         <div class="signature-line"/>
